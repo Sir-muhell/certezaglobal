@@ -1,0 +1,142 @@
+
+<?php
+if(empty($_POST['search'])) {
+  header("location : ./error");
+ }
+ include("data/functions.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Search | Certeza Global</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Demo project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
+<link rel="stylesheet" type="text/css" href="styles/post.css">
+<link rel="stylesheet" type="text/css" href="styles/post_responsive.css">
+<link rel="icon" type="image/png"  href="images/logo7.png">
+
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div><a href="./"><img class="logos" src="images/logo7.png"></a></div>
+						<nav class="main_nav">
+							<ul>
+								<li class="active"><a href="index.html">Home</a></li>
+								<li><a href="#">Articles</a></li>
+								<li class="dropdown">
+									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+										<ul><a class="container" style="color: black" href="#">HTML</a></ul>
+									    <ul><a class="container" style="color: black" href="#">CSS</a></ul>
+									    <ul><a class="container" style="color: black" href="#">JavaScript</a></ul>
+									</div>
+								</li>
+		  						<li><a href="./about">About</a></li>
+								<li><a href="./contact">Contact</a></li>
+										
+							</ul>
+						</nav>
+						
+						<?php include("includes/menu.php"); ?>
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.jpg" data-speed="0.8"></div>
+		<div class="home_content">
+			<div class="post_category trans_200"><a href="category.html" class="trans_200">sport</a></div>
+			<div class="post_title">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</div>
+		</div>
+	</div>
+	
+	<!-- Page Content -->
+
+	<div class="page_content">
+		<div class="container">
+			<div class="row row-lg-eq-height">
+
+				<!-- Post Content -->
+
+				<div class="col-lg-9">
+					<div class="post_content">
+
+						
+						<div class="similar_posts">
+							<div class="grid clearfix">
+								<?php   
+								if(!empty($_POST['search'])) {
+							                      $search_keyword = $_POST['search'];
+							                     }
+							                   $sql = "SELECT * FROM blogs WHERE title LIKE '%$search_keyword%' OR content LIKE '%$search_keyword%'  OR tags LIKE '%$search_keyword%' OR author LIKE '%$search_keyword%'  AND posted = 'publish' ORDER BY id DESC ";
+							                        
+							                       
+							                        $result=mysqli_query($con,$sql);
+							                        $rowcount=mysqli_num_rows($result);
+							                           
+							                  
+                        
+						                            if ($rowcount==0) {
+						       
+						                            echo "<p style=color:#E9573F><b>Sorry your search for:<u style=color:black>$search_keyword</u> returned zero results</b></p>";
+						                            echo "<p><b style=color:#717478>Suggestions<b><br><span style=color:#FFA500>Your search item is not available on Our Website<br>Try being more specific with key words<br>Enter key word using title<br>Try search using category<br>Try again later<br></span></p>";
+						                            echo "<p><a href=\"http://www.google.com/search?q=" 
+						                            . $search_keyword . "\" target=\"_blank\" title=\"Look up 
+						                            " . $search_keyword . " on Google\" style=color:#37BC9B>Click here</a> to try the 
+						                            search on google</p>";
+						                        }
+						                        else{
+						                            echo "<p style='color:#4FC1E9'><b>You searched for:<u style=color:black> $search_keyword</u></b></p>";
+						                            echo "<p style='color:#37BC9B; margin-buttom:'><b>Results($rowcount)..</b></p>";
+						                        }
+
+						                    if(!empty($result)) { 
+                            					foreach($result as $row){
+                                ?>
+
+	                        
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="post.php?id=<?php echo $row['id']; ?>">
+				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="single.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
+				                    <small class="post_meta"><a href="#">Katy Liu</a><span><?php echo $row['date']; ?></span></small>
+				                  </div>
+				                </div>
+	                        
+	                    <?php }} ?>
+							
+
+							
+
+							
+						</div>
+					</div>
+				</div>
+			</div>
+					
+					
+				
+				<?php include("includes/sidebar2.php"); ?>
+				<?php include("includes/footer.php"); ?>
+				<script src="plugins/parallax-js-master/parallax.min.js"></script>
+				<script src="js/post.js"></script>
+				
+	</body>
+</html>
