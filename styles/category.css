@@ -355,6 +355,20 @@ section
 	padding-left: 49px;
 	color: #FFFFFF;
 }
+
+.header_search
+{
+	display: inline-block;
+	width: 46px;
+	height: 46px;
+	background: red;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	padding-left: 49px;
+	color: #FFFFFF;
+}
+
 .header_search_input::-webkit-input-placeholder
 {
 	font-family: 'Ubuntu', sans-serif;

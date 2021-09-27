@@ -82,28 +82,54 @@ if ("$id" == '') {
 				<div class="col-lg-9">
 					<div class="main_content">
 
-						<?php include("includes/miss.php"); ?>
+						<div class="blog_section">
+							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
+								<div class="section_title">Don't Miss</div>
+								<div class="section_tags ml-auto">
+									<ul>
+										<li style="margin-left: 20px"><a href="#">All</a></li>
+										<?php
+										$sql = "SELECT * FROM blog_categories";
+										$result=mysqli_query($con,$sql);
+										$row = db_fetch_assoc($result);
+										 if(!empty($result)) { 
+										foreach($result as $row){ 
+										?>
+										<li style="margin-top: 20px"><a href="category.html"><?php echo $row['name']; ?></a></li>
+										<?php }} ?>
+									</ul>
+								</div>
+								<div class="section_panel_more">
+									<ul>
+										<li>All
+											<ul>
+												<?php
+												$sql = "SELECT * FROM blog_categories";
+												$result=mysqli_query($con,$sql);
+												$row = db_fetch_assoc($result);
+												 if(!empty($result)) { 
+												foreach($result as $row){ 
+												?>
+												<li><a href="category.html"><?php echo $row['name']; ?></a></li>
+												<?php }} ?>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
 							<div class="section_content">
 								<div class="grid clearfix">
-									<?php
-									$sql = "SELECT * FROM blogs WHERE category = '$id'";
-									$result=mysqli_query($con,$sql);
-									$row = db_fetch_assoc($result);
-									if(!empty($result)) { 
-									foreach($result as $row){ 
-									?> 
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="post?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
-				                  </a>
-				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="post?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small class="post_meta"><a href="#">Katy Liu</a><span><?php echo $row['date']; ?></span></small>
-				                  </div>
-				                </div>
 
-									<?php }}?>
+									<!-- Small Card With Image -->
+									<div class="card card_small_with_image grid-item">
+										<img class="card-img-top" src="images/post_10.jpg" alt="">
+										<div class="card-body">
+											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+										</div>
+									</div>
+
+									
 
 								</div>
 							</div>

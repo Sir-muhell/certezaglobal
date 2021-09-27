@@ -67,7 +67,7 @@ if(empty($_POST['search'])) {
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.jpg" data-speed="0.8"></div>
 		<div class="home_content">
 			<div class="post_category trans_200"><a href="category.html" class="trans_200">sport</a></div>
-			<div class="post_title">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</div>
+			<div class="post_title"><?php echo strtoupper("Search"); ?></div>
 		</div>
 	</div>
 	
@@ -118,11 +118,11 @@ if(empty($_POST['search'])) {
 	                        
 				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
 				                  <a href="post?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
+				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
 				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small class="post_meta"><a href="#">Katy Liu</a><span><?php echo $row['date']; ?></span></small>
+				                    <small class="post_meta"><a href="#"><?php echo ucwords($row['author']); ?></a><span><?php echo $row['date']; ?></span></small>
 				                  </div>
 				                </div>
 	                        

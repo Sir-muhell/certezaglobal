@@ -5,7 +5,8 @@
 							</div> -->
 							<form action="./search" method="post" name="form">
 				              <input type="search" name="search" class="header_search_input" placeholder="Search here..." required="yes">
-				              <button type="submit" name="submit"><img class="header_search_icon" src="images/search.png" alt=""></button>
+				              <img class="header_search_icon" src="images/search.png" alt="">
+				              <div class="post_category trans_200">sport</a></div>
 				            </form>
 							
 						</div>
@@ -24,9 +25,10 @@
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 		<div class="logo menu_mm"><a href="./"><img src="images/logo3.png"></a></div>
 		<div class="search">
-			<form action="search.php" method="post" name="form">
-				<input type="search" name="search" class="header_search_input" placeholder="Search here..." required="yes">
-				<button type="submit" name="submit"><img class="header_search_icon" src="images/search.png" alt=""></button>
+			<form action="./search" method="post" name="form">
+				<input type="search" name="search" class="header_search_input" placeholder="Search here..." required>
+				<img class="header_search_icon" src="images/search_2.png" alt="">
+				<div class="post_category trans_200"></div>
 			</form>
 		</div>
 		<nav class="menu_nav">
@@ -44,7 +46,7 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul><a class="container" style="color: black; " href="./category/<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></ul>
+										<ul><a class="container" style="color: black; " href="./category?id=<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 				</li>

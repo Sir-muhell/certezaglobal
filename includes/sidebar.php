@@ -56,7 +56,7 @@
                                 			?>
 
 							                <div class="side_post">
-												<a href="single.php?id=<?php echo $row['id']; ?>">
+												<a href="./post?id=<?php echo $row['id']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
 														<div class="side_post_content">
@@ -90,7 +90,7 @@
                                 			?>
 
 							                <div class="side_post">
-												<a href="single.php?id=<?php echo $row['id']; ?>"">
+												<a href="./post?id=<?php echo $row['id']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
 														<div class="side_post_content">
@@ -124,7 +124,7 @@
                                 			?>
 
 							                <div class="side_post">
-												<a href="single.php?id=<?php echo $row['id']; ?>">
+												<a href="./post?id=<?php echo $row['id']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
 														<div class="side_post_content">
