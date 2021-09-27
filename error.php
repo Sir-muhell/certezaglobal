@@ -32,13 +32,19 @@
 							<ul>
 								<li class="active"><a href="index.html">Home</a></li>
 								<li><a href="#">Articles</a></li>
-								<li class="dropdown">
+								<li class="dropdown active">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<ul><a class="container" style="color: black" href="#">HTML</a></ul>
-									    <ul><a class="container" style="color: black" href="#">CSS</a></ul>
-									    <ul><a class="container" style="color: black" href="#">JavaScript</a></ul>
+										<?php
+										$sql = "SELECT * FROM blog_categories";
+										$result=mysqli_query($con,$sql);
+										$row = db_fetch_assoc($result);
+										 if(!empty($result)) { 
+										foreach($result as $row){ 
+										?>
+										<ul><a class="container" style="color: black" href="./category.php?<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
+									    <?php }} ?>
 									</div>
 								</li>
 		  						<li><a href="#">About</a></li>

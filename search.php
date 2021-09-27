@@ -10,7 +10,7 @@ if(empty($_POST['search'])) {
 <title>Search | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Demo project">
+<meta name="description" content="Certeza Global">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -37,18 +37,24 @@ if(empty($_POST['search'])) {
 						<div><a href="./"><img class="logos" src="images/logo7.png"></a></div>
 						<nav class="main_nav">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
+								<li ><a href="./">Home</a></li>
 								<li><a href="#">Articles</a></li>
-								<li class="dropdown">
+								<li class="dropdown active">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<ul><a class="container" style="color: black" href="#">HTML</a></ul>
-									    <ul><a class="container" style="color: black" href="#">CSS</a></ul>
-									    <ul><a class="container" style="color: black" href="#">JavaScript</a></ul>
+										<?php
+										$sql = "SELECT * FROM blog_categories";
+										$result=mysqli_query($con,$sql);
+										$row = db_fetch_assoc($result);
+										 if(!empty($result)) { 
+										foreach($result as $row){ 
+										?>
+										<ul><a class="container" style="color: black" href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
+									    <?php }} ?>
 									</div>
 								</li>
-		  						<li><a href="./about">About</a></li>
+		  						<li><a href="#">About</a></li>
 								<li><a href="./contact">Contact</a></li>
 										
 							</ul>
@@ -111,11 +117,11 @@ if(empty($_POST['search'])) {
 
 	                        
 				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="post.php?id=<?php echo $row['id']; ?>">
+				                  <a href="post?id=<?php echo $row['id']; ?>">
 				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="single.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
+				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
 				                    <small class="post_meta"><a href="#">Katy Liu</a><span><?php echo $row['date']; ?></span></small>
 				                  </div>
 				                </div>

@@ -7,14 +7,14 @@ include("data/functions.php");
 <title>Certeza Global | Home</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Demo project">
+<meta name="description" content="Certeza Global2">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css"><!-- 
+<link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css"> -->
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="icon" type="image/png"  href="images/logo7.png">
@@ -33,15 +33,21 @@ include("data/functions.php");
 						<div><a href="./"><img class="logos" src="images/logo7.png"></a></div>
 						<nav class="main_nav">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
+								<li class="active"><a href="./">Home</a></li>
 								<li><a href="#">Articles</a></li>
 								<li class="dropdown">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<ul><a class="container" style="color: black" href="#">HTML</a></ul>
-									    <ul><a class="container" style="color: black" href="#">CSS</a></ul>
-									    <ul><a class="container" style="color: black" href="#">JavaScript</a></ul>
+										<?php
+										$sql = "SELECT * FROM blog_categories";
+										$result=mysqli_query($con,$sql);
+										$row = db_fetch_assoc($result);
+										 if(!empty($result)) { 
+										foreach($result as $row){ 
+										?>
+										<ul><a class="container" style="color: black" href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
+									    <?php }} ?>
 									</div>
 								</li>
 		  						<li><a href="#">About</a></li>
@@ -301,56 +307,28 @@ include("data/functions.php");
 				<div class="col-lg-9">
 					<div class="main_content">
 
-						<!-- Blog Section - Don't Miss -->
+						<?php include("includes/miss.php"); ?>
+							<div class="section_content">
+								<div class="grid clearfix">
 
-						<div class="blog_section">
-							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
-								<div class="section_title">Don't Miss</div>
-								<div class="section_tags ml-auto">
-									<ul>
-										<li style="margin-left: 20px"><a href="category.html">All</a></li>
+									<!-- Largest Card With Image -->
+									<!-- <div class="card card_largest_with_image grid-item">
 										<?php
-										$sql = "SELECT * FROM blog_categories";
+										$sql = "SELECT * FROM blogs LIMIT 1";
 										$result=mysqli_query($con,$sql);
 										$row = db_fetch_assoc($result);
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<li style="margin-top: 20px"><a href="category.html"><?php echo $row['name']; ?></a></li>
-										<?php }} ?>
-									</ul>
-								</div>
-								<div class="section_panel_more">
-									<ul>
-										<li>All
-											<ul>
-												<?php
-												$sql = "SELECT * FROM blog_categories";
-												$result=mysqli_query($con,$sql);
-												$row = db_fetch_assoc($result);
-												 if(!empty($result)) { 
-												foreach($result as $row){ 
-												?>
-												<li><a href="category.html"><?php echo $row['name']; ?></a></li>
-												<?php }} ?>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="section_content">
-								<div class="grid clearfix">
-
-									<!-- Largest Card With Image -->
-									<div class="card card_largest_with_image grid-item">
-										<img class="card-img-top" src="images/post_1.jpg" alt="https://unsplash.com/@cjtagupa">
+										<img class="card-img-top" src="blogadmin/images/<?php echo $row['photo'] ?>" alt="https://unsplash.com/@cjtagupa" style="height: 50%; width: 50%;">
 										<div class="card-body">
 											<div class="card-title"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
 											<p class="card-text">Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+											<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span></small>
+										<?php }} ?>
 										</div>
 									</div>
-
+ -->
 									<!-- Small Card Without Image -->
 									<div class="card card_default card_small_no_image grid-item">
 										<div class="card-body">

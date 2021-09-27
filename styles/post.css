@@ -616,7 +616,7 @@ section
 }
 .post_category
 {
-	width: 83px;
+	max-width: 200px;
 	height: 28px;
 	background: rgba(255,255,255,0.2);
 	border-radius: 14px;

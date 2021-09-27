@@ -1,14 +1,21 @@
 <?php include("data/functions.php");
 $id=$_REQUEST['id'];
-$sql = "SELECT * FROM blogs WHERE id = ".$id." ";
-$result=mysqli_query($con,$sql);
-$rowcount=mysqli_num_rows($result);
-$row = db_fetch_assoc($result);
-
+session_start();
 $_SESSION["postid"] = $id;
 if (empty($id)) {
 	header("location : error.php");
 }
+
+
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
+         $url = "https://";   
+    else  
+         $url = "http://";   
+    // Append the host(domain name, ip) to the URL.   
+    $url.= $_SERVER['HTTP_HOST'];   
+    
+    // Append the requested resource location to the URL   
+    $url.= $_SERVER['REQUEST_URI'];    
 
  ?>
 
@@ -31,11 +38,11 @@ if (empty($id)) {
 <link rel="icon" type="image/png"  href="images/logo7.png">
 <style>
 	#msgs {
-        font-family: cursive;
+        font-family: inherit;
         font-size: 15px
         margin-left: 10px;
         margin-top: 10px;
-        color:red;
+        color:#2ddf80;
 </style>
 </head>
 <body>
@@ -52,18 +59,24 @@ if (empty($id)) {
 						<div><a href="./"><img class="logos" src="images/logo7.png"></a></div>
 						<nav class="main_nav">
 							<ul>
-								<li class="active"><a href="./">Home</a></li>
-								<li><a href="./">Articles</a></li>
-								<li class="dropdown">
+								<li ><a href="./">Home</a></li>
+								<li><a href="">Articles</a></li>
+								<li class="dropdown active">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<ul><a class="container" style="color: black" href="#">HTML</a></ul>
-									    <ul><a class="container" style="color: black" href="#">CSS</a></ul>
-									    <ul><a class="container" style="color: black" href="#">JavaScript</a></ul>
+										<?php
+										$sqls = "SELECT * FROM blog_categories";
+										$results=mysqli_query($con,$sqls);
+										$rows = db_fetch_assoc($results);
+										 if(!empty($results)) { 
+										foreach($results as $rows){ 
+										?>
+										<ul><a class="container" style="color: black" href="./category?<?php echo  $rows['id'];?>"><?php echo $rows['name']; ?></a></ul>
+									    <?php }} ?>
 									</div>
 								</li>
-		  						<li><a href="./about">About</a></li>
+		  						<li><a href="#">About</a></li>
 								<li><a href="./contact">Contact</a></li>
 										
 							</ul>
@@ -75,8 +88,14 @@ if (empty($id)) {
 	<div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.jpg" data-speed="0.8"></div>
 		<div class="home_content">
-			<div class="post_category trans_200"><a href="category.html" class="trans_200">sport</a></div>
-			<div class="post_title">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</div>
+			<div class="post_category trans_200"><a href="./category?id=<?php echo $id;?>" class="trans_200"><?php echo $rows['name'];?></a></div>
+			<?php
+			$sql = "SELECT * FROM blogs WHERE id = ".$id." ";
+			$result=mysqli_query($con,$sql);
+			$rowcount=mysqli_num_rows($result);
+			$row = db_fetch_assoc($result);
+			?>
+			<div class="post_title"><?php echo $row['title'];?></div>
 		</div>
 	</div>
 	
@@ -90,7 +109,7 @@ if (empty($id)) {
 
 				<div class="col-lg-9">
 					<div class="post_content">
-
+						
 						<!-- Top Panel -->
 						<div class="post_panel post_panel_top d-flex flex-row align-items-center justify-content-start">
 							<div class="author_image"><div><img src="images/author.jpg" alt=""></div></div>
@@ -98,9 +117,21 @@ if (empty($id)) {
 							<div class="post_share ml-sm-auto">
 								<span>share</span>
 								<ul class="post_share_list">
-									<li class="post_share_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li class="post_share_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li class="post_share_item"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+									<li class="post_share_item">
+										<a href="https://api.whatsapp.com/send?text=<?php echo $url;?>" data-action="share/whatsapp/share" data-media="<?php echo $row['photo']; ?>">
+											<i class="fa fa-whatsapp" style="color: green;" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="post_share_item">
+										<a href="http://twitter.com/home?status=<?php echo $url; ?>" target="_blank" title="Twitter" data-media="<?php echo $row['photo']; ?>">
+											<i class="fa fa-twitter" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="post_share_item">
+										<a href="http://www.facebook.com/sharer.php?u=<?php echo $url; ?>"target="_blank" title="Facebook" data-media="<?php echo $row['photo']; ?>">
+											<i class="fa fa-facebook" aria-hidden="true"></i>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -135,9 +166,21 @@ if (empty($id)) {
 							<div class="post_share ml-sm-auto">
 								<span>share</span>
 								<ul class="post_share_list">
-									<li class="post_share_item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li class="post_share_item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li class="post_share_item"><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+									<li class="post_share_item">
+										<a href="https://api.whatsapp.com/send?text=<?php echo $url;?>" data-action="share/whatsapp/share" data-media="<?php echo $row['photo']; ?>">
+											<i class="fa fa-whatsapp" style="color: green;" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="post_share_item">
+										<a href="http://twitter.com/home?status=<?php echo $url; ?>" target="_blank" title="Twitter" data-media="<?php echo $row['photo']; ?>">
+											<i class="fa fa-twitter" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li class="post_share_item">
+										<a href="http://www.facebook.com/sharer.php?u=<?php echo $url; ?>"target="_blank" title="Facebook" data-media="<?php echo $row['photo']; ?>">
+											<i class="fa fa-facebook" aria-hidden="true"></i>
+										</a>
+									</li>
 								</ul>
 							</div>
 						</div>
@@ -163,8 +206,8 @@ if (empty($id)) {
 				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: 250px">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="post.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small class="post_meta"><a href="#">Katy Liu</a><span><?php echo $row['date']; ?></span></small>
+				                    <div class="card-title card-title-small"><a href="post.php?id=<?php echo $row['id']; ?>"><?php echo strtoupper($row['title']) ; ?></a></div>
+				                    <small class="post_meta"><a href="#"><?php echo ucwords($row['author']) ; ?></a><span><?php echo $row['date']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
@@ -184,9 +227,9 @@ if (empty($id)) {
 											<form id="frm-comment">
 												<input type="hidden" name="comment_id" id="commentId" placeholder="Name" />
 												<input type="hidden" id="post_id" name="post_id" value="<?php echo $_GET['id']; ?>">
-												<input type="text" class="comment_input comment_input_name" placeholder="Your Name" required="required">
-												<input type="email" class="comment_input comment_input_email" placeholder="Your Email" required="required">
-												<textarea class="comment_text" placeholder="Your Comment" required="required"></textarea>
+												<input type="text" class="comment_input comment_input_name" placeholder="Your Name" id="name" required="required">
+												<input type="email" class="comment_input comment_input_email" placeholder="Your Email" required="required" id="email">
+												<textarea class="comment_text" placeholder="Your Comment" required="required" id="comment"></textarea>
 												<div id="msgs"></div>
 												<button type="button" style="outline: none" id="submitButton" class="comment_button">Post Comment</button>
 											</form>
@@ -197,7 +240,7 @@ if (empty($id)) {
 
 							<!-- Comments -->
 							<div class="comments">
-								<div class="comments_title">Comments <span>(12)</span></div>
+								<div class="comments_title">Comments <span></span></div>
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="comments_container">

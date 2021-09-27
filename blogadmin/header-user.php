@@ -56,6 +56,7 @@
             <li class="dropdown user-dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  <?php echo ucwords(getLoggedMemberID());  ?><b class="caret"></b></a>
             <ul class="dropdown-menu">
+              <li><a href="<?php echo PREPEND_PATH; ?>membership_profile.php"><i class="fa fa-user"></i> <strong>My Profile Details</strong> </a></li>
               
               <!--login/logout area starts-->
               <li>

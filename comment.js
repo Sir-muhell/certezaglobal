@@ -89,7 +89,7 @@
                                     comments = "<li class='comment'>"+
                                     "<div class='comment_body' style='margin-bottom: -30px'>"+
                                     "<div class='comment_panel d-flex flex-row align-items-center justify-content-start'>"+
-                                    "<small class='post_meta'><a href='#'><b>" + data[i]['comment_sender'] + "</b></a><span>Sep 29, 2017 at 9:48 am</span></small>"+
+                                    "<small class='post_meta'><a href='#'><b>" + data[i]['comment_sender'] + "</b></a><span>" + data[i]['commentedon'] + " at " + data[i]['timer'] + "</span></small>"+
                                     "<button type='button' style='outline: none' onClick='postReply(" + commentId + ")' class='reply_button ml-auto'>Reply</button>"+
                                     "</div>"+
                                     "<div class='comment_content'>"+
@@ -111,14 +111,14 @@
                 {
                     if (commentId == data[i].parent_comment_id)
                     {
-                      var comments = "<li class='comment' style='margin-left:25px'>"+
-                                    "<div class='comment_body'>"+
+                      var comments = "<li class='comment' >"+
+                                    "<div class='comment_body' style='margin-left:25px'>"+
                                     "<div class='comment_panel d-flex flex-row align-items-center justify-content-start'>"+
-                                    "<small class='post_meta'><a href='#'>" + data[i]['comment_sender'] + "</a><span>Sep 29, 2017 at 9:48 am</span></small>"+
+                                    "<small class='post_meta'><a href='#'>" + data[i]['comment_sender'] + "</a><span>" + data[i]['commentedon'] + " at " + data[i]['timer'] + "</span></small>"+
                                     "<button type='button' style='outline: none' onClick='postReply(" + commentId + ")' class='reply_button ml-auto'>Reply</button>"+
                                     "</div>"+
                                     "<div class='comment_content'>"+
-                                    "<p>" + data[i]['comments'] + "</p>"+
+                                    "<p>" + data[i]['comments'] + "</p><hr>"+
                                     "</div></div></li>";
                         var item = $("<li>").html(comments);
                         var reply_list = $('<ul>');

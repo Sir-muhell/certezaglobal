@@ -797,4 +797,12 @@ function getpopularposts($table){
 }
 
 
+function getcat($id){
+	require("database/db_connect.php");
+	$sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = '$id' ORDER BY id DESC LIMIT 4";
+	$result=mysqli_query($con,$sql);
+	$rowcount=mysqli_num_rows($result);
+};
+
+
 ?>
