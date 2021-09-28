@@ -21,6 +21,7 @@
 											<li class="custom_dot custom_dot_top active"><span></span></li>
 											<li class="custom_dot custom_dot_top"><span></span></li>
 											<li class="custom_dot custom_dot_top"><span></span></li>
+											<li class="custom_dot custom_dot_top"><span></span></li>
 										</ul>
 										<div class="custom_next custom_next_top">
 											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -36,16 +37,31 @@
 								<!-- Top Stories Slider -->
 								<div class="sidebar_slider_container">
 									<div class="owl-carousel owl-theme sidebar_slider_top">
+									<?php  
+								
+							                     
+							        $sqls = "SELECT * FROM blog_categories ORDER BY rand()";
+							        $results=mysqli_query($con,$sqls);
+							        $rowcounts=mysqli_num_rows($results);
+							                           
+							                  
+                        
+						                        
 
+						        	if(!empty($results)) { 
+			                     	foreach($results as $rows){
+			                       	?>
 										<!-- Top Stories Slider Item -->
 										<div class="owl-item">
-											<p>Character</p><br>
+											<p><?php echo ucwords($rows['name']); 
+											$id = $rows['id'];
+											?></p><br>
 											<?php  
 								
 							                     
-							                   	$sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = '11' ORDER BY id DESC LIMIT 4";
-							                    $result=mysqli_query($con,$sql);
-							                    $rowcount=mysqli_num_rows($result);
+							                $sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = ".$id." ORDER BY id DESC LIMIT 4";
+							                $result=mysqli_query($con,$sql);
+							                $rowcount=mysqli_num_rows($result);
 							                           
 							                  
                         
@@ -69,75 +85,8 @@
 				                        
 				                    			<?php }} ?>
 										</div>
+									<?php }} ?>
 
-										<!-- Top Stories Slider Item -->
-										<div class="owl-item">
-
-											<p>Wisdom</p><br>
-											<?php  
-								
-							                     
-							                   	$sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = '12' ORDER BY id DESC LIMIT 4";
-							                    $result=mysqli_query($con,$sql);
-							                    $rowcount=mysqli_num_rows($result);
-							                           
-							                  
-                        
-						                        
-
-						                    if(!empty($result)) { 
-                            					foreach($result as $row){
-                                			?>
-
-							                <div class="side_post">
-												<a href="./post?id=<?php echo $row['id']; ?>">
-													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
-														<div class="side_post_content">
-															<div class="side_post_title"><?php echo $row['title']; ?></div>
-															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span></small>
-														</div>
-													</div>
-												</a>
-											</div>
-				                        
-				                    			<?php }} ?>
-										</div>
-
-										<!-- Top Stories Slider Item -->
-										<div class="owl-item">
-
-											<p>Peace</p><br>
-											<?php  
-								
-							                     
-							                   	$sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = '10' ORDER BY id DESC LIMIT 4";
-							                    $result=mysqli_query($con,$sql);
-							                    $rowcount=mysqli_num_rows($result);
-							                           
-							                  
-                        
-						                        
-
-						                    if(!empty($result)) { 
-                            					foreach($result as $row){
-                                			?>
-
-							                <div class="side_post">
-												<a href="./post?id=<?php echo $row['id']; ?>">
-													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
-														<div class="side_post_content">
-															<div class="side_post_title"><?php echo $row['title']; ?></div>
-															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span></small>
-														</div>
-													</div>
-												</a>
-											</div>
-				                        
-				                    			<?php }} ?>
-
-										</div>
 
 									</div>
 								</div>
@@ -173,6 +122,7 @@
 											<li class="custom_dot custom_dot_vid active"><span></span></li>
 											<li class="custom_dot custom_dot_vid"><span></span></li>
 											<li class="custom_dot custom_dot_vid"><span></span></li>
+
 										</ul>
 										<div class="custom_next custom_next_vid">
 											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

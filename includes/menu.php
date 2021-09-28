@@ -6,7 +6,7 @@
 							<form action="./search" method="post" name="form">
 				              <input type="search" name="search" class="header_search_input" placeholder="Search here..." required="yes">
 				              <img class="header_search_icon" src="images/search.png" alt="">
-				              <div class="post_category trans_200">sport</a></div>
+				              <!-- <div class="post_category trans_200">sport</a></div> -->
 				            </form>
 							
 						</div>
@@ -28,7 +28,7 @@
 			<form action="./search" method="post" name="form">
 				<input type="search" name="search" class="header_search_input" placeholder="Search here..." required>
 				<img class="header_search_icon" src="images/search_2.png" alt="">
-				<div class="post_category trans_200"></div>
+				<!-- <div class="post_category trans_200"></div> -->
 			</form>
 		</div>
 		<nav class="menu_nav">

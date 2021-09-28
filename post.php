@@ -193,7 +193,7 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 							<div class="grid clearfix">
 								<?php  
 								$cat = $row['category'];
-								$sql = "SELECT * FROM blogs where category = ".$cat.""; 
+								$sql = "SELECT * FROM blogs WHERE category = ".$cat." LIMIT  "; 
 								$result=mysqli_query($con,$sql);
 							    $rowcount=mysqli_num_rows($result);
 
@@ -202,8 +202,8 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 
 	                        
 				                <div class="card card_small_with_image grid-item">
-				                  <a href="post.php?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: 250px">
+				                  <a href="./post?id=<?php echo $row['id']; ?>">
+				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
 				                  </a>
 				                  <div class="card-body">
 				                    <div class="card-title card-title-small"><a href="post.php?id=<?php echo $row['id']; ?>"><?php echo strtoupper($row['title']) ; ?></a></div>
