@@ -72,7 +72,7 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 										 if(!empty($results)) { 
 										foreach($results as $rows){ 
 										?>
-										<ul><a class="container" style="color: black" href="./category?<?php echo  $rows['id'];?>"><?php echo $rows['name']; ?></a></ul>
+										<ul><a class="container" style="color: black" href="./category?id=<?php echo  $rows['id'];?>"><?php echo $rows['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>
@@ -139,7 +139,8 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 						<!-- Post Body -->
 
 						<div class="post_body">
-							<p class="post_p"><?php echo $row['content']; ?></p>
+							<?php $string = $row['content']; ?>
+							<p class="post_p"><?php echo substr($string,0,  ) ?></p>
 							<figure>
 								<img src="blogadmin/images/<?php echo $row['photo']; ?>" alt="">
 								<figcaption>Lorem Ipsum Dolor Sit Amet</figcaption>
@@ -193,7 +194,7 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 							<div class="grid clearfix">
 								<?php  
 								$cat = $row['category'];
-								$sql = "SELECT * FROM blogs WHERE category = ".$cat." LIMIT  "; 
+								$sql = "SELECT * FROM blogs WHERE category = ".$cat." LIMIT 3 "; 
 								$result=mysqli_query($con,$sql);
 							    $rowcount=mysqli_num_rows($result);
 

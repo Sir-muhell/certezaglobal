@@ -66,8 +66,8 @@ if(empty($_POST['search'])) {
 	<div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.jpg" data-speed="0.8"></div>
 		<div class="home_content">
-			<div class="post_category trans_200"><a href="category.html" class="trans_200">sport</a></div>
-			<div class="post_title"><?php echo strtoupper("Search"); ?></div>
+			
+			<div class="post_title" style="font-size: 40px"><?php echo strtoupper("Search"); ?></div>
 		</div>
 	</div>
 	
@@ -139,7 +139,7 @@ if(empty($_POST['search'])) {
 					
 					
 				
-				<?php include("includes/sidebar2.php"); ?>
+				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>
 				<script src="plugins/parallax-js-master/parallax.min.js"></script>
 				<script src="js/post.js"></script>

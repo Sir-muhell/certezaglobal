@@ -121,7 +121,7 @@ include("data/functions.php");
 					</div>
 					
 				</div>
-				<?php include("includes/sidebar2.php"); ?>
+				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>
 				<script src="plugins/parallax-js-master/parallax.min.js"></script>
 				<script src="js/post.js"></script>
