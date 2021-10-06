@@ -1,10 +1,10 @@
 <?php
     
-    $to = 'hello@olapearlshub.com';
+    $to = 'certezaglobal11@gmail.com';
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $from= $_POST["email"];
-    $subject = " $fullname from Certeza Global Contact Page.";
+    $subject = " $fname $lname from Certeza Global Contact Page.";
     $sub= $_POST["subject"];
     $message= $_POST["message"];
 
@@ -16,7 +16,7 @@
 
    
 
-    $logo = 'https://olapearlshub.com/img/core-img/llogo.png';
+    $logo = 'https://certezaglobal.com.ng/img/core-img/llogo.png';
     $link = 'https://certezaglobal.com.ng';
 
 $body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>$sub - $fname $lname </title></head><link rel='stylesheet' href='https://olapearlshub.com/style.css'><link rel='stylesheet' href='https://olapearlshub.com/font-awesome.min.css'><link rel='stylesheet' href='https://olapearlshub.com/bootstrap.min.css'><body style='text-align:center;'>";

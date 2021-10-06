@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Olapearl's Hub | <?php echo ucwords('BLOG ADMIN') . ' | ' . $Translation['admin area']; ?><?php echo html_attr(isset($GLOBALS['page_title']) ? " | {$GLOBALS['page_title']}" : ''); ?></title>
 
-		<link id="browser_favicon" rel="shortcut icon" href="<?php echo PREPEND_PATH; ?>./resources/images/appgini-icon.png">
+		<link id="browser_favicon" rel="shortcut icon" href="<?php echo PREPEND_PATH; ?>./resources/images/certeza.png">
 
 		<link rel="stylesheet" href="<?php echo PREPEND_PATH; ?>resources/initializr/css/yeti.css">
 		<link rel="stylesheet" href="<?php echo PREPEND_PATH; ?>dynamic.css.php">
@@ -198,22 +198,22 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i> <?php echo $Translation["utilities"] ; ?> <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="pageSettings.php"><i class="glyphicon menu-item-icon text-info glyphicon-cog"></i> <?php echo $Translation["admin settings"]  ; ?></a></li>
-							<li class="divider"></li>
+							<!-- <li class="divider"></li>
 							<li><a href="pageRebuildThumbnails.php"><i class="glyphicon menu-item-icon text-info glyphicon-picture"></i> <?php echo  $Translation["rebuild thumbnails"]  ; ?></a></li>
 							<li><a href="pageRebuildFields.php"><i class="glyphicon menu-item-icon text-info glyphicon-refresh"></i> <?php echo  $Translation['rebuild fields'] ; ?></a></li>
 							<li><a href="pageUploadCSV.php"><i class="glyphicon menu-item-icon text-info glyphicon-upload"></i> <?php echo $Translation['import CSV'] ; ?></a></li>
 							<li><a href="pageTransferOwnership.php"><i class="glyphicon menu-item-icon text-info glyphicon-random"></i> <?php echo $Translation['batch transfer'] ; ?></a></li>
 							<li><a href="pageMail.php?sendToAll=1"><i class="glyphicon menu-item-icon text-info glyphicon-envelope"></i> <?php echo $Translation['mail all users'] ; ?></a></li>
 							<li><a href="pageBackupRestore.php"><i class="glyphicon menu-item-icon text-info glyphicon-tasks"></i> <?php echo $Translation['database backups'] ; ?></a></li>
-							<li class="divider"></li>
-							<li><a href="https://forums.appgini.com" target="_blank"><i class="glyphicon menu-item-icon text-info glyphicon-new-window"></i> <?php echo $Translation['AppGini forum']; ?></a></li>
+							<li class="divider"></li> -->
+							<!-- <li><a href="https://forums.appgini.com" target="_blank"><i class="glyphicon menu-item-icon text-info glyphicon-new-window"></i> <?php echo $Translation['AppGini forum']; ?></a></li> -->
 						</ul>
 					</li>
 
 					<?php $plugins = get_plugins(); ?>
 
 					<?php if(count($plugins)){ ?>
-						<li class="dropdown">
+						<!-- <li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-plus"></i> <?php echo $Translation["plugins"] ; ?> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<?php foreach($plugins as $plugin){ ?>
@@ -225,7 +225,7 @@
 									<li><a target="_blank" href="<?php echo $plugin['admin_path']; ?>"><?php echo $plugin_icon . $plugin['title']; ?></a></li>
 								<?php } ?>
 							</ul>
-						</li>
+						</li> -->
 					<?php } ?>
 				</ul>
 

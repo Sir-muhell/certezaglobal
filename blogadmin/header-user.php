@@ -28,27 +28,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">DASHBOARD</a>
+          <a class="navbar-brand" href="index.php"><span><img src="resources/images/certeza.png" style="height: 30px; width: auto;"></span>&nbsp; DASHBOARD</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="blogs_view.php"><i class="fa fa-rss"></i>Blogs</a></li>
-            <li><a href="blog_categories_view.php"><i class="fa fa-tags"></i>Categories</a></li>
-            <li><a href="blogs_view.php"><i class="fa fa-check"></i>Published</a></li>
+            <li><a href="./blogs_view"><i class="fa fa-book"></i>Blogs</a></li>
+            <li><a href="./blog_categories_view"><i class="fa fa-tags"></i>Categories</a></li>
+            <li><a href="./blogs_view"><i class="fa fa-check"></i>Published</a></li>
             <li><a href="#"><i class="fa fa-tasks"></i>Drafts</a></li>
-            <li><a href="<?php echo PREPEND_PATH; ?>membership_profile.php"><i class="fa fa-user">&nbsp;</i>My Profile Details</a></li>
+            <li><a href="<?php echo PREPEND_PATH; ?>./membership_profile"><i class="fa fa-user">&nbsp;</i>My Profile Details</a></li>
+            <li><a href="<?php echo PREPEND_PATH; ?>index.php?signOut=1"><i class="fa fa-power-off"></i> <?php echo $Translation['sign out']; ?> </a></li>
             <?php
             $usernow=getLoggedMemberID();
             if ($usernow=="admin") {
-            # code...show more links for admin only
-            echo'<li><a href="titles_view.php"><i class="fa fa-desktop"></i>Web Details</a></li>
-            <li><a href="links_view.php"><i class="fa fa-link"></i>Links</a></li>
-            <li><a href="editors_choice_view.php"><i class="fa fa-trophy"></i>Editors Choice</a></li>
-            <li><a href="../adminstats"><i class="fa fa-bar-chart-o"></i>Admin Stats</a></li>';
-          }
+              ?>
+           
+            <!-- <li><a href="titles_view.php"><i class="fa fa-desktop"></i>Web Details</a></li> -->
+            <!-- <li><a href="links_view.php"><i class="fa fa-link"></i>Links</a></li> -->
+            <!-- <li><a href="editors_choice_view.php"><i class="fa fa-trophy"></i>Editors Choice</a></li> -->
+            <!-- <li><a href="../adminstats"><i class="fa fa-bar-chart-o"></i>Admin Stats</a></li> -->
+          <?php }
           ?>
           </ul>
          <ul class="nav navbar-nav navbar-right navbar-user">
@@ -92,7 +94,7 @@
           <div class="col-lg-12">
             <h1>Hello <?php echo ucwords(getLoggedMemberID()); ?> !</h1>
             <ol class="breadcrumb">
-              <li><a href="../index.php"><i class="icon-dashboard" style="text-decoration:none;"></i> <strong>View Website</strong></a></li>
+              <li><a href="../"><i class="icon-dashboard" style="text-decoration:none;"></i> <strong>View Website</strong></a></li>
               <li><a href="index.php"><i class="icon-dashboard" style="text-decoration:none;"></i> <strong>Dashboard</strong></a></li>
             </ol>
             <?php include("libs/alerts.php");?>

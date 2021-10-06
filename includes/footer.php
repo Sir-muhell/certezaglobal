@@ -5,27 +5,36 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="row row-lg-eq-height">
-				<div class="col-lg-9 order-lg-1 order-2">
+				<div class="col-lg-4">
 					<div class="footer_content">
-						<div><a href="./"><img class="" src="images/logo6.png" style="height: 30%; width: 30%"></a></div>
+						<div class="subscribe_title">About Us</div>
+						<div class="footer_social">
+							<p style="color: #fff">Certeza Global is a blog inspired, to help unveil the confidence in women of different sectors of life that has been ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained... <a href="./about" style="color: grey; border: none;">Read more</a></p>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-lg-4 order-lg-1 order-1">
+					<div class="footer_content">
+						<div><a href="./"><img class="" src="images/logo7.png" style="height: 40px;"></a></div>
 						<div class="footer_social">
 							<ul style="margin: 50px 0px 50px 0px">
 								<li class="footer_social_facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li class="footer_social_twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 								<li class="footer_social_instagram"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 								<li class="footer_social_google"><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+								<li class="footer_social_google"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
-						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
- &copy; Certeza <script>document.write(new Date().getFullYear());</script> Developed by <a style="color: #fff" href="" target="_blank">Aholu Samuel</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+						<div class="copyright">
+						 &copy; Certeza <script>document.write(new Date().getFullYear());</script> Developed by <a style="color: #fff" href="" target="_blank">Aholu Samuel</a>
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 order-lg-2 order-1">
-					<div class="subscribe">
-						<div class="subscribe_background"></div>
-						<div class="subscribe_content">
-							<div class="subscribe_title">Subscribe</div>
+				
+				<div class="col-lg-4 order-lg-2 order-2">
+					<div class="footer_content">
+						<div class="subscribe_title">Subscribe</div>
 							<form action="#">
 								<input type="email" class="sub_input" placeholder="Your Email" required="required">
 								<button class="sub_button">
@@ -35,9 +44,9 @@
 									</svg>
 								</button>
 							</form>
-						</div>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</footer>

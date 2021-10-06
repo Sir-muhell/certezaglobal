@@ -53,9 +53,9 @@
 			                       	?>
 										<!-- Top Stories Slider Item -->
 										<div class="owl-item">
-											<p><?php echo ucwords($rows['name']); 
+											<p style="font-size: 17px"><strong><?php echo ucwords($rows['name']); 
 											$id = $rows['id'];
-											?></p><br>
+											?></strong></p><br>
 											<?php  
 								
 							                     

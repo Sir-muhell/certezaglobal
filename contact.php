@@ -34,9 +34,9 @@ include("data/functions.php");
 						<div><a href="./"><img class="logos" src="images/logo7.png"></a></div>
 						<nav class="main_nav">
 							<ul>
-								<li class="active"><a href="./">Home</a></li>
+								<li><a href="./">Home</a></li>
 								<li><a href="#">Articles</a></li>
-								<li class="dropdown active">
+								<li class="dropdown">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -52,7 +52,7 @@ include("data/functions.php");
 									</div>
 								</li>
 		  						<li><a href="./about">About</a></li>
-								<li><a href="./contact">Contact</a></li>
+								<li class="active"><a href="./contact">Contact</a></li>
 										
 							</ul>
 						</nav>

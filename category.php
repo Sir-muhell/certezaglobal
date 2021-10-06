@@ -11,7 +11,7 @@ if ("$id" == '') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Search | Certeza Global</title>
+<title>Category | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Certeza Global">
@@ -76,7 +76,7 @@ if ("$id" == '') {
 			$row = db_fetch_assoc($result);
 			?>
 			
-			<div class="post_title" style="font-size: 40px"><?php echo strtoupper($row['name']); ?></div>
+			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($row['name']); ?></div>
 		</div>
 	</div>
 	
