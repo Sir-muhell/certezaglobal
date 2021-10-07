@@ -75,7 +75,8 @@ function blogs_insert(){
 	}
 
 	$o = array('silentErrors' => true);
-	sql('insert into `blogs` set       `title`=' . (($data['title'] !== '' && $data['title'] !== NULL) ? "'{$data['title']}'" : 'NULL') . ', `category`=' . (($data['category'] !== '' && $data['category'] !== NULL) ? "'{$data['category']}'" : 'NULL') . ', `tags`=' . (($data['tags'] !== '' && $data['tags'] !== NULL) ? "'{$data['tags']}'" : 'NULL') . ', `content`=' . (($data['content'] !== '' && $data['content'] !== NULL) ? "'{$data['content']}'" : 'NULL') . ', ' . ($data['photo'] != '' ? "`photo`='{$data['photo']}'" : '`photo`=NULL') . ', `date`=' . "'{$data['date']}'" . ', `author`=' . "'{$data['author']}'" . ', `posted`=' . (($data['posted'] !== '' && $data['posted'] !== NULL) ? "'{$data['posted']}'" : 'NULL'), $o);
+	$d = date('M d y');
+	sql('insert into `blogs` set       `title`=' . (($data['title'] !== '' && $data['title'] !== NULL) ? "'{$data['title']}'" : 'NULL') . ', `category`=' . (($data['category'] !== '' && $data['category'] !== NULL) ? "'{$data['category']}'" : 'NULL') . ', `tags`=' . (($data['tags'] !== '' && $data['tags'] !== NULL) ? "'{$data['tags']}'" : 'NULL') . ', `content`=' . (($data['content'] !== '' && $data['content'] !== NULL) ? "'{$data['content']}'" : 'NULL') . ', ' . ($data['photo'] != '' ? "`photo`='{$data['photo']}'" : '`photo`=NULL') . ', `date`= "'. $d .'" , `author`=' . "'{$data['author']}'" . ', `posted`=' . (($data['posted'] !== '' && $data['posted'] !== NULL) ? "'{$data['posted']}'" : 'NULL'), $o);
 	if($o['error']!=''){
 		echo $o['error'];
 		echo "<a href=\"blogs_view.php?addNew_x=1\">{$Translation['< back']}</a>";
@@ -221,7 +222,7 @@ function blogs_update($selected_id){
 	}
 
 	$o=array('silentErrors' => true);
-	sql('update `blogs` set       `title`=' . (($data['title'] !== '' && $data['title'] !== NULL) ? "'{$data['title']}'" : 'NULL') . ', `category`=' . (($data['category'] !== '' && $data['category'] !== NULL) ? "'{$data['category']}'" : 'NULL') . ', `tags`=' . (($data['tags'] !== '' && $data['tags'] !== NULL) ? "'{$data['tags']}'" : 'NULL') . ', `content`=' . (($data['content'] !== '' && $data['content'] !== NULL) ? "'{$data['content']}'" : 'NULL') . ', ' . ($data['photo']!='' ? "`photo`='{$data['photo']}'" : '`photo`=`photo`') . ', `date`=`date`' . ', `posted`=' . (($data['posted'] !== '' && $data['posted'] !== NULL) ? "'{$data['posted']}'" : 'NULL') . " where `id`='".makeSafe($selected_id)."'", $o);
+	sql('update `blogs` set       `title`=' . (($data['title'] !== '' && $data['title'] !== NULL) ? "'{$data['title']}'" : 'NULL') . ', `category`=' . (($data['category'] !== '' && $data['category'] !== NULL) ? "'{$data['category']}'" : 'NULL') . ', `tags`=' . (($data['tags'] !== '' && $data['tags'] !== NULL) ? "'{$data['tags']}'" : 'NULL') . ', `content`=' . (($data['content'] !== '' && $data['content'] !== NULL) ? "'{$data['content']}'" : 'NULL') . ', ' . ($data['photo']!='' ? "`photo`='{$data['photo']}'" : '`photo`=`photo`') . ', `date`="'. $d .'"' . ', `posted`=' . (($data['posted'] !== '' && $data['posted'] !== NULL) ? "'{$data['posted']}'" : 'NULL') . " where `id`='".makeSafe($selected_id)."'", $o);
 	if($o['error']!=''){
 		echo $o['error'];
 		echo '<a href="blogs_view.php?SelectedID='.urlencode($selected_id)."\">{$Translation['< back']}</a>";
