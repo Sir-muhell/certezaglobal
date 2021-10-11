@@ -53,7 +53,7 @@
 			                       	?>
 										<!-- Top Stories Slider Item -->
 										<div class="owl-item">
-											<p style="font-size: 17px"><strong><?php echo ucwords($rows['name']); 
+											<p style="font-size: 17spx"><strong><?php echo ucwords($rows['name']); 
 											$id = $rows['id'];
 											?></strong></p><br>
 											<?php  
@@ -97,6 +97,7 @@
 
 						<div class="sidebar_section">
 							<div class="advertising">
+						<a href="">Advertisement</a>
 								<div class="advertising_background" style="background-image:url(images/post_17.jpg)"></div>
 								<div class="advertising_content d-flex flex-column align-items-start justify-content-end">
 									<div class="advertising_perc">-15%</div>
