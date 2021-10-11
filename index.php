@@ -386,100 +386,26 @@ include("data/functions.php");
 							</div>
 							<div class="section_content">
 								<div class="grid clearfix">
+									<?php  
+							
+								$sqlss = "SELECT * FROM blogs DESC LIMIT 6"; 
+								$resultss=mysqli_query($con,$sqlss);
+							    $rowcount=mysqli_num_rows($resultss);
+
+							   foreach($resultss as $row) {
+                                ?>
 									
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="images/post_10.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
+								<div class="card card_small_with_image grid-item">
+				                  <a href="./post?id=<?php echo $row['id']; ?>">
+				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="post.php?id=<?php echo $row['id']; ?>"><?php echo strtoupper($row['title']) ; ?></a></div>
+				                    <small class="post_meta"><a href="#"><?php echo ucwords($row['author']) ; ?></a><span><?php echo $row['date']; ?></span></small>
+				                  </div>
+				                </div>
 
-									<!-- Small Card Without Image -->
-									<div class="card card_default card_small_no_image grid-item">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="images/post_15.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="images/post_13.jpg" alt="https://unsplash.com/@jakobowens1">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(images/post_11.jpg)"></div>
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(images/post_16.jpg)"></div>
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
-										<img class="card-img-top" src="images/post_14.jpg" alt="">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card Without Image -->
-									<div class="card card_default card_small_no_image grid-item">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Small Card Without Image -->
-									<div class="card card_default card_small_no_image grid-item">
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
-									</div>
-
-									<!-- Default Card With Background -->
-									<div class="card card_default card_default_with_background grid-item">
-										<div class="card_background" style="background-image:url(images/post_12.jpg)"></div>
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-										</div>
-									</div>
-
-									<!-- Default Card With Background -->
-									<div class="card card_default card_default_with_background grid-item">
-										<div class="card_background" style="background-image:url(images/post_6.jpg)"></div>
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most</a></div>
-										</div>
-									</div>
+				                <?php } ?>
 								</div>
 								
 							</div>
