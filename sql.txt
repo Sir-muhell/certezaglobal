@@ -1,2 +1,3 @@
 blogadmin/libs/db_connect.php
 data/db.php
+blogadmin/config.php
