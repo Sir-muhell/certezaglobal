@@ -97,7 +97,6 @@
 
 						<div class="sidebar_section">
 							<div class="advertising">
-						<a href="">Advertisement</a>
 								<div class="advertising_background" style="background-image:url(images/post_17.jpg)"></div>
 								<div class="advertising_content d-flex flex-column align-items-start justify-content-end">
 									<div class="advertising_perc">-15%</div>

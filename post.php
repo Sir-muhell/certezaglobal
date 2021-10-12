@@ -15,7 +15,28 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
     $url.= $_SERVER['HTTP_HOST'];   
     
     // Append the requested resource location to the URL   
-    $url.= $_SERVER['REQUEST_URI'];    
+    $url.= $_SERVER['REQUEST_URI'];
+
+$add = $_SERVER['REMOTE_ADDR'];
+
+$sql = "SELECT * FROM blogs WHERE id = '".$id."'";
+$con = mysqli_connect("localhost","root","","olapearls_blog");
+$result = mysqli_query($con,$sql);
+$row = db_fetch_assoc($result);
+$view = $row['views'];
+
+$sqls = "SELECT * FROM views WHERE p_id = '$id' AND address = '$add'";
+$results = mysqli_query($con,$sqls);
+
+if ($result = '' ) {
+	$view = $view++; 
+		$sqlss = "UPDATE blogs SET views ='".$view."' WHERE id= '".$id."'";
+	}    
+$result = mysqli_query($con, $sql);
+
+if (! $result) {
+    $result = mysqli_error($con);
+}
 
  ?>
 

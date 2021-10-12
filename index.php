@@ -1,20 +1,20 @@
 <?php
 include("data/functions.php");
  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Certeza Global | Home</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Certeza Global2">
+<meta name="description" content="Certeza Global">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css"><!-- 
-<link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css"> -->
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="icon" type="image/png"  href="images/logo7.png">
@@ -386,26 +386,55 @@ include("data/functions.php");
 							</div>
 							<div class="section_content">
 								<div class="grid clearfix">
-									<?php  
-							
-								$sqlss = "SELECT * FROM blogs DESC LIMIT 6"; 
-								$resultss=mysqli_query($con,$sqlss);
-							    $rowcount=mysqli_num_rows($resultss);
-
-							   foreach($resultss as $row) {
-                                ?>
 									
-								<div class="card card_small_with_image grid-item">
-				                  <a href="./post?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
+									<?php   
+									$sql = "SELECT * FROM blogs LIMIT 0, 3";
+									$result=mysqli_query($con,$sql);
+									$row = db_fetch_assoc($result);
+									if(!empty($result)) { 
+									foreach($result as $row){ 
+
+						           
+                                ?>
+
+	                        
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="post?id=<?php echo $row['id']; ?>">
+				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="post.php?id=<?php echo $row['id']; ?>"><?php echo strtoupper($row['title']) ; ?></a></div>
-				                    <small class="post_meta"><a href="#"><?php echo ucwords($row['author']) ; ?></a><span><?php echo $row['date']; ?></span></small>
+				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
+				                    </i></small>
+				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
 				                  </div>
 				                </div>
+	                        
+	                    <?php }} ?>
 
-				                <?php } ?>
+								
+
+									<!-- Small Card With Image -->
+									<div class="card card_small_with_image grid-item">
+										<img class="card-img-top" src="images/post_13.jpg" alt="https://unsplash.com/@jakobowens1">
+										<div class="card-body">
+											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+										</div>
+									</div>
+
+									<!-- Small Card With Background -->
+									<div class="card card_default card_small_with_background grid-item">
+										<div class="card_background" style="background-image:url(images/post_11.jpg)"></div>
+										<div class="card-body">
+											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
+											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
+										</div>
+									</div>
+
+									
+
+
 								</div>
 								
 							</div>
@@ -416,7 +445,6 @@ include("data/functions.php");
 						<div id="load_more" class="load_more_button text-center trans_200">Load More</div>
 					</div>
 				</div>
-
 				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>
 				<script src="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.js"></script>

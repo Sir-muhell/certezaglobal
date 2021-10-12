@@ -213,7 +213,7 @@
 					<?php $plugins = get_plugins(); ?>
 
 					<?php if(count($plugins)){ ?>
-						<!-- <li class="dropdown">
+						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-plus"></i> <?php echo $Translation["plugins"] ; ?> <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<?php foreach($plugins as $plugin){ ?>
@@ -225,7 +225,7 @@
 									<li><a target="_blank" href="<?php echo $plugin['admin_path']; ?>"><?php echo $plugin_icon . $plugin['title']; ?></a></li>
 								<?php } ?>
 							</ul>
-						</li> -->
+						</li>
 					<?php } ?>
 				</ul>
 
