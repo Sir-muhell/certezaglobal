@@ -20,7 +20,7 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 $add = $_SERVER['REMOTE_ADDR'];
 
 $sql = "SELECT * FROM blogs WHERE id = '".$id."'";
-$con = mysqli_connect("localhost","root","","olapearls_blog");
+
 $result = mysqli_query($con,$sql);
 $row = db_fetch_assoc($result);
 $view = $row['views'];
