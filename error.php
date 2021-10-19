@@ -52,7 +52,7 @@
 									    <?php }} ?>
 									</div>
 								</li>
-		  						<li><a href="#" style="color: black;">About</a></li>
+		  						<li><a href="./about" style="color: black;">About</a></li>
 								<li><a href="./contact"style="color: black;">Contact</a></li>
 										
 							</ul>

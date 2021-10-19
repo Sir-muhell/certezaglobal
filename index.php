@@ -50,7 +50,7 @@ include("data/functions.php");
 									    <?php }} ?>
 									</div>
 								</li>
-		  						<li><a href="#">About</a></li>
+		  						<li><a href="./about">About</a></li>
 								<li><a href="./contact">Contact</a></li>
 										
 							</ul>
@@ -324,9 +324,9 @@ include("data/functions.php");
 						</div>
 
 					</div>
-					<div class="load_more">
+					<!-- <div class="load_more">
 						<div id="load_more" class="load_more_button text-center trans_200">Load More</div>
-					</div>
+					</div> -->
 				</div>
 				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>

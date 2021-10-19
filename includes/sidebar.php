@@ -319,6 +319,7 @@
 
 						<div class="sidebar_section">
 							<div class="advertising_2">
+								<div><p>Ads</p></div>
 								<div class="advertising_background" style="background-image:url(images/post_18.jpg)"></div>
 								<div class="advertising_2_content d-flex flex-column align-items-center justify-content-center">
 									<div class="advertising_2_link"><a href="#">Turbulent <span>Mind</span></a></div>

@@ -50,8 +50,8 @@
 									    <?php }} ?>
 									</div>
 				</li>
-		  		<li class="menu_mm"><a href="#">About</a></li>
-				<li class="menu_mm"><a href="#">Contact</a></li>
+		  		<li class="menu_mm"><a href="./about">About</a></li>
+				<li class="menu_mm"><a href="./contact">Contact</a></li>
 										
 			</ul>
 		</nav>
