@@ -122,7 +122,9 @@ if(empty($_POST['search'])) {
 				                  </a>
 				                  <div class="card-body">
 				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small class="post_meta"><a href="#"><?php echo ucwords($row['author']); ?></a><span><?php echo $row['date']; ?></span></small>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
+				                    </i></small>
+				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
 				                  </div>
 				                </div>
 	                        

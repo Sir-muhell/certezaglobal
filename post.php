@@ -19,24 +19,37 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 
 $add = $_SERVER['REMOTE_ADDR'];
 
+
 $sql = "SELECT * FROM blogs WHERE id = '".$id."'";
 
 $result = mysqli_query($con,$sql);
 $row = db_fetch_assoc($result);
 $view = $row['views'];
 
-$sqls = "SELECT * FROM views WHERE p_id = '$id' AND address = '$add'";
-$results = mysqli_query($con,$sqls);
+//check if the post has been viewed once
+$sqla = "SELECT * FROM views WHERE p_id = '".$id."' AND address = '".$add."' ";
+$resulta = mysqli_query($con,$sqla);
+$rowa = db_fetch_assoc($resulta);
+$rowcounta=mysqli_num_rows($resulta);
 
-if ($result = '' ) {
-	$view = $view++; 
-		$sqlss = "UPDATE blogs SET views ='".$view."' WHERE id= '".$id."'";
-	}    
-$result = mysqli_query($con, $sql);
 
-if (! $result) {
-    $result = mysqli_error($con);
+if ($rowcounta == '0') {
+	$sqlb = "INSERT INTO views (`p_id`,`address`)
+			VALUES ('".$id."', '".$add."')";
+			$resultb = mysqli_query($con, $sqlb);
+
+			if (! $resultb) {
+			    $resultb = mysqli_error($con);
+			}
+	$sqls = "SELECT * FROM views WHERE p_id = '".$id."' AND address = '".$add."' ";
+	$results = mysqli_query($con,$sqls);
+	$row = db_fetch_assoc($results);
+
+	$view = ++$view;
+	$sqlss = "UPDATE blogs SET views = '".$view."' WHERE id = '".$id."'";
+	$resultss = mysqli_query($con, $sqlss);
 }
+
 
  ?>
 
@@ -228,8 +241,10 @@ if (! $result) {
 				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="post.php?id=<?php echo $row['id']; ?>"><?php echo strtoupper($row['title']) ; ?></a></div>
-				                    <small class="post_meta"><a href="#"><?php echo ucwords($row['author']) ; ?></a><span><?php echo $row['date']; ?></span></small>
+				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
+				                    </i></small>
+				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
