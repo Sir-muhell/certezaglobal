@@ -50,6 +50,7 @@
 		    max-width: 170px;
     		margin: 0 auto 17px;
 			  transition: transform .5s;
+			  border-radius: 50%;
 		}
 .teams .owl-carousel .owl-item .img-circle:hover {
 		    transform: scale(0.9);

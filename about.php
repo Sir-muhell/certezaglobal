@@ -132,143 +132,239 @@
 						<div class="post_quote">
 								<p class="post_p">Certeza Global is a blog inspired by Oluwabusolami Adepitan, to help unveil the confidence in women of different sectors of life that has been ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained.</p>
 						</div>
-						<p class="post_p">Meet the lady with the wild vision and Imagination, about to set the world on fire.</p>
+						<p class="post_p">Meet the team with the wild vision and Imagination, about to set the world on fire.</p>
 
-						<section class="teams" style="width:100%;">
-	<div class="container">
+					<section class="teams" style="width:100%;">
+						<div class="container">
 
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="customers-teams" class="owl-carousel">
+					      <div class="row">
+					        <div class="col-sm-12">
+					          <div id="customers-teams" class="owl-carousel">
 
-            <!--team 1 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img class="img-circle" src="images/logo2.png" alt="team">
-                <h2>Full Name</h2>
-								<p class="title">Dept.</p>
-									<div id="pastexp">
-										<h5 id="pastexphead">ROLE</h5>
-										
-									</div>
-										<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
+					            <!--team 1 -->
+					            <div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/bubu.jpg" alt="team">
+					                <h6>Oluwabusolami Fumilayo Adepitan </h6>
+														<div id="pastexp">
+															<p id="pastexphead">Founder/ Lifestyle</p>
+														</div>
+													<div class="social-icons" id="teamsocial">
+														<a class="social-icon social-icon--facebook" id="socialicon" href="https://facebook.com/profile.php?id=100071220171889">
 															<img src="https://i.imgur.com/c9JxYPS.png">
 														</a>
-														
+																				
 														<a class="social-icon social-icon--twitter" id="socialicon">
 															<img src="https://i.imgur.com/VHB4APa.png">
 														</a>
 														<a class="social-icon social-icon--linkedin" id="socialicon">
 															<img src="https://i.imgur.com/egfJ4V2.png">
 														</a>
-														
-														<a class="social-icon social-icon--instagram" id="socialicon">
+																				
+														<a class="social-icon social-icon--instagram" id="socialicon" href="https://instagram.com/oluwabosolami_adepitan?r=nametag">
 															<img src="https://i.imgur.com/cgH07pQ.png">
 														</a>
-														
-
-									</div>  <!--Social Icons End Here-->
-								
-								
-								
-								
-								
-								
-              </div>
-           
-            </div>
-            <!--END OF team 1 -->
-						
-						
-						
-                       <!--team 2 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img class="img-circle" src="images/logo2.png" alt="team">
-                <h2>Full Name</h2>
-								<p class="title">Dept.</p>
-									<div id="pastexp">
-										<h5 id="pastexphead">ROLE</h5>
-										
-									</div>
-										<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
+													</div>  
+						            </div>
+						          </div>
+						            <!--END OF team 1 -->
+											
+											
+											
+					                       <!--team 2 -->
+					            <div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/sope.jpg" alt="team">
+					                <h6>Mosope Adeyemi</h6>
+														<div id="pastexp">
+															<h5 id="pastexphead">Fashion</h5>
+														</div>
+													<div class="social-icons" id="teamsocial">
+														<a class="social-icon social-icon--facebook" id="socialicon" href="https://facebook.com/adeyemi.mosope.3">
 															<img src="https://i.imgur.com/c9JxYPS.png">
 														</a>
-														
+																				
 														<a class="social-icon social-icon--twitter" id="socialicon">
 															<img src="https://i.imgur.com/VHB4APa.png">
 														</a>
 														<a class="social-icon social-icon--linkedin" id="socialicon">
 															<img src="https://i.imgur.com/egfJ4V2.png">
 														</a>
-														
+																				
 														<a class="social-icon social-icon--instagram" id="socialicon">
 															<img src="https://i.imgur.com/cgH07pQ.png">
 														</a>
-														
-
-									</div>  <!--Social Icons End Here-->
-								
-								
-								
-								
-								
-								
-              </div>
-           
-            </div>
-            <!--END OF team 2 -->
-						
-						
-						
-                       <!--team 3 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <img class="img-circle" src="images/logo2.png" alt="team">
-                <h2>Full Name</h2>
-								<p class="title">Dept.</p>
-									<div id="pastexp">
-										<h5 id="pastexphead">Role</h5>
-	
-									</div>
-										<div class="social-icons" id="teamsocial">
+													</div>  
+						            </div>
+						          </div>
+					            <!--END OF team 2 -->
+											
+											
+											
+					                       <!--team 3 -->
+					            <div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/bolu.jpg" alt="team">
+					                <h6>Boluwatifenisola Olajide</h6>
+														<div id="pastexp">
+															<h5 id="pastexphead">Career</h5>
+														</div>
+													<div class="social-icons" id="teamsocial">
 														<a class="social-icon social-icon--facebook" id="socialicon">
 															<img src="https://i.imgur.com/c9JxYPS.png">
 														</a>
-														
+																				
 														<a class="social-icon social-icon--twitter" id="socialicon">
 															<img src="https://i.imgur.com/VHB4APa.png">
 														</a>
 														<a class="social-icon social-icon--linkedin" id="socialicon">
 															<img src="https://i.imgur.com/egfJ4V2.png">
 														</a>
-														
+																				
 														<a class="social-icon social-icon--instagram" id="socialicon">
 															<img src="https://i.imgur.com/cgH07pQ.png">
 														</a>
-														
+													</div>  
+						            </div>
+						          </div>
+					            <!--END OF team 3 -->
+					           
+											<div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/eunice.jpg" alt="team">
+					                <h6>Adesiji-Adelekan .A. Eunice</h6>
+														<div id="pastexp">
+															<h5 id="pastexphead">Art and Justice</h5>
+														</div>
+													<div class="social-icons" id="teamsocial">
+														<a class="social-icon social-icon--facebook" id="socialicon">
+															<img src="https://i.imgur.com/c9JxYPS.png">
+														</a>
+																				
+														<a class="social-icon social-icon--twitter" id="socialicon">
+															<img src="https://i.imgur.com/VHB4APa.png">
+														</a>
+														<a class="social-icon social-icon--linkedin" id="socialicon">
+															<img src="https://i.imgur.com/egfJ4V2.png">
+														</a>
+																				
+														<a class="social-icon social-icon--instagram" id="socialicon">
+															<img src="https://i.imgur.com/cgH07pQ.png">
+														</a>
+													</div>  
+						            </div>
+						          </div>
 
-									</div>  <!--Social Icons End Here-->
-								
-								
-								
-								
-								
-								
-              </div>
-           
-            </div>
-            <!--END OF team 3 -->
-           
-						
-						
-          </div>
-        </div>
-      </div>
-      </div>
-    </section>
+
+						          <div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/hannah.jpg" alt="team">
+					                <h6>Oluwayemisi Hannah Taiwo</h6>
+														<div id="pastexp">
+															<h5 id="pastexphead">Content Creator/ Graphics Designer</h5>
+														</div>
+													<div class="social-icons" id="teamsocial">
+														<a class="social-icon social-icon--facebook" id="socialicon">
+															<img src="https://i.imgur.com/c9JxYPS.png">
+														</a>
+																				
+														<a class="social-icon social-icon--twitter" id="socialicon">
+															<img src="https://i.imgur.com/VHB4APa.png">
+														</a>
+														<a class="social-icon social-icon--linkedin" id="socialicon">
+															<img src="https://i.imgur.com/egfJ4V2.png">
+														</a>
+																				
+														<a class="social-icon social-icon--instagram" id="socialicon">
+															<img src="https://i.imgur.com/cgH07pQ.png">
+														</a>
+													</div>  
+						            </div>
+						          </div>
+
+						          <div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/temi.jpg" alt="team">
+					                <h6>Aanuoluwapo .O. Soleye</h6>
+														<div id="pastexp">
+															<h5 id="pastexphead">Politics/Society</h5>
+														</div>
+													<div class="social-icons" id="teamsocial">
+														<a class="social-icon social-icon--facebook" id="socialicon">
+															<img src="https://i.imgur.com/c9JxYPS.png">
+														</a>
+																				
+														<a class="social-icon social-icon--twitter" id="socialicon">
+															<img src="https://i.imgur.com/VHB4APa.png">
+														</a>
+														<a class="social-icon social-icon--linkedin" id="socialicon">
+															<img src="https://i.imgur.com/egfJ4V2.png">
+														</a>
+																				
+														<a class="social-icon social-icon--instagram" id="socialicon">
+															<img src="https://i.imgur.com/cgH07pQ.png">
+														</a>
+													</div>  
+						            </div>
+						          </div>
+
+						          <div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/timi.jpg" alt="team">
+					                <h6>Olwatimileyin .O.Adepitan</h6>
+														<div id="pastexp">
+															<h5 id="pastexphead">Parenting</h5>
+														</div>
+													<div class="social-icons" id="teamsocial">
+														<a class="social-icon social-icon--facebook" id="socialicon">
+															<img src="https://i.imgur.com/c9JxYPS.png">
+														</a>
+																				
+														<a class="social-icon social-icon--twitter" id="socialicon">
+															<img src="https://i.imgur.com/VHB4APa.png">
+														</a>
+														<a class="social-icon social-icon--linkedin" id="socialicon">
+															<img src="https://i.imgur.com/egfJ4V2.png">
+														</a>
+																				
+														<a class="social-icon social-icon--instagram" id="socialicon">
+															<img src="https://i.imgur.com/cgH07pQ.png">
+														</a>
+													</div>  
+						            </div>
+						          </div>
+
+						          <div class="item">
+					              <div class="shadow-effect">
+					                <img class="img-circle" src="images/sewanu.jpg" alt="team">
+					                <h6>Sewanu Zosu</h6>
+														<div id="pastexp">
+															<h5 id="pastexphead">Health and Fitness</h5>
+														</div>
+													<div class="social-icons" id="teamsocial">
+														<a class="social-icon social-icon--facebook" id="socialicon">
+															<img src="https://i.imgur.com/c9JxYPS.png">
+														</a>
+																				
+														<a class="social-icon social-icon--twitter" id="socialicon">
+															<img src="https://i.imgur.com/VHB4APa.png">
+														</a>
+														<a class="social-icon social-icon--linkedin" id="socialicon">
+															<img src="https://i.imgur.com/egfJ4V2.png">
+														</a>
+																				
+														<a class="social-icon social-icon--instagram" id="socialicon">
+															<img src="https://i.imgur.com/cgH07pQ.png">
+														</a>
+													</div>  
+						            </div>
+						          </div>
+											
+					          </div>
+					        </div>
+					      </div>
+					    </div>
+					  </section>
 
 							<figcaption>Meet the Team</figcaption>
 							
