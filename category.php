@@ -142,7 +142,7 @@ if ("$id" == '') {
 				$row = db_fetch_assoc($result);
 				$cat = $row['id'];
 				
-				if ($cat = '12') { ?>
+				if ($cat === '10') { ?>
 					
 						<div>Oluwabusolami Funmilayo Adepitan is a skilled writer, eloquent speaker, Influencer, an entrepreneur and Brand Strategist.<br>
 						She is a final year student of the prestigious institution; Lagos State University, studying Banking and Finance.<br>
@@ -157,11 +157,14 @@ if ("$id" == '') {
 				<?php }
 				else {
 					?>
-					<div></div>
+					
 					<?php
 				}
+
+				
 				 ?>
 				
+
 				
 
 								
