@@ -135,7 +135,35 @@ if ("$id" == '') {
 				</div>
 				<br><br><br><br>
 
-				<div class="section_title">About Author</div>
+				<div class="section_title">About Author</div><br>
+				<?php
+				$sql = "SELECT * FROM blog_categories WHERE id = '$id'" ;
+				$result=mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$cat = $row['id'];
+				
+				if ($cat = '12') { ?>
+					
+						<div>Oluwabusolami Funmilayo Adepitan is a skilled writer, eloquent speaker, Influencer, an entrepreneur and Brand Strategist.<br>
+						She is a final year student of the prestigious institution; Lagos State University, studying Banking and Finance.<br>
+						Oluwabusolami Adepitan is the founder and tutor of the Academy LearnWithBubu ; where she help entrepreneurs of her kind know their spot, gain recognition and find fulfillment in business.
+						It is her utmost desire for thousand of entrepreneurs to find purpose on earth as well as finding purpose in the business world, in order to grow wealth.
+						She currently authored two ebooks titled Make Them Glue to Your Brand and The Secrets of a Successful Business.<br>
+						She is the founder and sole owner of Certeza Global and her goal is unveil the giant in women as well as unveiling the confidence in both sex by offering great products and the involvement of various strategies.<br>
+						Oluwabusolami is an Ardent lover of God, who sees to it that the will of God be done on earth.
+						</div><br>
+
+					
+				<?php }
+				else {
+					?>
+					<div></div>
+					<?php
+				}
+				 ?>
+				
+				
+
 								
 						
 			</div>
