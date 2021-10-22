@@ -12,10 +12,9 @@
 		}
 		
 		#customers-teams .item {
-			 height:470px !important;
+			 
 		    text-align: center;
-		    padding: 50px;
-				margin-bottom:80px;
+				margin-top:80px;
 		    opacity: .2;
 		    -webkit-transform: scale3d(0.8, 0.8, 1);
 		    transform: scale3d(0.8, 0.8, 1);

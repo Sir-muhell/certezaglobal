@@ -35,9 +35,7 @@
                 }
  
                 }
-                console.log(username);
-                console.log(useremail);
-                console.log(usercontent);
+             
                 console.log(str);
                  
                  

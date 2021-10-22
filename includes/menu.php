@@ -26,19 +26,18 @@
 		<div class="logo menu_mm"><a href="./"><img src="images/logo3.png"></a></div>
 		<div class="search">
 			<form action="./search" method="post" name="form">
-				<input type="search" name="search" class="header_search_input" placeholder="Search here..." required>
-				<img class="header_search_icon" src="images/search_2.png" alt="">
+				<input type="text" name="search" class="header_search_input" placeholder="Search here..." required>
 				<!-- <div class="post_category trans_200"></div> -->
 			</form>
 		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="./">Home</a></li>
-				<li class="active menu_mm"><a href="#">Articles</a></li>
+				<li class="menu_mm"><a href="#">Articles</a></li>
 				<li class="dropdown menu_mm">
-					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<?php
 										$sql = "SELECT * FROM blog_categories";
 										$result=mysqli_query($con,$sql);
@@ -46,10 +45,10 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul><a class="container" style="color: black; " href="./category?id=<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></ul>
+										<ul style="margin-bottom: 15px;"><a class="container" style="color: black" href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
-				</li>
+								</li>
 		  		<li class="menu_mm"><a href="./about">About</a></li>
 				<li class="menu_mm"><a href="./contact">Contact</a></li>
 										

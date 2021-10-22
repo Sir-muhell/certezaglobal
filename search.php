@@ -97,21 +97,15 @@ if(empty($_POST['search'])) {
 							                           
 							                  
                         
-						                            if ($rowcount==0) {
+						                            if ($rowcount!==0) {
 						       
-						                            echo "<p style=color:#E9573F><b>Sorry your search for:<u style=color:black>$search_keyword</u> returned zero results</b></p>";
-						                            echo "<p><b style=color:#717478>Suggestions<b><br><span style=color:#FFA500>Your search item is not available on Our Website<br>Try being more specific with key words<br>Enter key word using title<br>Try search using category<br>Try again later<br></span></p>";
-						                            echo "<p><a href=\"http://www.google.com/search?q=" 
-						                            . $search_keyword . "\" target=\"_blank\" title=\"Look up 
-						                            " . $search_keyword . " on Google\" style=color:#37BC9B>Click here</a> to try the 
-						                            search on google</p>";
-						                        }
-						                        else{
+						                           
+						                        
 						                            echo "<p style='color:#4FC1E9'><b>You searched for:<u style=color:black> $search_keyword</u></b></p>";
 						                            echo "<p style='color:#37BC9B; margin-buttom:'><b>Results($rowcount)..</b></p>";
 						                        }
 
-						                    if(!empty($result)) { 
+						                    
                             					foreach($result as $row){
                                 ?>
 
@@ -128,7 +122,10 @@ if(empty($_POST['search'])) {
 				                  </div>
 				                </div>
 	                        
-	                    <?php }} ?>
+	                    <?php }
+
+	                    
+	                    ?>
 							
 
 							

@@ -22,6 +22,9 @@
 											<li class="custom_dot custom_dot_top"><span></span></li>
 											<li class="custom_dot custom_dot_top"><span></span></li>
 											<li class="custom_dot custom_dot_top"><span></span></li>
+											<li class="custom_dot custom_dot_top"><span></span></li>
+											<li class="custom_dot custom_dot_top"><span></span></li>
+											<li class="custom_dot custom_dot_top"><span></span></li>
 										</ul>
 										<div class="custom_next custom_next_top">
 											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

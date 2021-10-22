@@ -134,7 +134,7 @@
 						</div>
 						<p class="post_p">Meet the team with the wild vision and Imagination, about to set the world on fire.</p>
 
-					<section class="teams" style="width:100%;">
+					<section class="teams col-sm-12" style="width:100%;">
 						<div class="container">
 
 					      <div class="row">
@@ -147,7 +147,7 @@
 					                <img class="img-circle" src="images/bubu.jpg" alt="team">
 					                <h6>Oluwabusolami Fumilayo Adepitan </h6>
 														<div id="pastexp">
-															<p id="pastexphead">Founder/ Lifestyle</p>
+															<h5 id="pastexphead">Founder/ Lifestyle</h5>
 														</div>
 													<div class="social-icons" id="teamsocial">
 														<a class="social-icon social-icon--facebook" id="socialicon" href="https://facebook.com/profile.php?id=100071220171889">

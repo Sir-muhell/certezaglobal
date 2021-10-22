@@ -75,8 +75,17 @@ if ("$id" == '') {
 			$result=mysqli_query($con,$sql);
 			$row = db_fetch_assoc($result);
 			?>
+
 			
 			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($row['name']); ?></div>
+			
+			<?php 
+			$sqle = "SELECT * FROM blogs WHERE category = '$id' LIMIT 1  ";
+			$resulte=mysqli_query($con,$sqle);
+			$rowe = db_fetch_assoc($resulte);
+			?>
+			<div>Author - <a href="#author" style="color: white;"><?php echo ucwords( $rowe['author']); ?></a></div>
+
 		</div>
 	</div>
 	
@@ -124,6 +133,10 @@ if ("$id" == '') {
 						</div>
 					</div>
 				</div>
+
+								<div class="section_title">What's Trending</div>
+								
+						
 			</div>
 					
 					

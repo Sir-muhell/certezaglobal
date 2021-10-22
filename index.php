@@ -91,7 +91,8 @@ include("data/functions.php");
 										$rows = db_fetch_assoc($results);
 										?>
 										<div class="home_slider_item_title">
-											<a href="./post?id=<?php echo $rows['category']; ?>"><?php echo $rows['title'];?></a>
+											<a href="./post?id=<?php echo $rows['category']; ?>"><?php echo $rows['title'];?></a><br>
+											<h4><i>by </i><?php echo ucwords($rows['author']);?></h4>
 										</div>
 										<div class="home_slider_item_link">
 											<a href="./post?id=<?php echo $rows['category']; ?>" class="trans_200">Continue Reading
@@ -138,7 +139,7 @@ include("data/functions.php");
 								<div class="home_slider_next_background trans_400"></div>
 								<div class="home_slider_next_content trans_400">
 									<div class="home_slider_next_title">next</div>
-									<div class="home_slider_next_link">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</div>
+									<div class="home_slider_next_link">About Product Advertised</div>
 								</div>
 							</div>
 						</div>
@@ -215,9 +216,9 @@ include("data/functions.php");
 				                  </a>
 				                  <div class="card-body">
 				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" style="float: right;" > <span><?php echo $row['views']; ?></span>
 				                    </i></small>
-				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
@@ -271,7 +272,7 @@ include("data/functions.php");
 
 						<!-- Blog Section - Latest -->
 
-						<div class="blog_section">
+						<div class="blog_section" style="margin-bottom: 30px">
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
 								<div class="section_title">Latest Articles</div>
 							</div>
@@ -295,7 +296,7 @@ include("data/functions.php");
 				                  </a>
 				                  <div class="card-body">
 				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" style="float: right;"> <span><?php echo $row['views']; ?></span>
 				                    </i></small>
 				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
 				                  </div>

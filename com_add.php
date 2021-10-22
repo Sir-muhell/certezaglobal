@@ -4,7 +4,7 @@ $commentId 			= isset($_POST['comment_id']) ? $_POST['comment_id'] : "";
 $comment 			= isset($_POST['comment']) ? $_POST['comment'] : "";
 $email 				= isset($_POST['email']) ? $_POST['email'] : "";
 $commentSenderName 	= isset($_POST['name']) ? $_POST['name'] : "";
-$date 				= date('M d, y');
+$date 				= date('Y-m-d');
 $time               = date('h:i:sA');
 $postid 			= isset($_POST['post_id']) ? $_POST['post_id'] : "";
 
