@@ -83,7 +83,7 @@ include("data/functions.php");
 							<div class="row">
 								<div class="col">
 									<div class="home_slider_content">
-										<div class="home_slider_item_category trans_200"><a href="category.html" class="trans_200"><?php echo $row['name']; ?></a></div>
+										<div class="home_slider_item_category trans_200"><a href="./category?id=<?php echo $row['id']; ?>" class="trans_200"><?php echo $row['name']; ?></a></div>
 										<br>
 										<?php 
 										$sqls = "SELECT * FROM blogs ORDER BY rand() DESC";
@@ -91,7 +91,7 @@ include("data/functions.php");
 										$rows = db_fetch_assoc($results);
 										?>
 										<div class="home_slider_item_title">
-											<a href="./post?id=<?php echo $rows['category']; ?>"><?php echo $rows['title'];?></a><br>
+											<a href="./post?id=<?php echo $rows['id']; ?>"><?php echo $rows['title'];?></a><br>
 											<h4><i>by </i><?php echo ucwords($rows['author']);?></h4>
 										</div>
 										<div class="home_slider_item_link">

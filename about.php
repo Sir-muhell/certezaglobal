@@ -259,7 +259,7 @@
 						          <div class="item">
 					              <div class="shadow-effect">
 					                <img class="img-circle" src="images/hannah.jpg" alt="team">
-					                <h6>Oluwayemisi Hannah Taiwo</h6>
+					                <h6>Oluwayemisi Hannah Tiwo</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Content Creator/ Graphics Designer</h5>
 														</div>

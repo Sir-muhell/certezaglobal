@@ -625,7 +625,7 @@ section
 }
 .home_slider_item_category
 {
-	width: 83px;
+	max-width: 200px;
 	height: 28px;
 	background: #899091;
 	border-radius: 14px;

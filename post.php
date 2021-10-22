@@ -146,7 +146,7 @@ if ($rowcounta == '0') {
 						
 						<!-- Top Panel -->
 						<div class="post_panel post_panel_top d-flex flex-row align-items-center justify-content-start">
-							<div class="author_image"><div><img src="images/author.jpg" alt=""></div></div>
+							<div class="author_image"><div><img src="images/author.jpg" alt="author"></div></div>
 							<div class="post_meta"><a href="#"><?php echo ucwords($row['author']); ?></a><span><?php echo ucwords($row['date']); ?></span></div>
 							<div class="post_share ml-sm-auto">
 								<span>share</span>
@@ -224,7 +224,7 @@ if ($rowcounta == '0') {
 						<hr><br>
 						<!-- Similar Posts -->
 						<div class="similar_posts">
-							<h3><u>Related posts by same author </u></h3>
+							<div class="section_title">Related posts by same author </div><br>
 							<div class="grid clearfix">
 								<?php  
 								$cat = $row['category'];
@@ -257,7 +257,7 @@ if ($rowcounta == '0') {
 
 							<!-- Post Comment -->
 							<div class="post_comment">
-								<div class="post_comment_title">Post Comment</div>
+								<div class="section_title">Post Comment</div>
 								<div class="row">
 									<div class="col-xl-8">
 										<div class="post_comment_form_container">
@@ -277,7 +277,7 @@ if ($rowcounta == '0') {
 
 							<!-- Comments -->
 							<div class="comments">
-								<div class="comments_title">Comments <span></span></div>
+								<div class="section_title">Comments <span></span></div>
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="comments_container">

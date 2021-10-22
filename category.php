@@ -133,8 +133,9 @@ if ("$id" == '') {
 						</div>
 					</div>
 				</div>
+				<br><br><br><br>
 
-								<div class="section_title">What's Trending</div>
+				<div class="section_title">About Author</div>
 								
 						
 			</div>

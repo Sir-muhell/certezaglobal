@@ -1834,3 +1834,29 @@ section
 {
 	border-bottom: solid 1px rgba(255,255,255,1);
 }
+
+.section_title
+{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 18px;
+	font-weight: 700;
+	color: #000000;
+	padding-bottom: 10px;
+	white-space: nowrap;
+	-webkit-transform: translateY(3px);
+	-moz-transform: translateY(3px);
+	-ms-transform: translateY(3px);
+	-o-transform: translateY(3px);
+	transform: translateY(3px);
+}
+.section_title::after
+{
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50px;
+	height: 2px;
+	background: #000000;
+	content: '';
+}
