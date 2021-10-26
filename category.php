@@ -44,9 +44,9 @@ if ("$id" == '') {
 								<li ><a href="./">Home</a></li>
 								<li><a href="#">Articles</a></li>
 								<li class="dropdown active">
-									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false" style="display: block;">Categories
+									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<div class="dropdown-menu" style="position: absolute;">
 										<?php
 										$sql = "SELECT * FROM blog_categories";
 										$result=mysqli_query($con,$sql);

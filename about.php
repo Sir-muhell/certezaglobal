@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>About</title>
+<title>About | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Certeza Global">
@@ -122,15 +122,15 @@
 						<p class="post_p">You should see how amazed I was, at least I saw someone who look like me, I got to discover they were clothes each body shapes are to wear and this is why it look as though they don't have a broad shoulder.</p>
 						<p class="post_p">I made research on what cloth I could wear, accessories, what fit my body shape more and so on...</p>
 						<p class="post_p">Guess What? <br>
-						Knowing what best fit my body shape or cover my scar wasn't the solution, the problem was, the negative comment of people, the critics of people has brought my esteem low. All along, I thought it was due to my body shape but I never knew it went as far as stealing myself away from me. </p>
+						Knowing what best fit my body shape or cover my scar wasn't the solution, the problem was, the negative comment of people, the critics of people has brought my esteem low. All along, I thought it was due to my body shape but I never knew it went as far as stealing myself away from me.  </p>
 						<p class="post_p">I became someone who found it hard to express herself, felt like the world was for those with the perfect story, shape and look. <br>
 						I couldn't face the world, face the crowd and face myself.</p>
 						<p class="post_p">Do you know a lady with the wild vision and imagination on her head but find it hard to come out of the shell? This girl was me. It took me from me, it made me feel less of myself, feel insecure, the worst of it all is, it came as an obstacle to stop me from achieving purpose, discovering my true self and becoming the Majestical Vessel God wants me to be for the world that await me.</p>
-						<p class="post_p">Building my Self-esteem since then has hindered the word called PURPOSE. I felt I was the only one going through this till my eyes were opened to see married women body shamed by their husbands, ladies who has lost purpose due to these circumstances and females who feel the world is not meant for them.</p>
+						<p class="post_p">Building my Self-esteem since then has hindered the word called <strong>PURPOSE</strong>. I felt I was the only one going through this till my eyes were opened to see women who has lost purpose due to their past: Various circumstances like child assault, sexual abuse, peer pressure, family background, Wrong marriage etc. Gripped with the fear of revealing themselves to the world.</p>
 						<p class="post_p">This is why I faced my mirror and said to my spirit. <br><i>"I want to unveil the giant in women along with me; I am not keeping this to myself alone"</i></p>
 						
 						<div class="post_quote">
-								<p class="post_p">Certeza Global is a blog inspired by Oluwabusolami Adepitan, to help unveil the confidence in women of different sectors of life that has been ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained.</p>
+								<p class="post_p">Certeza Global is a blog inspired by Oluwabusolami Adepitan, to help unveil the confidence in women of different sectors of life as ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained subscribe to this site so you receive notifications on every article.</p>
 						</div>
 						<p class="post_p">Meet the team with the wild vision and Imagination, about to set the world on fire.</p>
 
