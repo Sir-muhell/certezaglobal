@@ -311,7 +311,7 @@
 						          <div class="item">
 					              <div class="shadow-effect">
 					                <img class="img-circle" src="images/timi.jpg" alt="team">
-					                <h6>Olwatimileyin .O.Adepitan</h6>
+					                <h6>Oluwatimileyin .O.Adepitan</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Parenting</h5>
 														</div>

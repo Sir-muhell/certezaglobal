@@ -44,7 +44,7 @@ if ("$id" == '') {
 								<li ><a href="./">Home</a></li>
 								<li><a href="#">Articles</a></li>
 								<li class="dropdown active">
-									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
+									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false" style="display: block;">Categories
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<?php
@@ -156,13 +156,71 @@ if ("$id" == '') {
 					
 				<?php }
 				else {
-					?>
-					
-					<?php
+				
+				if ( $cat === '11') { ?>
+
+						<div>Orirenitemi Aanuoluwapo Soleye is a 200 Level student of Lagos State University in the department of Political Science Education. <br>
+
+						Her passion for women and children has made her a volunteer for various advocacy initiatives in and outside campus such as Girls 4 Leadership Initiative, WARRIF to mention but a few. Her dedication to serve humanity has propelled her to be a tutor under Excel Minds Academic Group on Campus, group which offers free tutorials to students.
+						Orirenitemi also believes in morality as a weapon against social vices. She upholds the believe that women can be exceedingly great even more than they expect through discovering the essence and versatility of their nature.<br>
+
+						Orirenitemi is a writer who has her articles published online. She is also passionate about the world's politics especially in contemporary times and this led to her winning the Girls 4 Leadership contest which qualified  her as a panelist in a discussion that attracted the participation of other women around the world about the Afghanistan Taliban Rule.<br>
+						She also loves to see children grow under the right guidance. She is a lover of music and nature.</div><br>
+				<?php }
+				else {
+			
+				if ($cat === '12') { ?>
+
+						<div>Mosope Oluwatoyin Adeyemi is a creative writer, a student coach, a singer and the author of an E-Book specially written for new university students titled "How to excel in university". <br>
+
+						She is passionate about making Africans great readers, because according to her; If readers are leaders, then for Africa to lead, we have to read".<br> 
+
+						As a result of this passion, she created a bookclub called "Blackbooklovers" which is centered on reading great books that can help groom people into leaders both in the present and in the future. The bookclub is open to everyone as there is a page on Instagram for it @blackbooklovers.<br>
+
+						She strongly believe that there is hope for the ordinary man, as long as he is willing to fight for the future he deserves.</div> <br>
+
+
+				<?php }
+				else{
+
+				if ($cat === '13') { ?>
+
+					???
+				<?php }
+				else {
+
+				if ($cat === '14') { ?>
+						<div>Oluwatimileyin Oluwakemi Adepitan is a child of the most High God. She is an advocate of His word and a bearer of His grace.<br>
+
+						She is a student of Lagos State College of Medicine, (LASCOM). Aspiring to become a medical doctor.<br>
+
+						Her passion to write is fuelled by the need to eradicate ignorance on important issues in the society. She is a poet, a speaker and also a script writer.
+						She's written quite a number of poems, some of which are titled: Friends or Foes, Restored and many others.<br>
+						She's a writer of two books which are to be published soon. <br>
+
+						Oluwakemi is a strong advocate for Truth.</div><br>
+				<?php }		
+				else {
+
+				if ($cat === '15') { ?>
+						<div>Adesiji-Adelekan Ademilayo Eunice is a 300 level student of the department of Pharmacology, Therapeutics and Toxicology at Lagos State University College of Medicine.<br>
+
+						She is a creative writer, a deputy Editor-in-chief at Association of Campus Journalists LASU and an instrumentalist. Her passion for planning and multitasking has made a part of several committees within the university serving in various capacities. Her spirit for welfarism and dedication to humanity has made a volunteer for The Slum Movement and Awesome Treasure Foundations amongst a few.<br>
+
+						Ademilayo is a multi talented individual who believes in using her 5 talents to gain 5 more. She believes that being female is not a limitation but a blessing and encourages female to not morally degrade themselves but to be an epitome of beauty, brains and good morals.</div><br>
+				<?php	
+				}
+				}
+				}	
+				}
+				}
+				
+
+
 				}
 
 				
-				 ?>
+				?>
 				
 
 				
