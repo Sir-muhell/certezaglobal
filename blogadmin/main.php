@@ -152,6 +152,36 @@
               </a>
             </div>
           </div>
+
+           <div class="col-lg-3">
+            <div class="panel" style="background-color: #b3b300">
+              <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php?>">
+                <div class="panel-heading">
+                <div class="row" style="color: #4d4d00">
+                  <div class="col-xs-6">
+                    <i class="fa fa-lock fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading"><i class="fa fa-"></i></p>
+                    <p class="announcement-text"><strong>Ads Center</strong></p>
+                  </div>
+                </div>
+              </div>
+              </a>
+              <a href="<?php echo PREPEND_PATH; ?>admin/pageHome.php?>">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      View
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
           <?php
   }
   ?>

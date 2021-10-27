@@ -62,7 +62,7 @@
 											<?php  
 								
 							                     
-							                $sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = ".$id." ORDER BY id DESC LIMIT 4";
+							                $sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = '$id' ORDER BY id DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 							                           
@@ -80,7 +80,7 @@
 														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title"><?php echo $row['title']; ?></div>
-															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span></small>
+															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span><span> <?php echo $row['views']; ?> view(s)</span></small>
 														</div>
 													</div>
 												</a>
@@ -99,13 +99,27 @@
 						<!-- Advertising -->
 
 						<div class="sidebar_section">
+							<?php  
+								
+							                     
+							                $sql = "SELECT * FROM blogs LIMIT 1";
+							                $result=mysqli_query($con,$sql);
+							                $rowcount=mysqli_num_rows($result);
+							                           
+							                  
+
+						                    if(!empty($result)) { 
+                            					foreach($result as $row){
+                                			?>
 							<div class="advertising">
-								<div class="advertising_background" style="background-image:url(images/post_17.jpg)"></div>
+								<img style="height: auto; width: 100%" src="blogadmin/images/<?php echo $row['photo']; ?>">
 								<div class="advertising_content d-flex flex-column align-items-start justify-content-end">
 									<div class="advertising_perc">-15%</div>
 									<div class="advertising_link"><a href="#">How Did van Gogh’s Turbulent Mind</a></div>
 								</div>
+							
 							</div>
+							<?php }} ?>
 						</div>
 
 						<!-- Newest Videos -->
@@ -123,6 +137,7 @@
 
 										<!-- Newest Videos Slider Item -->
 										<div class="owl-item">
+											<br>
 											<?php
 											 $sql = "SELECT * FROM blogs ORDER BY views DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
@@ -143,7 +158,7 @@
 														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title"><?php echo $row['title']; ?></div>
-															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span></small>
+															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span><span> <?php echo $row['views']; ?> view(s)</span></small>
 														</div>
 													</div>
 												</a>

@@ -2,15 +2,15 @@
 	$dbServer = 'localhost';
 
 	
-	$dbUsername = 'root';
-	$dbPassword = '';
-	$dbDatabase = 'olapearls_blog';
+	// $dbUsername = 'root';
+	// $dbPassword = '';
+	// $dbDatabase = 'olapearls_blog';
 
 
 
-	// $dbUsername = 'certezag_data';
-	// $dbPassword = 'certezapasswordsecured';
-	// $dbDatabase = 'certezag_data';
+	$dbUsername = 'certezag_data';
+	$dbPassword = 'certezapasswordsecured';
+	$dbDatabase = 'certezag_data';
 
 	$adminConfig = array(
 		'adminUsername' => "admin",
@@ -29,7 +29,7 @@
 		'MySQLDateFormat' => "%m/%d/%Y",
 		'PHPDateFormat' => "n/j/Y",
 		'PHPDateTimeFormat' => "m/d/Y, h:i a",
-		'senderName' => "Olapearl's Hub",
+		'senderName' => "Certeza Global",
 		'senderEmail' => "hello@certezaglobal.com.ng",
 		'approvalSubject' => "Your membership is now approved",
 		'approvalMessage' => "Dear member,\r\n\r\nYour membership is now approved by the admin. You can log in to your account here:\r\nhttp://admin.certezaglobal.com.ng\r\n\r\nRegards,\r\nAdmin",

@@ -35,10 +35,10 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="./blogs_view"><i class="fa fa-book"></i>Blogs</a></li>
-            <li><a href="./blog_categories_view"><i class="fa fa-tags"></i>Categories</a></li>
-            <li><a href="./blogs_view"><i class="fa fa-check"></i>Published</a></li>
-            <li><a href="#"><i class="fa fa-tasks"></i>Drafts</a></li>
+            <li><a href="./blogs_view"><i class="fa fa-book"></i> Blogs</a></li>
+            <li><a href="./blog_categories_view"><i class="fa fa-tags"></i> Categories</a></li>
+            <li><a href="./blogs_view"><i class="fa fa-check"></i> Published</a></li>
+            <li><a href="#"><i class="fa fa-tasks"></i> Drafts</a></li>
             <li><a href="<?php echo PREPEND_PATH; ?>./membership_profile"><i class="fa fa-user">&nbsp;</i>My Profile Details</a></li>
             <li><a href="<?php echo PREPEND_PATH; ?>index.php?signOut=1"><i class="fa fa-power-off"></i> <?php echo $Translation['sign out']; ?> </a></li>
             <?php
@@ -46,7 +46,7 @@
             if ($usernow=="admin") {
               ?>
            
-            <!-- <li><a href="titles_view.php"><i class="fa fa-desktop"></i>Web Details</a></li> -->
+            <li><a href="titles_view.php"><i class="fa fa-desktop"></i> Ads Center</a></li>
             <!-- <li><a href="links_view.php"><i class="fa fa-link"></i>Links</a></li> -->
             <!-- <li><a href="editors_choice_view.php"><i class="fa fa-trophy"></i>Editors Choice</a></li> -->
             <!-- <li><a href="../adminstats"><i class="fa fa-bar-chart-o"></i>Admin Stats</a></li> -->
