@@ -111,13 +111,11 @@
 						                    if(!empty($result)) { 
                             					foreach($result as $row){
                                 			?>
+
 							<div class="advertising">
-								<img style="height: auto; width: 100%" src="blogadmin/images/<?php echo $row['photo']; ?>">
-								<div class="advertising_content d-flex flex-column align-items-start justify-content-end">
-									<div class="advertising_perc">-15%</div>
-									<div class="advertising_link"><a href="#">How Did van Gogh’s Turbulent Mind</a></div>
-								</div>
-							
+								Advertisement
+								<img style="height: auto; width: 100%;" src="images/ads.jpg">
+								<?php  ?>					
 							</div>
 							<?php }} ?>
 						</div>
@@ -175,13 +173,10 @@
 
 						<!-- Advertising 2 -->
 
-						<div class="sidebar_section">
+						<div class="sidebar_section mb-5">
 							<div class="advertising_2">
 								<div><p>Ads</p></div>
-								<div class="advertising_background" style="background-image:url(images/post_18.jpg)"></div>
-								<div class="advertising_2_content d-flex flex-column align-items-center justify-content-center">
-									<div class="advertising_2_link"><a href="#">Turbulent <span>Mind</span></a></div>
-								</div>
+								<img style="height: auto; width: 100%;" src="images/ads.jpg">
 							</div>
 						</div>
 

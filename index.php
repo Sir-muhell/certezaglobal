@@ -34,7 +34,13 @@ include("data/functions.php");
 						<nav class="main_nav">
 							<ul>
 								<li class="active"><a href="./">Home</a></li>
-								<li><a href="#">Articles</a></li>
+								<?php
+										$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
+										$result=mysqli_query($con,$sql);
+										$row = db_fetch_assoc($result);
+										 
+								?>
+								<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
 								<li class="dropdown">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
@@ -135,7 +141,8 @@ include("data/functions.php");
 						
 						<div class="home_slider_next_container">
 							<strong>Advertisement</strong>
-							<div class="home_slider_next" style="background-image:url(images/home_slider_next.jpg)">
+							<div class="home_slider_next" >
+								<img style="height: auto; width: 100%; " src="images/ads.jpg">
 								<div class="home_slider_next_background trans_400"></div>
 								<div class="home_slider_next_content trans_400">
 									<div class="home_slider_next_title">next</div>
@@ -190,7 +197,7 @@ include("data/functions.php");
 
 				<!-- Main Content -->
 
-				<div class="col-lg-9">
+				<div class="col-lg-9 col-12">
 					<div class="main_content">
 
 						<?php include("includes/miss.php"); ?>

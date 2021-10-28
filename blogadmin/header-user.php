@@ -46,7 +46,7 @@
             if ($usernow=="admin") {
               ?>
            
-            <li><a href="titles_view.php"><i class="fa fa-desktop"></i> Ads Center</a></li>
+            <li><a href="ads.php"><i class="fa fa-desktop"></i> Ads Center</a></li>
             <!-- <li><a href="links_view.php"><i class="fa fa-link"></i>Links</a></li> -->
             <!-- <li><a href="editors_choice_view.php"><i class="fa fa-trophy"></i>Editors Choice</a></li> -->
             <!-- <li><a href="../adminstats"><i class="fa fa-bar-chart-o"></i>Admin Stats</a></li> -->

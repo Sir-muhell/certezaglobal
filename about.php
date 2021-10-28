@@ -48,7 +48,13 @@
 						<nav class="main_nav">
 							<ul>
 								<li ><a href="./">Home</a></li>
-								<li><a href="">Articles</a></li>
+								<?php
+										$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
+										$result=mysqli_query($con,$sql);
+										$row = db_fetch_assoc($result);
+										 
+								?>
+								<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
 								<li class="dropdown active">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>

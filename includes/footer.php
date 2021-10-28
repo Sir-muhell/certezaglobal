@@ -1,6 +1,9 @@
 
 
 	<!-- Footer -->
+	<?php
+	$address = $_SERVER['REQUEST_URI']; 
+	?>
 
 	<footer class="footer">
 		<div class="container">
@@ -35,9 +38,11 @@
 				<div class="col-lg-4 order-lg-2 order-2">
 					<div class="footer_content">
 						<div class="subscribe_title">Subscribe</div>
-							<form action="#">
-								<input type="email" class="sub_input" placeholder="Your Email" required="required">
-								<button class="sub_button">
+							<form action="subscribe.php">
+									<input type="email " class="sub_input" name="name" placeholder="Your Full Name" required="required">
+									<br><br>
+									<input type="text " class="sub_input" name="email" placeholder="Your Email" required="required">
+								<button class="sub_button" type="button">
 									<svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										 width="19px" height="13px" viewBox="0 0 19 13" enable-background="new 0 0 19 13" xml:space="preserve">
 										<polygon fill="#FFFFFF" points="12.475,0 11.061,0 17.081,6.021 0,6.021 0,7.021 17.038,7.021 11.06,13 12.474,13 18.974,6.5 "/>
