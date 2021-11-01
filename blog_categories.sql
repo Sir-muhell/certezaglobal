@@ -38,13 +38,13 @@ CREATE TABLE `blog_categories` (
 --
 
 INSERT INTO `blog_categories` (`id`, `name`) VALUES
-(10, 'Lifestyle'),
-(11, 'Politics / Society'),
-(12, 'Fashion'),
-(13, 'Career'),
-(14, 'Parenting'),
-(15, 'Art and Justice'),
-(16, 'Health and Fitness');
+(1, 'Lifestyle'),
+(2, 'Politics / Society'),
+(3, 'Fashion'),
+(4, 'Career'),
+(5, 'Parenting'),
+(6, 'Art and Justice'),
+(7, 'Health and Fitness');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +64,7 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT for table `blog_categories`
 --
 ALTER TABLE `blog_categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

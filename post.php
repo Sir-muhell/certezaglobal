@@ -152,8 +152,60 @@ if ($rowcounta == '0') {
 						
 						<!-- Top Panel -->
 						<div class="post_panel post_panel_top d-flex flex-row align-items-center justify-content-start">
-							<div class="author_image"><div><img src="images/author.jpg" alt="author"></div></div>
-							<div class="post_meta"><a href="#"><?php echo ucwords($row['author']); ?></a><span><?php echo ucwords($row['date']); ?></span></div>
+							<?php
+				
+				$cat = $row['category'];
+				
+				if ($cat === '1') {
+					
+				$author= 'Oluwabusolami Fumilayo Adepitan';
+				$pic = 'bubu';
+				}
+				else {
+				
+				if ( $cat === '2') {
+					$pic = 'temi';
+				}
+				else {
+			
+				if ($cat === '3') { 
+
+					$pic = 'sope';
+				}
+				else{
+
+				if ($cat === '4') { 
+					$pic = 'bolu';
+				}
+				else {
+
+				if ($cat === '5') { 
+					$pic = 'timi';
+				}		
+				else {
+
+				if ($cat === '6') {
+					$pic = 'eunice';		
+				}
+				else {
+
+				if ($cat === '7') {
+					$pic = 'sewanu';		
+				}
+			}
+				}
+				}	
+				}
+				}
+				
+
+
+				}
+
+				
+				?>
+							<div class="author_image"><div><img src="images/<?php echo $pic; ?>.jpg" alt="author"></div></div>
+							<div class="post_meta"><a href="#"><?php echo ucwords($row['author']); ?></a><span><?php echo ucwords($row['date']); ?></span><span><i class="fa fa-eye"> <?php echo $row['views']; ?></i></span></div>
 							<div class="post_share ml-sm-auto">
 								<span>share</span>
 								<ul class="post_share_list">
@@ -179,8 +231,10 @@ if ($rowcounta == '0') {
 						<!-- Post Body -->
 
 						<div class="post_body">
-							<?php $string = $row['content']; ?>
-							<p class="post_p"><?php echo substr($string,0,  ) ?></p>
+							<?php  $string = $row['content'];
+							$content = preg_replace('/font-family.+?;/', "", $string);
+							 ?>
+							<p class="post_p"><?php echo $content; ?></p>
 							<figure>
 								<img src="blogadmin/images/<?php echo $row['photo']; ?>" alt="">
 								<figcaption>Lorem Ipsum Dolor Sit Amet</figcaption>

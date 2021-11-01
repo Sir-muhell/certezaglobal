@@ -86,7 +86,58 @@
 												</a>
 											</div>
 				                        
-				                    			<?php }} ?>
+				                    			<?php }} 
+
+				                    			
+				                    				if($rowcount == '0') {
+				                    					?>
+				                    		<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+											<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+											<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+											<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+				                    			<?php
+				                    				}		
+				                    			?>
 										</div>
 									<?php }} ?>
 
@@ -137,7 +188,7 @@
 										<div class="owl-item">
 											<br>
 											<?php
-											 $sql = "SELECT * FROM blogs ORDER BY views DESC LIMIT 4";
+											 $sql = "SELECT * FROM blogs WHERE category = '10' ORDER BY views DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 							                           
@@ -161,7 +212,58 @@
 													</div>
 												</a>
 											</div>
-										<?php }} ?>
+										<?php }} 
+											if($rowcount == '0') {
+				                    					?>
+				                    		<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+											<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+											<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+											<div class="side_post">
+												<a href="#">
+													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
+														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_content">
+															<div class="side_post_title">Nothing to show yet</div>
+															<small class="post_meta"></small>
+														</div>
+													</div>
+												</a>
+											</div>
+				                    			<?php
+				                    				}		
+				                    			
+
+										?>
 
 
 										</div>
