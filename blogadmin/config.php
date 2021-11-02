@@ -2,15 +2,15 @@
 	$dbServer = 'localhost';
 
 	
-	$dbUsername = 'root';
-	$dbPassword = '';
-	$dbDatabase = 'olapearls_blog';
+	// $dbUsername = 'root';
+	// $dbPassword = '';
+	// $dbDatabase = 'olapearls_blog';
 
 
 
-	// $dbUsername = 'certezag_data';
-	// $dbPassword = 'certezapasswordsecured';
-	// $dbDatabase = 'certezag_data';
+	$dbUsername = 'certezag_data';
+	$dbPassword = 'certezapasswordsecured';
+	$dbDatabase = 'certezag_data';
 
 	$adminConfig = array(
 		'adminUsername' => "admin",
