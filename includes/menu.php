@@ -38,7 +38,7 @@
 						$result=mysqli_query($con,$sql);
 						$row = db_fetch_assoc($result);
 						$rowcount=mysqli_num_rows($result);	
-				if ($rowcount === '0') { ?>
+				if ($rowcount == '0') { ?>
 							<li><a href="#">Latest Articles</a></li>
 				<?php }
 
