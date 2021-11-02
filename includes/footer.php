@@ -24,7 +24,7 @@
 							<ul style="margin: 50px 0px 50px 0px">
 								<li class="footer_social_facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li class="footer_social_twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li class="footer_social_instagram"><a href="https://instagram.com/certezaglobal.ng"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="footer_social_instagram"><a href="https://instagram.com/certezaglobal/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 								<li class="footer_social_google"><a href="https://wa.me/2347051532319"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
 								<li class="footer_social_google"><a href="mailto: certezaglobal11@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
 							</ul>
