@@ -17,6 +17,8 @@ include("data/functions.php");
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link href="manifest.json">
+<meta name="theme-color" content="#262626"> 
 <link rel="icon" type="image/png"  href="images/logo7.png">
 </head>
 <body>
@@ -38,9 +40,16 @@ include("data/functions.php");
 										$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
 										$result=mysqli_query($con,$sql);
 										$row = db_fetch_assoc($result);
-										 
+										$rowcount=mysqli_num_rows($result);	
+								if ($rowcount == '0') { ?>
+									 	<li><a href="#">Latest Articles</a></li>
+								<?php }
+
+								else { ?>
+										<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
+								<?php 
+								}	 
 								?>
-								<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
 								<li class="dropdown">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
@@ -485,6 +494,19 @@ include("data/functions.php");
 				</div>
 				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>
+				<script>
+				  if ('serviceWorker' in navigator) {
+				    console.log("Will the service worker register?");
+				    navigator.serviceWorker.register('service-worker.js')
+				      .then(function(reg){
+				        console.log("Yes, it did.");
+				      }).catch(function(err) {
+				        console.log("No it didn't. This happened: ", err)
+				      });
+				  }
+				</script>
+				<script src="service-worker.js">
+				</script>
 				<script src="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.js"></script>
 				<script src="plugins/masonry/images_loaded.js"></script>
 				<script src="js/custom.js"></script>			

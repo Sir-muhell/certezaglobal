@@ -25,6 +25,8 @@ if ("$id" == '') {
 <link rel="stylesheet" type="text/css" href="styles/post.css">
 <link rel="stylesheet" type="text/css" href="styles/post_responsive.css">
 <link rel="icon" type="image/png"  href="images/logo7.png">
+<meta name="theme-color" content="#262626"> 
+<link rel="icon" type="image/png"  href="images/logo7.png">
 
 </head>
 <body>
@@ -46,9 +48,16 @@ if ("$id" == '') {
 										$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
 										$result=mysqli_query($con,$sql);
 										$row = db_fetch_assoc($result);
-										 
+										$rowcount=mysqli_num_rows($result);	
+								if ($rowcount === '0') { ?>
+									 	<li><a href="#">Latest Articles</a></li>
+								<?php }
+
+								else { ?>
+										<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
+								<?php 
+								}	 
 								?>
-								<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
 								<li class="dropdown active">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>

@@ -1,0 +1,21 @@
+{
+  "short_name": "Certeza Global",
+  "name": "Olapearl's Hub",
+  "description": "Certeza Global",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "images/certeza.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "display": "standalone",
+  "related_applications": [{
+    "platform": "web",
+    "url": "https://certezaglobal.com.ng"
+  }]
+}
