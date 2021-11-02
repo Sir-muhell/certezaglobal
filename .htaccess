@@ -16,11 +16,6 @@ RewriteCond %{HTTP_HOST} ^certezaglobal\.com.ng [NC]
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://certezaglobal.com.ng/$1 [R,L]
 
- RewriteEngine On
- RewriteCond %{REQUEST_FILENAME} !-f
- RewriteCond %{REQUEST_FILENAME} !-d
- RewriteRule ^(.*)$ index.php?q=$1 [QSA,L]
-
 RewriteEngine On    # Turn on the rewriting engine
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
