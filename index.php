@@ -95,9 +95,13 @@ include("data/functions.php");
 										$sqls = "SELECT * FROM blogs ORDER BY rand() DESC";
 										$results=mysqli_query($con,$sqls);
 										$rows = db_fetch_assoc($results);
+										$rowcount=mysqli_num_rows($results);
 										?>
 										<div class="home_slider_item_title">
 											<a href="./post?id=<?php echo $rows['id']; ?>"><?php echo $rows['title'];?></a><br>
+											<?php if ($rowcount == '0') { ?>
+											<a href="#">Nothing to Show Yet</a><br>
+										<?php 	} ?>
 											<h4><i>by </i><?php echo ucwords($rows['author']);?></h4>
 										</div>
 										<div class="home_slider_item_link">
@@ -123,6 +127,8 @@ include("data/functions.php");
 								$sql = "SELECT * FROM blogs ORDER BY rand() DESC LIMIT 3" ;
 								$result=mysqli_query($con,$sql);
 								$row = db_fetch_assoc($result);
+								$rowcount=mysqli_num_rows($result);
+
 								 if(!empty($result)) { 
 								foreach($result as $row){ 
 								?>
@@ -133,7 +139,28 @@ include("data/functions.php");
 										<a href="./post?id=<?php echo $row['category']; ?>"><strong><?php echo $row['title'];?></strong></a>
 									</div>
 								</div>
-								<?php }} ?>
+								<?php }}
+								if ($rowcount == '0') { ?>
+								<div class="col-lg-3 col-md-6 similar_post_col">
+									<div class="similar_post trans_200" style="background-image: url(images/logo2.png); ; background-repeat: no-repeat;">
+										<a href="# ?>" style="float: right;"><strong> Nothing to Show Yet</strong></a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6 similar_post_col">
+									<div class="similar_post trans_200" style="background-image: url(images/logo2.png); ; background-repeat: no-repeat;">
+										<a href="# ?>" style="float: right;"><strong> Nothing to Show Yet</strong></a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-6 similar_post_col">
+									<div class="similar_post trans_200" style="background-image: url(images/logo2.png); ; background-repeat: no-repeat;">
+										<a href="# ?>" style="float: right;"><strong> Nothing to Show Yet</strong></a>
+									</div>
+								</div>
+								
+								<?php
+								}
+
+								 ?>
 								
 
 							</div>
@@ -210,6 +237,7 @@ include("data/functions.php");
 									$sql = "SELECT * FROM blogs LIMIT 0, 3";
 									$result=mysqli_query($con,$sql);
 									$row = db_fetch_assoc($result);
+									$rowcount=mysqli_num_rows($results);
 									if(!empty($result)) { 
 									foreach($result as $row){ 
 
@@ -229,7 +257,47 @@ include("data/functions.php");
 				                  </div>
 				                </div>
 	                        
-	                    <?php }} ?>
+	                    <?php }}
+	                    if ($rowcount == '0') { ?>
+	                    		<div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+	                    <?php
+	                    }
+
+	                     ?>
 
 								
 
@@ -259,13 +327,51 @@ include("data/functions.php");
 								<div class="grid clearfix">
 									
 								
+									<div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+					                  <a href="#" style="background-color: black;">
+					                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+					                  </a>
+					                  <div class="card-body">
+					                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+					                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+					                    </i></small>
+					                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+					                  </div>
+					                </div>
+
+					                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+
+
+									<!-- Small Card With Image -->
+									<div class="card card_small_with_image grid-item">
+										
+									</div>
+
 									<!-- Small Card With Background -->
 									<div class="card card_default card_small_with_background grid-item">
-										<div class="card_background" style="background-image:url(images/post_4.jpg)"></div>
-										<div class="card-body">
-											<div class="card-title card-title-small"><a href="post.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</a></div>
-											<small class="post_meta"><a href="#">Katy Liu</a><span>Sep 29, 2017 at 9:48 am</span></small>
-										</div>
+									
 									</div>
 
 								</div>
@@ -290,6 +396,7 @@ include("data/functions.php");
 									$sql = "SELECT * FROM blogs LIMIT 0, 3";
 									$result=mysqli_query($con,$sql);
 									$row = db_fetch_assoc($result);
+									$rowcount=mysqli_num_rows($results);
 									if(!empty($result)) { 
 									foreach($result as $row){ 
 
@@ -309,7 +416,47 @@ include("data/functions.php");
 				                  </div>
 				                </div>
 	                        
-	                    <?php }} ?>
+	                    <?php }} 
+	                    if ($rowcount == '0') { ?>
+	                    	<div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                  <a href="#" style="background-color: black;">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  </a>
+				                  <div class="card-body">
+				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
+				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
+				                  </div>
+				                </div>
+
+	                    <?php 	
+	                    }
+	                    ?>
 
 								
 
