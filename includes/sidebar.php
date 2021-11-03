@@ -165,7 +165,7 @@
 
 							<div class="advertising">
 								Advertisement
-								<img style="height: auto; width: 100%;" src="images/ads.jpg">
+								<img style="height: auto; width: 100%;" src="images/ads.webp">
 								<?php  ?>					
 							</div>
 							<?php }} ?>
@@ -278,7 +278,7 @@
 						<div class="sidebar_section mb-5">
 							<div class="advertising_2">
 								<div><p>Ads</p></div>
-								<img style="height: auto; width: 100%;" src="images/ads.jpg">
+								<img style="height: auto; width: 100%;" src="images/ads.webp">
 							</div>
 						</div>
 

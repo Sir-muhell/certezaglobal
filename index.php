@@ -189,7 +189,7 @@ include("data/functions.php");
 						<div class="home_slider_next_container">
 							<strong>Advertisement</strong>
 							<div class="home_slider_next" >
-								<img style="height: auto; width: 100%; " src="images/ads.jpg">
+								<img style="height: auto; width: 100%; " src="images/ads.webp">
 								<div class="home_slider_next_background trans_400"></div>
 								<div class="home_slider_next_content trans_400">
 									<div class="home_slider_next_title">next</div>
