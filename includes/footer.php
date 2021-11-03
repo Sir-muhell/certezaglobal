@@ -30,7 +30,7 @@
 							</ul>
 						</div>
 						<div class="copyright">
-						 &copy; Certeza <script>document.write(new Date().getFullYear());</script> Developed by <a style="color: #fff" href="" target="_blank">Aholu Samuel</a>
+						 &copy; Certeza <script><?php echo date('Y') ?></script> Developed by <a style="color: #fff" href="" target="_blank">Aholu Samuel</a>
 						</div>
 					</div>
 				</div>
