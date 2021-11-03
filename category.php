@@ -21,7 +21,6 @@ if ("$id" == '') {
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css">
 <link rel="stylesheet" type="text/css" href="styles/post.css">
 <link rel="stylesheet" type="text/css" href="styles/post_responsive.css">
 <link rel="icon" type="image/png"  href="images/logo7.png">
@@ -40,7 +39,7 @@ if ("$id" == '') {
 			<div class="row">
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div><a href="./"><img class="logos" src="images/logo7.png"></a></div>
+						<div><a href="./"><img class="logos" src="images/logo7.webp"></a></div>
 						<nav class="main_nav">
 							<ul>
 								<li ><a href="./">Home</a></li>
@@ -145,7 +144,7 @@ if ("$id" == '') {
 	                    	if($rowcount == '0') { ?>
 	                    		<div class="card card_small_with_image grid-item" style="margin-top: 90px" >
 				                  <a href="#"><center>
-				                      <img src="images/logo2.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto"></center>
+				                      <img src="images/logo2.webp" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto"></center>
 				                  </a>
 				                  <div class="card-body">
 				                  	<center>Nothing to show yet</center>
@@ -155,7 +154,7 @@ if ("$id" == '') {
 				                </div>
 				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
 				                  <a href="#"><center>
-				                      <img src="images/logo2.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto"></center>
+				                      <img src="images/logo2.webp" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto"></center>
 				                  </a>
 				                  <div class="card-body">
 				                  	<center>Nothing to show yet</center>
@@ -165,7 +164,7 @@ if ("$id" == '') {
 				                </div>
 				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
 				                  <a href="#"><center>
-				                      <img src="images/logo2.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto"></center>
+				                      <img src="images/logo2.webp" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto"></center>
 				                  </a>
 				                  <div class="card-body">
 				                  	<center>Nothing to show yet</center>

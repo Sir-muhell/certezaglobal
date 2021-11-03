@@ -94,7 +94,7 @@
 				                    		<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -105,7 +105,7 @@
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -116,7 +116,7 @@
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -127,7 +127,7 @@
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -218,7 +218,7 @@
 				                    		<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -229,7 +229,7 @@
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -240,7 +240,7 @@
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -251,7 +251,7 @@
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.png" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>

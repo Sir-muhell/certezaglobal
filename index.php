@@ -32,7 +32,7 @@ include("data/functions.php");
 			<div class="row">
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div><a href="./"><img class="logos" src="images/logo7.png"></a></div>
+						<div><a href="./"><img class="logos" src="images/logo7.webp"></a></div>
 						<nav class="main_nav">
 							<ul>
 								<li class="active"><a href="./">Home</a></li>
