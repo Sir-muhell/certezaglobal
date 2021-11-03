@@ -22,18 +22,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule    ^([A-Za-z0-9_-]+)$    post.php?id=$1    [NC,L]    # Handle page requests
 
 
-## EXPIRES CACHING ##
-ExpiresActive On
-ExpiresByType image/logo2.png "access plus 1 year"
-ExpiresByType styles/main_styles.css "access plus 1 year"
-ExpiresByType styles/bootstrap4/bootstrap.min.js "access plus 1 year"
-ExpiresByType plugins/font-awesome-4.7.0/css/font-awesome.min.css "access plus 1 year"
-ExpiresByType text/css "access plus 1 month"
-ExpiresByType application/pdf "access plus 1 month"
-ExpiresByType text/x-javascript "access plus 1 month"
-ExpiresByType application/x-shockwave-flash "access plus 1 month"
-ExpiresByType image/x-icon "access plus 1 year"
-ExpiresDefault "access plus 2 days"
-## EXPIRES CACHING ##
 
 
