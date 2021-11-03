@@ -92,7 +92,7 @@ include("data/functions.php");
 				
 				<!-- Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider.jpg)"></div>
+					<div class="home_slider_background" style="background-image:url(images/home_slider.webp)"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
