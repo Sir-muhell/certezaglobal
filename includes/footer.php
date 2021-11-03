@@ -30,7 +30,7 @@
 							</ul>
 						</div>
 						<div class="copyright">
-						 &copy; Certeza <script><?php echo date('Y') ?></script> Developed by <a style="color: #fff" href="" target="_blank">Aholu Samuel</a>
+						 &copy; Certeza <script><?php echo date('Y') ?></script> Developed by <a style="color: #fff" href="https://www.google.com/search?q=aholu+samuel&sxsrf=AOaemvJ25dtLrpWTRjXWr9uBNvVJAZfBzA%3A1635950550042&source=hp&ei=1Z-CYcjFPNPI1sQPrsaAkAU&iflsig=ALs-wAMAAAAAYYKt5tVmGLSrpn2MF3InxbOEBFesQy5o&oq=&gs_lcp=Cgdnd3Mtd2l6EAEYADIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJ1AAWABgzTpoA3AAeACAAQCIAQCSAQCYAQCwAQo&sclient=gws-wiz" target="_blank">Aholu Samuel</a>
 						</div>
 					</div>
 				</div>
