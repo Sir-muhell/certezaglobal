@@ -156,7 +156,7 @@
 					            <!--team 1 -->
 					            <div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/bubu.jpg" alt="team">
+					                <img class="img-circle" src="images/bubu.webp" alt="team">
 					                <h6>Oluwabusolami Fumilayo Adepitan </h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Founder/ Lifestyle</h5>
@@ -186,7 +186,7 @@
 					                       <!--team 2 -->
 					            <div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/sope.jpg" alt="team">
+					                <img class="img-circle" src="images/sope.wepb" alt="team">
 					                <h6>Mosope Adeyemi</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Fashion</h5>
@@ -216,7 +216,7 @@
 					                       <!--team 3 -->
 					            <div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/bolu.jpg" alt="team">
+					                <img class="img-circle" src="images/bolu.wepb" alt="team">
 					                <h6>Boluwatifenisola Olajide</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Career</h5>
@@ -243,7 +243,7 @@
 					           
 											<div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/eunice.jpg" alt="team">
+					                <img class="img-circle" src="images/eunice.wepb" alt="team">
 					                <h6>Adesiji-Adelekan .A. Eunice</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Art and Justice</h5>
@@ -270,7 +270,7 @@
 
 						          <div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/hannah.jpg" alt="team">
+					                <img class="img-circle" src="images/hannah.wepb" alt="team">
 					                <h6>Oluwayemisi Hannah Tiwo</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Content Creator/ Graphics Designer</h5>
@@ -296,7 +296,7 @@
 
 						          <div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/temi.jpg" alt="team">
+					                <img class="img-circle" src="images/temi.wepb" alt="team">
 					                <h6>Aanuoluwapo .O. Soleye</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Politics/Society</h5>
@@ -322,7 +322,7 @@
 
 						          <div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/timi.jpg" alt="team">
+					                <img class="img-circle" src="images/timi.wepb" alt="team">
 					                <h6>Oluwatimileyin .O.Adepitan</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Parenting</h5>
@@ -348,7 +348,7 @@
 
 						          <div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/sewanu.jpg" alt="team">
+					                <img class="img-circle" src="images/sewanu.wepb" alt="team">
 					                <h6>Sewanu Zosu</h6>
 														<div id="pastexp">
 															<h5 id="pastexphead">Health and Fitness</h5>
