@@ -86,7 +86,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.jpg" data-speed="0.8"></div>
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.webp" data-speed="0.8"></div>
 		<div class="home_content">
 			<div class="post_title">ABOUT CERTEZA GLOBAL</div>
 		</div>
