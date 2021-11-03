@@ -1,8 +1,8 @@
 <?php
     
     $to = 'samuelaholu15@gmail.com';
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
+    $name = $_POST['fullname'];
+    // $lname = $_POST['lname'];
     $from= $_POST["email"];
     $subject = " $fname $lname from Certeza Global Contact Page.";
     $sub= $_POST["subject"];
@@ -19,7 +19,7 @@
     $logo = 'https://ceretzagobal.com.ng/imges/logo2.png';
     $link = 'https://certezaglobal.com.ng';
 
-$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>$sub - $fname $lname </title></head><link href='https://ceretzagobal.com.ng/plugins/font-awesome-4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+$body = "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>$sub - $name </title></head><link href='https://ceretzagobal.com.ng/plugins/font-awesome-4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 <link rel='stylesheet' type='text/css' href='https://ceretzagobal.com.ng/plugins/OwlCarousel2-2.2.1/owl.carousel.css'>
 <link rel='stylesheet' type='text/css' href='https://ceretzagobal.com.ng/plugins/OwlCarousel2-2.2.1/owl.theme.default.css'>
 <link rel='stylesheet' type='text/css' href='https://ceretzagobal.com.ng/plugins/OwlCarousel2-2.2.1/animate.css'>
@@ -30,7 +30,7 @@ $body .= "<img src='https://ceretzagobal.com.ng//logo2.png'>";
 $body .= "<div class='page_content>";	
 $body .= "<div class='container'><div class='row row-lg-eq-height'>";
 $body .= "<div class='col-lg-9'><div class='post_content'><div class='similar_posts'>";
-$body .= "<div class='post_comment'><div class='post_comment_title'>$fname, your meassage has been delivered successfully<br><br>We Promise to reply to your message as soon as possible.<br>Meanwhile, subscribe to our newsletter.</div><br>";	
+$body .= "<div class='post_comment'><div class='post_comment_title'>$name, your meassage has been delivered successfully<br><br>We Promise to reply to your message as soon as possible.<br>Meanwhile, subscribe to our newsletter.</div><br>";	
 $body .= "</div></div></div></div><br><br><br><br><br>";
 $body .= "<footer class='footer'><div class='container'><div class='row row-lg-eq-height'><div class='col-lg-6 order-lg-1 order-1'><div class='footer_content'>";
 $body .= "<div><a href='./'><img class='' src='https://ceretzagobal.com.ng/images/logo7.png' style='height: 40px;'></a></div>
