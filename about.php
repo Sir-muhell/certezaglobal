@@ -166,14 +166,14 @@
 															<img src="https://i.imgur.com/c9JxYPS.png">
 														</a>
 																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
+														<a class="social-icon social-icon--twitter" id="socialicon" href="#">
 															<img src="https://i.imgur.com/VHB4APa.png">
 														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
+														<a class="social-icon social-icon--linkedin" href="https://linkedin.com/in/adepitan-oluwabusolami-funmilayo-635bab1b5/" id="socialicon">
 															<img src="https://i.imgur.com/egfJ4V2.png">
 														</a>
 																				
-														<a class="social-icon social-icon--instagram" id="socialicon" href="https://instagram.com/oluwabosolami_adepitan?r=nametag">
+														<a class="social-icon social-icon--instagram" id="socialicon" href="https://www.instagram.com/oluwabusolami_adepitan/">
 															<img src="https://i.imgur.com/cgH07pQ.png">
 														</a>
 													</div>  
@@ -222,7 +222,7 @@
 															<h5 id="pastexphead">Career</h5>
 														</div>
 													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
+														<a class="social-icon social-icon--facebook" href="https://www.facebook.com/profile.php?id=100017933266795" id="socialicon">
 															<img src="https://i.imgur.com/c9JxYPS.png">
 														</a>
 																				
@@ -313,7 +313,7 @@
 															<img src="https://i.imgur.com/egfJ4V2.png">
 														</a>
 																				
-														<a class="social-icon social-icon--instagram" id="socialicon">
+														<a class="social-icon social-icon--instagram" href="https://www.instagram.com/my_name_is_orirenitemi/" id="socialicon">
 															<img src="https://i.imgur.com/cgH07pQ.png">
 														</a>
 													</div>  
