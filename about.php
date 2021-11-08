@@ -203,7 +203,7 @@
 															<img src="https://i.imgur.com/egfJ4V2.png">
 														</a>
 																				
-														<a class="social-icon social-icon--instagram" id="socialicon">
+														<a class="social-icon social-icon--instagram" href="https://www.instagram.com/lifewithsope/" id="socialicon">
 															<img src="https://i.imgur.com/cgH07pQ.png">
 														</a>
 													</div>  
