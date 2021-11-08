@@ -200,11 +200,12 @@ if ("$id" == '') {
 					
 						<p class="post_p">Oluwabusolami Funmilayo Adepitan is a skilled writer, eloquent speaker, Influencer, an entrepreneur and Brand Strategist.<br>
 						She is a final year student of the prestigious institution; Lagos State University, studying Banking and Finance.<br>
-						Oluwabusolami Adepitan is the founder and tutor of the Academy LearnWithBubu ; where she help entrepreneurs of her kind know their spot, gain recognition and find fulfillment in business.
+						Oluwabusolami Adepitan is the founder and tutor of the Academy <strong>LearnWithBubu </strong>; where she help entrepreneurs of her kind know their spot, gain recognition and find fulfillment in business.
 						It is her utmost desire for thousand of entrepreneurs to find purpose on earth as well as finding purpose in the business world, in order to grow wealth.
-						She currently authored two ebooks titled Make Them Glue to Your Brand and The Secrets of a Successful Business.<br>
+						She currently authored two ebooks titled <strong>Make Them Glue to Your Brand</strong> and <strong> The Secrets of a Successful Business</strong> .<br>
 						She is the founder and sole owner of Certeza Global and her goal is unveil the giant in women as well as unveiling the confidence in both sex by offering great products and the involvement of various strategies.<br>
-						Oluwabusolami is an Ardent lover of God, who sees to it that the will of God be done on earth.</p><br>
+						Oluwabusolami is an Ardent lover of God, who sees to it that the will of God be done on earth.
+						</p><br>
 
 					
 				<?php }
@@ -212,38 +213,44 @@ if ("$id" == '') {
 				
 				if ( $cat === '2') { ?>
 
-						<div>Orirenitemi Aanuoluwapo Soleye is a 200 Level student of Lagos State University in the department of Political Science Education. <br>
+						<p class="post_p">Orirenitemi Aanuoluwapo Soleye is a 200 Level student of Lagos State University in the department of Political Science Education. <br>
 
 						Her passion for women and children has made her a volunteer for various advocacy initiatives in and outside campus such as Girls 4 Leadership Initiative, WARRIF to mention but a few. Her dedication to serve humanity has propelled her to be a tutor under Excel Minds Academic Group on Campus, group which offers free tutorials to students.
 						Orirenitemi also believes in morality as a weapon against social vices. She upholds the believe that women can be exceedingly great even more than they expect through discovering the essence and versatility of their nature.<br>
 
 						Orirenitemi is a writer who has her articles published online. She is also passionate about the world's politics especially in contemporary times and this led to her winning the Girls 4 Leadership contest which qualified  her as a panelist in a discussion that attracted the participation of other women around the world about the Afghanistan Taliban Rule.<br>
-						She also loves to see children grow under the right guidance. She is a lover of music and nature.</div><br>
+						She also loves to see children grow under the right guidance. She is a lover of music and nature.</p><br>
 				<?php }
 				else {
 			
 				if ($cat === '3') { ?>
 
-						<div>Mosope Oluwatoyin Adeyemi is a creative writer, a student coach, a singer and the author of an E-Book specially written for new university students titled "How to excel in university". <br>
+						<p class="post_p">Mosope Oluwatoyin Adeyemi is a creative writer, a student coach, a singer and the author of an E-Book specially written for new university students titled "How to excel in university". <br>
 
 						She is passionate about making Africans great readers, because according to her; If readers are leaders, then for Africa to lead, we have to read".<br> 
 
 						As a result of this passion, she created a bookclub called "Blackbooklovers" which is centered on reading great books that can help groom people into leaders both in the present and in the future. The bookclub is open to everyone as there is a page on Instagram for it @blackbooklovers.<br>
 
-						She strongly believe that there is hope for the ordinary man, as long as he is willing to fight for the future he deserves.</div> <br>
+						She strongly believe that there is hope for the ordinary man, as long as he is willing to fight for the future he deserves.</p> <br>
 
 
 				<?php }
 				else{
 
 				if ($cat === '4') { ?>
+						<p class="post_p">Olajide Boluwatifenishola Elizabeth is a content writer,a potential chartered accountant and a fashion designer.<br>
 
-					???
+						She's a fervent follower and lover of Christ,who major goal is to see Jesus everywhere on the earth realm.<br>
+
+						Olajide Boluwatifenishola Elizabeth is a student of Lagos State University,studying Accounting.<br>
+						Its her utmost desire to see kids/teens fulfill their purposes and destinies here on earth. She loves to motivate and encourage kids/teens who feels down or dejected. Her joy is found in the joy of other kids.<br>
+							
+						</p><br>
 				<?php }
 				else {
 
 				if ($cat === '5') { ?>
-						<div>Oluwatimileyin Oluwakemi Adepitan is a child of the most High God. She is an advocate of His word and a bearer of His grace.<br>
+						<p class="post_p">Oluwatimileyin Oluwakemi Adepitan is a child of the most High God. She is an advocate of His word and a bearer of His grace.<br>
 
 						She is a student of Lagos State College of Medicine, (LASCOM). Aspiring to become a medical doctor.<br>
 
@@ -251,21 +258,21 @@ if ("$id" == '') {
 						She's written quite a number of poems, some of which are titled: Friends or Foes, Restored and many others.<br>
 						She's a writer of two books which are to be published soon. <br>
 
-						Oluwakemi is a strong advocate for Truth.</div><br>
+						Oluwakemi is a strong advocate for Truth.</p><br>
 				<?php }		
 				else {
 
 				if ($cat === '6') { ?>
-						<div>Adesiji-Adelekan Ademilayo Eunice is a 300 level student of the department of Pharmacology, Therapeutics and Toxicology at Lagos State University College of Medicine.<br>
+						<p class="post_p">Adesiji-Adelekan Ademilayo Eunice is a 300 level student of the department of Pharmacology, Therapeutics and Toxicology at Lagos State University College of Medicine.<br>
 
 						She is a creative writer, a deputy Editor-in-chief at Association of Campus Journalists LASU and an instrumentalist. Her passion for planning and multitasking has made a part of several committees within the university serving in various capacities. Her spirit for welfarism and dedication to humanity has made a volunteer for The Slum Movement and Awesome Treasure Foundations amongst a few.<br>
 
-						Ademilayo is a multi talented individual who believes in using her 5 talents to gain 5 more. She believes that being female is not a limitation but a blessing and encourages female to not morally degrade themselves but to be an epitome of beauty, brains and good morals.</div><br>
+						Ademilayo is a multi talented individual who believes in using her 5 talents to gain 5 more. She believes that being female is not a limitation but a blessing and encourages female to not morally degrade themselves but to be an epitome of beauty, brains and good morals.</p><br>
 				<?php }
 				else {
 
 				if ($cat === '7') { ?>
-						<div></div><br>
+						<p class="post_p"></p><br>
 				<?php	
 			}
 				}
