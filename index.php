@@ -17,7 +17,7 @@ include("data/functions.php");
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
-<link href="manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#262626"> 
 <link rel="icon" type="image/png"  href="images/logo7.png">
 </head>
@@ -505,6 +505,10 @@ include("data/functions.php");
 				</div>
 				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>
+				
+				<script src="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.js"></script>
+				<script src="plugins/masonry/images_loaded.js"></script>
+				<script src="js/custom.js"></script>		
 				<script>
 				  if ('serviceWorker' in navigator) {
 				    console.log("Will the service worker register?");
@@ -517,9 +521,18 @@ include("data/functions.php");
 				  }
 				</script>
 				<script src="service-worker.js">
-				</script>
-				<script src="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.js"></script>
-				<script src="plugins/masonry/images_loaded.js"></script>
-				<script src="js/custom.js"></script>			
+				          // Service worker for Progressive Web App
+				      if ('serviceWorker' in navigator) {
+				          navigator.serviceWorker.register('service-worker.js', {
+				              scope: '.' // THIS IS REQUIRED FOR RUNNING A PROGRESSIVE WEB APP FROM A NON_ROOT PATH
+				          }).then(function(registration) {
+				              // Registration was successful
+				              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				          }, function(err) {
+				              // registration failed :(
+				              console.log('ServiceWorker registration failed: ', err);
+				          });
+				      }
+				</script>	
 	</body>
 </html>
