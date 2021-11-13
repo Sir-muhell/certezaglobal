@@ -7,11 +7,15 @@ if ("$id" == '') {
 }
 ?>
 
-
+<?php 
+	$sql = "SELECT * FROM blog_categories WHERE id = '$id'";
+	$result=mysqli_query($con,$sql);
+	$row = db_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Category | Certeza Global</title>
+<title><?php echo $row['name']; ?> |Category | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Certeza Global">

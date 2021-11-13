@@ -265,7 +265,7 @@ include("data/functions.php");
                                 	?>
 
 	                        
-				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px;" >
 				                  <a href="post?id=<?php echo $row['id']; ?>">
 				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
@@ -279,9 +279,9 @@ include("data/functions.php");
 	                        
 	                    <?php }}
 	                    if ($rowcount == '0') { ?>
-	                    		<div class="card card_small_with_image grid-item" style="margin-top: 90px" >
+	                    		<div class="card card_small_with_image grid-item" class="rounded" style="margin-top: 90px; border-radius: 20px;" ><br>
 				                  <a href="#" style="background-color: black;">
-				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto;">
 				                  </a>
 				                  <div class="card-body">
 				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
