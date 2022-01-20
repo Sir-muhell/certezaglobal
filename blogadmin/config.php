@@ -8,8 +8,8 @@
 
 
 
-	$dbUsername = 'certezag_data';
-	$dbPassword = 'certezapasswordsecured';
+	$dbUsername = 'certezag_blogger';
+	$dbPassword = 'mycertezapasswordissafe';
 	$dbDatabase = 'certezag_data';
 
 	$adminConfig = array(
