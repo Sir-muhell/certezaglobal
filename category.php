@@ -200,7 +200,18 @@ if ("$id" == '') {
 				$row = db_fetch_assoc($result);
 				$cat = $row['id'];
 				
-				if ($cat === '1') { ?>
+				if ($cat === '1') { 
+
+				$sql = "SELECT * FROM users WHERE cat = '1'" ;
+				$result =mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$author1 = $row['about']; 
+
+				if (!empty($author1)) { ?>
+
+					<p class="post_p"><?php echo $author1; ?> </p><br>	
+					<?php 	}else{	?>
+
 					
 						<p class="post_p">Oluwabusolami Funmilayo Adepitan is a skilled writer, eloquent speaker, Influencer, an entrepreneur and Brand Strategist.<br>
 						She is a final year student of the prestigious institution; Lagos State University, studying Banking and Finance.<br>
@@ -212,10 +223,19 @@ if ("$id" == '') {
 						</p><br>
 
 					
-				<?php }
+				<?php }}
 				else {
 				
-				if ( $cat === '2') { ?>
+				if ( $cat === '2') { 
+
+				$sql = "SELECT * FROM users WHERE cat = '2'" ;
+				$result =mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$author2 = $row['about']; 
+
+				if (!empty($author2)) { ?>
+					<p class="post_p"><?php echo $author2; ?> </p><br>	
+					<?php 	}else{	?>
 
 						<p class="post_p">Orirenitemi Aanuoluwapo Soleye is a 200 Level student of Lagos State University in the department of Political Science Education. <br>
 
@@ -224,10 +244,18 @@ if ("$id" == '') {
 
 						Orirenitemi is a writer who has her articles published online. She is also passionate about the world's politics especially in contemporary times and this led to her winning the Girls 4 Leadership contest which qualified  her as a panelist in a discussion that attracted the participation of other women around the world about the Afghanistan Taliban Rule.<br>
 						She also loves to see children grow under the right guidance. She is a lover of music and nature.</p><br>
-				<?php }
+				<?php }}
 				else {
 			
-				if ($cat === '3') { ?>
+				if ($cat === '3') { 
+				$sql = "SELECT * FROM users WHERE cat = '3'" ;
+				$result =mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$author1 = $row['about']; 
+
+				if (!empty($author3)) { ?>
+					<p class="post_p"><?php echo $author3; ?> </p><br>
+					<?php 	}else{	?>
 
 						<p class="post_p">Mosope Oluwatoyin Adeyemi is a creative writer, a student coach, a singer and the author of an E-Book specially written for new university students titled "How to excel in university". <br>
 
@@ -238,10 +266,18 @@ if ("$id" == '') {
 						She strongly believe that there is hope for the ordinary man, as long as he is willing to fight for the future he deserves.</p> <br>
 
 
-				<?php }
+				<?php }}
 				else{
 
-				if ($cat === '4') { ?>
+				if ($cat === '4') { 
+				$sql = "SELECT * FROM users WHERE cat = '4'" ;
+				$result =mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$author1 = $row['about']; 
+
+				if (!empty($author4)) { ?>
+					<p class="post_p"><?php echo $author4; ?> </p><br>	
+					<?php 	}else{	?>
 						<p class="post_p">Olajide Boluwatifenishola Elizabeth is a content writer,a potential chartered accountant and a fashion designer.<br>
 
 						She's a fervent follower and lover of Christ,who major goal is to see Jesus everywhere on the earth realm.<br>
@@ -253,7 +289,15 @@ if ("$id" == '') {
 				<?php }
 				else {
 
-				if ($cat === '5') { ?>
+				if ($cat === '5') { 
+				$sql = "SELECT * FROM users WHERE cat = '5'" ;
+				$result =mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$author5 = $row['about']; 
+
+				if (!empty($author5)) { ?>
+					<p class="post_p"><?php echo $author5; ?> </p><br>
+					<?php 	}else{	?>
 						<p class="post_p">Oluwatimileyin Oluwakemi Adepitan is a child of the most High God. She is an advocate of His word and a bearer of His grace.<br>
 
 						She is a student of Lagos State College of Medicine, (LASCOM). Aspiring to become a medical doctor.<br>
@@ -263,10 +307,18 @@ if ("$id" == '') {
 						She's a writer of two books which are to be published soon. <br>
 
 						Oluwakemi is a strong advocate for Truth.</p><br>
-				<?php }		
+				<?php }}	
 				else {
 
-				if ($cat === '6') { ?>
+				if ($cat === '6') { 
+				$sql = "SELECT * FROM users WHERE cat = '6'" ;
+				$result =mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$author6 = $row['about']; 
+
+				if (!empty($author6)) { ?>
+					<p class="post_p"><?php echo $author6; ?> </p><br>
+					<?php 	}else{	?>
 						<p class="post_p">Adesiji-Adelekan Ademilayo Eunice is a 300 level student of the department of Pharmacology, Therapeutics and Toxicology at Lagos State University College of Medicine.<br>
 
 						She is a creative writer, a deputy Editor-in-chief at Association of Campus Journalists LASU and an instrumentalist. Her passion for planning and multitasking has made a part of several committees within the university serving in various capacities. Her spirit for welfarism and dedication to humanity has made a volunteer for The Slum Movement and Awesome Treasure Foundations amongst a few.<br>
@@ -275,7 +327,15 @@ if ("$id" == '') {
 				<?php }
 				else {
 
-				if ($cat === '7') { ?>
+				if ($cat === '7') { 
+				$sql = "SELECT * FROM users WHERE cat = '7'" ;
+				$result =mysqli_query($con,$sql);
+				$row = db_fetch_assoc($result);
+				$author1 = $row['about']; 
+
+				if (!empty($author7)) { ?>
+					<p class="post_p"><?php echo $author7; ?> </p><br>
+					<?php 	}else{	?>
 						<p class="post_p"></p><br>
 				<?php	
 			}
