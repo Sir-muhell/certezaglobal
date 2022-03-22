@@ -1,7 +1,7 @@
   <?php include('functions/init.php');  
 
 
- $username = $_SESSION['login'] ;
+$username = $_SESSION['login'] ;
  
 if(!isset($_SESSION['login'])) {
     header("location: ./ ");
