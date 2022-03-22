@@ -21,7 +21,7 @@ if(row_count($result) == 0){
    <!-- Required meta tags -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Connect Plus</title>
+   <title>Categories | Certeza Global</title>
    <!-- plugins:css -->
    <link rel="stylesheet" href="./assets/vendors/mdi/css/materialdesignicons.min.css">
    <link rel="stylesheet" href="./assets/vendors/flag-icon-css/css/flag-icon.min.css">
@@ -36,7 +36,7 @@ if(row_count($result) == 0){
    <!-- Layout styles -->
    <link rel="stylesheet" href="./assets/css/style.css">
    <!-- End layout styles -->
-   <link rel="shortcut icon" href="./assets/images/favicon.png" />
+   <link rel="shortcut icon" href="../images/logo7.png" />
    <link href="./assets/summernote/summernote-bs4.css" rel="stylesheet">
  </head>
  <body>
@@ -64,7 +64,9 @@ if(row_count($result) == 0){
                <div class="card">
                  <div class="card-body">
                    <h4 class="card-title">All Categories</h4>
-                   <table class="table table-bordered">
+                   <?php 
+                   if ($id === '1') { ?>
+                     <table class="table table-bordered">
                      <tr>
                       <thead>
                        <th>Category</th>
@@ -87,10 +89,33 @@ if(row_count($result) == 0){
                      </tr>
                      <?php }?>
                    </table>
+                   <?php }else { ?>
+                   <table class="table table-bordered">
+                     <tr>
+                      <thead>
+                       <th>Category</th>
+                       </thead>
+                     </tr>
+                     <?php
+                     $sql = "SELECT * FROM blog_categories ";
+                      $res = query($sql);
+                      foreach($res as $row) { 
+                     ?>
+                     <tr>
+                      <tbody>
+                        <input id="username<?php echo $row['id']; ?>" hidden value="<?php echo $row['name']; ?>">
+                       <td><?php echo $row['name']; ?></td>
+                      
+                       </tbody>
+                     </tr>
+                     <?php }?>
+                   </table>
+                  <?php } ?>
                  </div>
                </div>
              </div>
-             <div class="col-md-6 grid-margin">
+             <?php if ($id === '1') { ?>
+               <div class="col-md-6 grid-margin">
                <div class="card">
                  <div class="card-body">
                    <h4 class="card-title">Add New Category</h4>
@@ -103,6 +128,8 @@ if(row_count($result) == 0){
                  </div>
                </div>
              </div>
+            <?php  } ?>
+             
            </div>
          </div>
          <!-- Modal -->

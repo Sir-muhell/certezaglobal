@@ -1,9 +1,22 @@
+<?php 
+include('functions/init.php'); 
+
+ 
+if(isset($_SESSION['login'])) {
+	$sql = "SELECT * FROM `users` WHERE `user` = '$username'";
+	$result = query($sql);
+	$row = fetch_array($result);
+	$id = $row['id'];
+    header("./home?m=<?php echo $id; ?>");
+}
+
+?>
 <!DOCTYPE html>	
 <html>
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Connect Plus</title>
+    <title>Certeza Global</title>
     <!-- plugins:css -->
 	    <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
 	    <link rel="stylesheet" href="assets/vendors/flag-icon-css/css/flag-icon.min.css">
@@ -18,7 +31,7 @@
 	    <!-- Layout styles -->
 	    <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="../images/logo7.png" />
 </head>
 
 	
@@ -82,10 +95,10 @@
 					</div><br>
 					<div class="col-lg-12 row">
 						<div class="form-group col-lg-6 col-sm-12">
-							<input class="form-control" type="number" name="" id="pnum" placeholder="Phone Number" value="+234" required>
+							<input class="form-control" type="number" name="" id="pnum" placeholder="Phone Number" required>
 						</div>
 						<div class="form-group col-lg-6 col-sm-12">
-							<input class="form-control" type="number" name="" id="wnum" placeholder="Whatapp Number" value="+234" required>
+							<input class="form-control" type="number" name="" id="wnum" placeholder="Whatapp Number"  required>
 						</div>
 					</div><br><br>
 
@@ -130,7 +143,10 @@
 					</div><br>
 					<div class="form-group col-lg-12" style="margin-bottom: 70px;">
 				    	<button type="button" id="submit" style="width: 98%;" class="btn btn-danger" >REGISTER</button>
-				    <div>					
+				    <div>
+				    <div style="margin-right: 60px;">
+				    	 <span style="color: black; cursor: pointer;" onclick="signin();">Sign Up</span>
+				    </div>					
 				</div>
 			</div>
 		</form>

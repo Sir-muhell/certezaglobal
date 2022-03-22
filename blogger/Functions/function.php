@@ -259,7 +259,7 @@ $send = mail($to, $subject, $body, $headers);
 					mail_mailer($email, $activator, $subj, $link);
 
 					//redirect to verify page
-					echo '<script>window.location.href ="verify.php"</script>';	
+					echo '<script>window.location.href ="./verify"</script>';	
 					
 				}  else { 
 

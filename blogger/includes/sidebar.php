@@ -30,7 +30,11 @@
               <div class="collapse" id="article-basics">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="./users">View all Users</a></li>
-                  <li class="nav-item"> <a class="nav-link" href="./register">Add New User</a></li>
+                  <?php 
+                  if ($id === '1') { ?>
+                   <li class="nav-item"> <a class="nav-link" href="./register">Add New User</a></li>
+                  <?php }
+                  ?>
                 </ul>
               </div>
             </li>
@@ -40,6 +44,8 @@
                 <span class="menu-title">Categories</span>
               </a>
             </li>
+            <?php 
+            if ($id === '1') { ?>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                 <span class="icon-bg"><i class="mdi mdi-sale menu-icon"></i></span>
@@ -53,6 +59,8 @@
                 </ul>
               </div>
             </li>
+            <?php } ?>
+            
             <li class="nav-item">
               <a class="nav-link" href="pages/forms/basic_elements.html">
                 <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
