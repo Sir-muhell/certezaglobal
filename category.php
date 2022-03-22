@@ -86,15 +86,13 @@ if ("$id" == '') {
 	<!-- Home -->
 
 	<div class="home">
-		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/category.jpg" ></div>
-		<div class="home_content">
-			<?php 
+		<?php 
 			$sql = "SELECT * FROM blog_categories WHERE id = '$id'";
 			$result=mysqli_query($con,$sql);
 			$row = db_fetch_assoc($result);
 			?>
-
-			
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/cat/<?php echo $row['img']; ?>" ></div>
+		<div class="home_content">	
 			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($row['name']); ?></div>
 			
 			<?php 
@@ -286,7 +284,7 @@ if ("$id" == '') {
 						Its her utmost desire to see kids/teens fulfill their purposes and destinies here on earth. She loves to motivate and encourage kids/teens who feels down or dejected. Her joy is found in the joy of other kids.<br>
 							
 						</p><br>
-				<?php }
+				<?php }}
 				else {
 
 				if ($cat === '5') { 
@@ -324,7 +322,7 @@ if ("$id" == '') {
 						She is a creative writer, a deputy Editor-in-chief at Association of Campus Journalists LASU and an instrumentalist. Her passion for planning and multitasking has made a part of several committees within the university serving in various capacities. Her spirit for welfarism and dedication to humanity has made a volunteer for The Slum Movement and Awesome Treasure Foundations amongst a few.<br>
 
 						Ademilayo is a multi talented individual who believes in using her 5 talents to gain 5 more. She believes that being female is not a limitation but a blessing and encourages female to not morally degrade themselves but to be an epitome of beauty, brains and good morals.</p><br>
-				<?php }
+				<?php }}
 				else {
 
 				if ($cat === '7') { 
@@ -345,7 +343,7 @@ if ("$id" == '') {
 				}
 				}
 				
-
+			}
 
 				}
 

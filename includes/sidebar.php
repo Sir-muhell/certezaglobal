@@ -165,10 +165,18 @@
 
 							<div class="advertising">
 								Advertisement
-								<img style="height: auto; width: 100%;" src="images/ads.webp">
-								<?php  ?>					
+										
+							 	<?php          
+							    $sql = "SELECT * FROM ads";
+							    $result=mysqli_query($con,$sql);
+							    $rowcount=mysqli_num_rows($result);
+						        if(!empty($result)) { 
+                     			foreach($result as $row){
+                       			?>
+
+								<img style="height: auto; width: 100%;" src="<?php echo['image']; ?>">					
 							</div>
-							<?php }} ?>
+							<?php }}}} ?> 
 						</div>
 
 						<!-- Newest Videos -->
@@ -278,7 +286,16 @@
 						<div class="sidebar_section mb-5">
 							<div class="advertising_2">
 								<div><p>Ads</p></div>
-								<img style="height: auto; width: 100%;" src="images/ads.webp">
+								
+								<?php          
+							    $sql = "SELECT * FROM ads";
+							    $result=mysqli_query($con,$sql);
+							    $rowcount=mysqli_num_rows($result);
+						        if(!empty($result)) { 
+                     			foreach($result as $row){
+                       			?>
+								<img style="height: auto; width: 100%;" class="test" src="blogger/<?php echo $row['image']; ?>">
+							<?php }} ?> 
 							</div>
 						</div>
 

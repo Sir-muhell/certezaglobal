@@ -23,7 +23,7 @@
 
 	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-		<div class="logo menu_mm"><a href="./"><img src="images/logo3.png"></a></div>
+		<div class="logo menu_mm"><a href="./"><img src="images/logo_b.jpg"></a></div>
 		<div class="search">
 			<form action="./search" method="post" name="form">
 				<input type="text" name="search" class="header_search_input" placeholder="Search here..." required>
@@ -50,7 +50,7 @@
 				<li class="dropdown menu_mm">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<div style="position: static; overflow: hidden;" class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<?php
 										$sql = "SELECT * FROM blog_categories";
 										$result=mysqli_query($con,$sql);
@@ -58,7 +58,7 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul style="margin-bottom: 15px;"><a class="container" style="color: black" href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
+										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>

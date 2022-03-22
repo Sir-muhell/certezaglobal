@@ -92,7 +92,7 @@ include("data/functions.php");
 				
 				<!-- Slider Item -->
 				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_slider.webp)"></div>
+					<div class="home_slider_background" style="background-image:url(images/cat/<?php echo $row['img']; ?>)"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
@@ -189,12 +189,17 @@ include("data/functions.php");
 						<div class="home_slider_next_container">
 							<strong>Advertisement</strong>
 							<div class="home_slider_next" >
-								<img style="height: auto; width: 100%; " src="images/ads.webp">
-								<div class="home_slider_next_background trans_400"></div>
-								<div class="home_slider_next_content trans_400">
-									<div class="home_slider_next_title">next</div>
-									<div class="home_slider_next_link">About Product Advertised</div>
-								</div>
+								 <?php          
+							    $sql = "SELECT * FROM ads";
+							    $result=mysqli_query($con,$sql);
+							    $rowcount=mysqli_num_rows($result);
+						        if(!empty($result)) { 
+                     			foreach($result as $row){
+                       			?>
+								<img style="height: auto; width: 100%;" class="test" src="blogger/<?php echo $row['image']; ?>">
+								
+								
+								<?php }} ?> 
 							</div>
 						</div>
 
@@ -338,7 +343,7 @@ include("data/functions.php");
 
 						<!-- Blog Section - What's Trending -->
 
-						<div class="blog_section">
+						<!-- <div class="blog_section">
 							<div class="section_panel d-flex flex-row align-items-center justify-content-start">
 								<div class="section_title">What's Trending</div>
 								
@@ -381,23 +386,23 @@ include("data/functions.php");
 				                    </i></small>
 				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
 				                  </div>
-				                </div>
+				                </div> -->
 
 
 									<!-- Small Card With Image -->
-									<div class="card card_small_with_image grid-item">
+									<!-- <div class="card card_small_with_image grid-item">
 										
-									</div>
+									</div> -->
 
 									<!-- Small Card With Background -->
-									<div class="card card_default card_small_with_background grid-item">
+									<!-- <div class="card card_default card_small_with_background grid-item">
 									
 									</div>
 
 								</div>
 								
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Blog Section - Videos -->
 
@@ -533,6 +538,8 @@ include("data/functions.php");
 				              console.log('ServiceWorker registration failed: ', err);
 				          });
 				      }
-				</script>	
+				</script>
+		
+	
 	</body>
 </html>
