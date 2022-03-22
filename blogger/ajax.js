@@ -80,7 +80,7 @@ $(document).ready(function () {
       } else {
         $.ajax({
           type: "post",
-          url: "functions/init.php",
+          url: "Functions/init.php",
           data: { username: username, password: password },
           success: function (data) {
             $("#msg").html(data);
