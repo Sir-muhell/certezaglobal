@@ -1,5 +1,6 @@
 <?php
 include("data/functions.php");
+include("blogger/functions/function.php")
  ?>
 
 <!DOCTYPE html>
