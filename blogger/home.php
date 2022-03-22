@@ -1,14 +1,7 @@
 <?php include('functions/init.php');  
 
 
- $username = $_SESSION['login'] ;
- 
-if(!isset($_SESSION['login'])) {
-    header("location: ./ ");
-}
 
-$id       = $_GET['m'];
-$_SESSION['id'] = $id;
 $sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
 $result = query($sql);
 $row = fetch_array($result);

@@ -185,7 +185,7 @@ $result = query($sql);
 //redirect to verify function
 $subj = "VERIFY YOUR EMAIL";
 //$link = "https://thenfthood.com/./activate?key=".$activator;
-$link = "https://localhost/blogger/./activate?key=".$activator; 
+$link = "https://admin.certezaglobal.com.ng/./activate?key=".$activator; 
 $_SESSION['usermail'] = $email;
 
 mail_mailer($email, $activator, $subj, $link);
@@ -254,7 +254,7 @@ $send = mail($to, $subject, $body, $headers);
 
 					//redirect to verify function
 					$subj    = "VERIFY YOUR EMAIL";
-					$link 	 = "https://localhost/blogger/./activate?key=".$activator;
+					$link 	 = "https://admin.certezaglobal.com.ng/./activate?key=".$activator;
 
 					mail_mailer($email, $activator, $subj, $link);
 
@@ -317,7 +317,7 @@ if(isset($_POST['ffemail'])) {
 
 	//redirect to verify function
 	$subj = "RESET YOUR PASSWORD";
-	$link = "https://thenfthood.com/./recover?key=".$activator;
+	$link = "https://certezaglobal.com.ng/./recover?key=".$activator;
 
 	$_SESSION['email'] = $email;
 
@@ -335,7 +335,7 @@ if(isset($_POST['ffemail'])) {
 function fgmail_mailer($email, $activator, $subj, $link) {
 	
 $to 		= $email;
-$from 		= "noreply@thenfthood.com";
+$from 		= "noreply@certezaglobal.com.ng";
 $cmessage 	= "Best Regards<br/> <i>The Nft Hood</i>";
 
 $headers  = "From: " . $from . "\r\n";
