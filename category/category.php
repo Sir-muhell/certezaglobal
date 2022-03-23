@@ -677,7 +677,7 @@ if ("$name" == '') {
 				                    		<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -688,7 +688,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -699,7 +699,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -710,7 +710,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -773,14 +773,14 @@ if ("$name" == '') {
 					<div class="footer_content">
 						<div class="subscribe_title">About Us</div>
 						<div class="footer_social">
-							<p style="color: #fff">Certeza Global is a blog inspired, to help unveil the confidence in women of different sectors of life that has been ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained... <a href="./about" style="color: grey; border: none;">Read more</a></p>
+							<p style="color: #fff">Certeza Global is a blog inspired, to help unveil the confidence in women of different sectors of life that has been ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained... <a href="../about" style="color: grey; border: none;">Read more</a></p>
 						</div>
 						
 					</div>
 				</div>
 				<div class="col-lg-4 order-lg-1 order-1">
 					<div class="footer_content">
-						<div><a href="./"><img class="" src="images/logo7.png" style="height: 40px;"></a></div>
+						<div><a href="../"><img class="" src="../images/logo7.png" style="height: 40px;"></a></div>
 						<div class="footer_social">
 							<ul style="margin: 50px 0px 50px 0px">
 								<li class="footer_social_facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -791,7 +791,7 @@ if ("$name" == '') {
 							</ul>
 						</div>
 						<div class="copyright">
-						 &copy; Certeza <script><?php echo date('Y') ?></script> Developed by <a style="color: #fff" href="https://www.google.com/search?q=aholu+samuel&sxsrf=AOaemvJ25dtLrpWTRjXWr9uBNvVJAZfBzA%3A1635950550042&source=hp&ei=1Z-CYcjFPNPI1sQPrsaAkAU&iflsig=ALs-wAMAAAAAYYKt5tVmGLSrpn2MF3InxbOEBFesQy5o&oq=&gs_lcp=Cgdnd3Mtd2l6EAEYADIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJ1AAWABgzTpoA3AAeACAAQCIAQCSAQCYAQCwAQo&sclient=gws-wiz" target="_blank">Aholu Samuel</a>
+						 &copy; Certeza Global <?php echo date('Y') ?> Developed by <a style="color: #fff" href="https://www.google.com/search?q=aholu+samuel&sxsrf=AOaemvJ25dtLrpWTRjXWr9uBNvVJAZfBzA%3A1635950550042&source=hp&ei=1Z-CYcjFPNPI1sQPrsaAkAU&iflsig=ALs-wAMAAAAAYYKt5tVmGLSrpn2MF3InxbOEBFesQy5o&oq=&gs_lcp=Cgdnd3Mtd2l6EAEYADIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJ1AAWABgzTpoA3AAeACAAQCIAQCSAQCYAQCwAQo&sclient=gws-wiz" target="_blank">Aholu Samuel</a>
 						</div>
 					</div>
 				</div>
