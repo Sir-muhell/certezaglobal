@@ -58,7 +58,7 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
+										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./category/<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>
