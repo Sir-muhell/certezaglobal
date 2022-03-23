@@ -1,7 +1,7 @@
 <?php include("data/functions.php");
-$id=$_REQUEST['id'];
+$name=$_REQUEST['name'];
 session_start();
-$_SESSION["postid"] = $id;
+
 if (empty($id)) {
 	header("location : error.php");
 }
@@ -20,11 +20,17 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 $add = $_SERVER['REMOTE_ADDR'];
 
 
-$sql = "SELECT * FROM blogs WHERE id = '".$id."'";
+$sql = "SELECT * FROM article WHERE status = 'Publish' AND name = '".$name."'";
 
 $result = mysqli_query($con,$sql);
 $row = db_fetch_assoc($result);
 $view = $row['views'];
+$id = $row['id'];
+$_SESSION["postid"] = $id;
+$rowcouunt=mysqli_num_rows($row);
+if ($rowcount === '0') {
+	header("location : ./");
+}
 
 //check if the post has been viewed once
 $sqla = "SELECT * FROM views WHERE p_id = '".$id."' AND address = '".$add."' ";
@@ -94,7 +100,7 @@ if ($rowcounta == '0') {
 							<ul>
 								<li ><a href="./">Home</a></li>
 								<?php
-										$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
+										$sql = "SELECT * FROM article ORDER BY id DESC LIMIT 1";
 										$result=mysqli_query($con,$sql);
 										$row = db_fetch_assoc($result);
 										$rowcount=mysqli_num_rows($result);	
@@ -103,7 +109,7 @@ if ($rowcounta == '0') {
 								<?php }
 
 								else { ?>
-										<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
+										<li><a href="./<?php echo $row['name']; ?>">Latest Articles</a></li>
 								<?php 
 								}	 
 								?>
@@ -118,7 +124,7 @@ if ($rowcounta == '0') {
 										 if(!empty($results)) { 
 										foreach($results as $rows){ 
 										?>
-										<ul><a class="container" style="color: black" href="./category?id=<?php echo  $rows['id'];?>"><?php echo $rows['name']; ?></a></ul>
+										<ul><a class="container" style="color: black" href="./category/<?php echo  $rows['name'];?>"><?php echo $rows['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>
@@ -136,12 +142,12 @@ if ($rowcounta == '0') {
 		<div class="home_content">
 			<div class="post_category trans_200"><a href="./category?id=<?php echo $id;?>" class="trans_200"><?php echo $rows['name'];?></a></div>
 			<?php
-			$sql = "SELECT * FROM blogs WHERE id = ".$id." ";
+			$sql = "SELECT * FROM article WHERE name = ".$name." ";
 			$result=mysqli_query($con,$sql);
 			$rowcount=mysqli_num_rows($result);
 			$row = db_fetch_assoc($result);
 			?>
-			<div class="post_title"><?php echo $row['title'];?></div>
+			<div class="post_title"><?php echo $row['titles'];?></div>
 		</div>
 	</div>
 	

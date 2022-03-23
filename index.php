@@ -37,7 +37,7 @@ include("data/functions.php");
 							<ul>
 								<li class="active"><a href="./">Home</a></li>
 								<?php
-										$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
+										$sql = "SELECT * FROM article WHERE status = 'Publish' ORDER BY id DESC LIMIT 1";
 										$result=mysqli_query($con,$sql);
 										$row = db_fetch_assoc($result);
 										$rowcount=mysqli_num_rows($result);	
@@ -46,7 +46,7 @@ include("data/functions.php");
 								<?php }
 
 								else { ?>
-										<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
+										<li><a href="./<?php echo $row['name']; ?>">Latest Articles</a></li>
 								<?php 
 								}	 
 								?>
@@ -61,7 +61,7 @@ include("data/functions.php");
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul><a class="container" style="color: black" href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
+										<ul><a class="container" style="color: black" href="./category/<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>
@@ -98,16 +98,16 @@ include("data/functions.php");
 							<div class="row">
 								<div class="col">
 									<div class="home_slider_content">
-										<div class="home_slider_item_category trans_200"><a href="./category?id=<?php echo $row['id']; ?>" class="trans_200"><?php echo $row['name']; ?></a></div>
+										<div class="home_slider_item_category trans_200"><a href="./category/<?php echo $row['name']; ?>" class="trans_200"><?php echo $row['name']; ?></a></div>
 										<br>
 										<?php 
-										$sqls = "SELECT * FROM blogs ORDER BY rand() DESC";
+										$sqls = "SELECT * FROM article WHERE status = 'Publish' ORDER BY rand() DESC";
 										$results=mysqli_query($con,$sqls);
 										$rows = db_fetch_assoc($results);
 										$rowcount=mysqli_num_rows($results);
 										?>
 										<div class="home_slider_item_title">
-											<a href="./post?id=<?php echo $rows['id']; ?>"><?php echo $rows['title'];?></a><br>
+											<a href="./<?php echo $rows['name']; ?>"><?php echo $rows['name'];?></a><br>
 											<?php if ($rowcount == '0') { ?>
 											<a href="#">Welcome to Certeza Global</a><br>
 										<?php 	} ?>
@@ -115,11 +115,18 @@ include("data/functions.php");
 											<?php if ($rowcount == '0') {
 												echo "Adepitan Oluwabusolami";
 											 } ?>
-											 </i><?php echo ucwords($rows['author']);?></h4>
+											 <?php
+											$author =  $rows['author'];   
+											$sql = "SELECT * FROM users WHERE id = '$author'";
+											$resultsd=mysqli_query($con,$sql);
+											$rowsd = db_fetch_assoc($resultsd);
+
+		                                	?>
+											 </i><?php echo ucwords($rowsd['name']);?></h4>
 										</div>
 										<div class="home_slider_item_link">
 											<?php if ($rowcount > '0') { ?>
-											<a href="./post?id=<?php echo $rows['category']; ?>" class="trans_200">
+											<a href="./<?php echo $rows['name']; ?>" class="trans_200">
 											<?php } else {
 												if ($rowcount == '0') { ?>
 											<a href="#" class="trans_200">
@@ -144,7 +151,7 @@ include("data/functions.php");
 							<div class="row d-flex flex-row align-items-end">
 
 								<?php
-								$sql = "SELECT * FROM blogs ORDER BY rand() DESC LIMIT 3" ;
+								$sql = "SELECT * FROM article WHERE status = 'Publish' ORDER BY rand() DESC LIMIT 3" ;
 								$result=mysqli_query($con,$sql);
 								$row = db_fetch_assoc($result);
 								$rowcount=mysqli_num_rows($result);
@@ -155,8 +162,8 @@ include("data/functions.php");
 
 								<!-- Similar Post -->
 								<div class="col-lg-3 col-md-6 similar_post_col">
-									<div class="similar_post trans_200" style="background-image: url(blogadmin/images/<?php echo $row['photo']; ?>); background-size: 100%; background-repeat: repeat-x;">
-										<a href="./post?id=<?php echo $row['category']; ?>"><strong><?php echo $row['title'];?></strong></a>
+									<div class="similar_post trans_200" style="background-image: url(blogger/assets/images/article_images/<?php echo $row['image']; ?>); background-size: 100%; background-repeat: repeat-x;">
+										<a href="./<?php echo $row['name']; ?>"><strong><?php echo $row['titles'];?></strong></a>
 									</div>
 								</div>
 								<?php }}
@@ -186,7 +193,17 @@ include("data/functions.php");
 							</div>
 						</div>
 						
-						<div class="home_slider_next_container">
+						
+
+					</div>
+				</div>
+
+				
+
+			<?php }}?>
+
+			</div>
+			<div class="home_slider_next_container">
 							<strong>Advertisement</strong>
 							<div class="home_slider_next" >
 								 <?php          
@@ -202,16 +219,6 @@ include("data/functions.php");
 								<?php }} ?> 
 							</div>
 						</div>
-
-					</div>
-				</div>
-
-				
-
-			<?php }}?>
-
-			</div>
-
 			<div class="custom_nav_container home_slider_nav_container">
 				<div class="custom_prev custom_prev_home_slider">
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -259,10 +266,11 @@ include("data/functions.php");
 									
 
 									<?php   
-									$sql = "SELECT * FROM blogs LIMIT 0, 3";
+									$sql = "SELECT * FROM article WHERE status = 'Publish' ORDER BY views DESC LIMIT 0, 3";
 									$result=mysqli_query($con,$sql);
 									$row = db_fetch_assoc($result);
 									$rowcount=mysqli_num_rows($results);
+									
 									if(!empty($result)) { 
 									foreach($result as $row){ 
 
@@ -271,60 +279,25 @@ include("data/functions.php");
 
 	                        
 				                <div class="card card_small_with_image grid-item" style="margin-top: 90px;" >
-				                  <a href="post?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  <a href="./<?php echo $row['name']; ?>">
+				                      <img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" style="float: right;" > <span><?php echo $row['views']; ?></span>
+				                    <div class="card-title card-title-small"><a href="./<?php echo $row['name']; ?>"><?php echo $row['titles']; ?></a></div>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tag']; ?></span> <i class="fa fa-eye ml-3" style="float: right;" > <span><?php echo $row['views']; ?></span>
 				                    </i></small>
-				                    <small class="post_meta mt-1"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by <?php
+				                    $author =  $row['author'];
+									$sql = "SELECT * FROM users WHERE id = '$author'";
+									$results=mysqli_query($con,$sql);
+									$roll = db_fetch_assoc($results);
+				                     echo ucwords($roll['name']); ?></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
 	                    <?php }}
-	                    if ($rowcount == '0') { ?>
-	                    		<div class="card card_small_with_image grid-item" class="rounded" style="margin-top: 90px; border-radius: 20px;" ><br>
-				                  <a href="#" style="background-color: black;">
-				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto;">
-				                  </a>
-				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
-				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
-				                    </i></small>
-				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
-				                  </div>
-				                </div>
-
-				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="#" style="background-color: black;">
-				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
-				                  </a>
-				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
-				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
-				                    </i></small>
-				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
-				                  </div>
-				                </div>
-
-				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="#" style="background-color: black;">
-				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
-				                  </a>
-				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
-				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
-				                    </i></small>
-				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
-				                  </div>
-				                </div>
-	                    <?php
-	                    }
-
 	                     ?>
-
-								
+	                    		
 
 									<!-- Small Card With Image -->
 									<div class="card card_small_with_image grid-item">
@@ -418,7 +391,7 @@ include("data/functions.php");
 								<div class="grid clearfix">
 									
 									<?php   
-									$sql = "SELECT * FROM blogs LIMIT 0, 3";
+									$sql = "SELECT * FROM article WHERE status = 'Publish' LIMIT 0, 3";
 									$result=mysqli_query($con,$sql);
 									$row = db_fetch_assoc($result);
 									$rowcount=mysqli_num_rows($results);
@@ -430,58 +403,28 @@ include("data/functions.php");
 
 	                        
 				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="post?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                  <a href="./<?php echo $row['name']; ?>">
+				                      <img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" style="float: right;"> <span><?php echo $row['views']; ?></span>
+				                    <div class="card-title card-title-small"><a href="./<?php echo $row['name']; ?>"><?php echo $row['titles']; ?></a></div>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tag']; ?></span> <i class="fa fa-eye ml-3" style="float: right;"> <span><?php echo $row['views']; ?></span>
 				                    </i></small>
-				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
+				                    <?php
+				              		
+				                    ?>
+				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php
+				                    $author =  $row['author'];
+									$sqls = "SELECT * FROM users WHERE id = '$author'";
+									$results=mysqli_query($con,$sqls);
+									$rolls = db_fetch_assoc($results);
+				                     echo ucwords($rolls['name']); ?></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
 	                    <?php }} 
-	                    if ($rowcount == '0') { ?>
-	                    	<div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="#" style="background-color: black;">
-				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
-				                  </a>
-				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
-				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
-				                    </i></small>
-				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
-				                  </div>
-				                </div>
-
-				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="#" style="background-color: black;">
-				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
-				                  </a>
-				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
-				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
-				                    </i></small>
-				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
-				                  </div>
-				                </div>
-
-				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="#" style="background-color: black;">
-				                      <img src="images/logo6.png" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
-				                  </a>
-				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="#">Nothing to Show Yet</a></div>
-				                    <small><i class="fa fa-tag"></i> <i class="fa fa-eye ml-3" style="float: right;" >
-				                    </i></small>
-				                    <small class="post_meta mt-1"><a href="#"><i>by </i></a></small>
-				                  </div>
-				                </div>
-
-	                    <?php 	
-	                    }
-	                    ?>
+	                     ?>
+	                    
 
 								
 

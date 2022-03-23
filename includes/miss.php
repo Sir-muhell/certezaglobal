@@ -13,7 +13,7 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<li style="margin-top: 20px"><a href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></li>
+										<li style="margin-top: 20px"><a href="category/<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></li>
 										<?php }} ?>
 									</ul>
 								</div>
@@ -28,7 +28,7 @@
 												 if(!empty($result)) { 
 												foreach($result as $row){ 
 												?>
-												<li><a href="./category?id=<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></li>
+												<li><a href="category/<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></li>
 												<?php }} ?>
 											</ul>
 										</li>

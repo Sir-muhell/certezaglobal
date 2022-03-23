@@ -126,7 +126,7 @@ $wnum	 		= clean($_POST['wnum']);
 $edit	 		= clean($_POST['edit']);
 $niche	 		= clean($_POST['niche']);
 $spec	 		= clean($_POST['spec']);
-$stength	 	= clean($_POST['strength']);
+$strength	 	= clean($_POST['strength']);
 $weak	 		= clean($_POST['weak']);
 $fbook	 		= clean($_POST['fbook']);
 $linkedin	 	= clean($_POST['linkedin']);
@@ -150,7 +150,7 @@ if($pword != $cpword) {
 			echo "Password doesn't match!";
 			
 		} else {
-			register($fname, $uname, $email, $pword, $pnum, $wnum, $niche, $spec, $fbook, $linkedin, $ig, $twitter);
+			register($fname, $uname, $email, $pword, $pnum, $wnum, $niche, $spec, $fbook, $linkedin, $ig, $twitter, $edit, $weak, $strength);
 		}
 	}
 	}
@@ -160,7 +160,7 @@ if($pword != $cpword) {
 	
 
 /** REGISTER USER **/
-function register($fname, $uname, $email, $pword, $pnum, $wnum, $niche, $spec, $fbook, $linkedin, $ig, $twitter) {
+function register($fname, $uname, $email, $pword, $pnum, $wnum, $niche, $spec, $fbook, $linkedin, $ig, $twitter, $edit, $weak, $strength) {
 
 	$fname 		= escape($fname);
 	$uname 		= escape($uname);
@@ -174,12 +174,15 @@ function register($fname, $uname, $email, $pword, $pnum, $wnum, $niche, $spec, $
 	$linkedin 	= escape($linkedin);
 	$ig 		= escape($ig);
 	$twitter 	= escape($twitter);
+	$edit = escape($edit);
+	$strength = escape($strength);
+	$weak = escape($weak);
 
 	$activator = token_generator();
 	$date = date('Y:m:d');
 	
 $sql = "INSERT INTO users(`name`, `user`, `email`, `password`, `phone`, `w_num`, `niche`, `spec`, `facebook`, `linkedin`, `instagram`, `twitter`, `date_reg`, `activator`, `activated`, `verified`, `pix`)";
-$sql.= " VALUES('$fname', '$uname', '$email', '$pword', '$pnum', '$wnum', '$niche', '$spec', '$fbook', '$linkedin', '$ig', '$twitter', '$date', '$activator', 0 , 2, 'assets/images/logo-mini.svg')";
+$sql.= " VALUES('$fname', '$uname', '$email', '$pword', '$pnum', '$wnum', '$niche', '$spec', '$fbook', '$linkedin', '$ig', '$twitter', '$date', '$activator', 0 , 2, '../images/logo7.png')";
 $result = query($sql);
 
 //redirect to verify function
@@ -189,6 +192,12 @@ $link = "https://admin.certezaglobal.com.ng/./activate?key=".$activator;
 $_SESSION['usermail'] = $email;
 
 mail_mailer($email, $activator, $subj, $link);
+$sqls = "SELECT * FROM `users` WHERE `user` = '1'";
+$results = query($sqls);
+$rows = fetch_array($results);
+$admin = $rows['email'];
+
+mail_admin($fname, $weak, $strength, $edit, $admin, $niche, $spec);
 
 //redirect to verify page
 echo 'Loading...Please Wait!';
@@ -203,7 +212,6 @@ function mail_mailer($email, $activator, $subj, $link) {
 
 $to 		= $email;
 $from 		= "noreply@certezaglobal.com.ng";
-$cmessage 	= "Best Regards<br/> <i>Nft Hood</i>";
 
 $headers  = "From: " . $from . "\r\n";
 $headers .= "Reply-To: ". $from . "\r\n";
@@ -221,6 +229,37 @@ $url  = '';
 $body = "<p style='margin-left: 45px; margin-top: 34px; text-align: left; font-size: 17px;'>Hi there! <br/> Thank you for signing up.;</p>";
 $body .= "<p style='margin-left: 45px; text-align: left;'><a target='_blank' href='{$link}' style='color: #ff0000; text-decoration: none'><b>Click here to activate your email Address</b></a></p>
 <br/>";
+
+$send = mail($to, $subject, $body, $headers);
+}
+
+function mail_admin($fname, $weak, $strength, $edit, $admin, $niche, $spec) {
+
+$to 		= $admin;
+$from 		= "noreply@certezaglobal.com.ng";
+
+$headers  = "From: " . $from . "\r\n";
+$headers .= "Reply-To: ". $from . "\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
+$headers .= "X-Priority: 1 (Highest)\n";
+$headers .= "X-MSMail-Priority: High\n";
+$headers .= "Importance: High\n";
+
+$subject = 'Approve User Account';
+$fname = $fname;
+$weak = $weak;
+$edit = $edit;
+$niche = $niche;
+$strength = $strength;
+
+
+$body = "<p style='margin-left: 45px; margin-top: 34px; text-align: left;'>Hello Administrator, <br/> {$fanme} has Signed up to be a writer in Certeza Global. <br/> The following are {$fname}'s details you need to know. <br/> </p>";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Niche: {$niche}</p><br/>";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Specialization: {$spec}</p><br/>";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Editors used: {$edit}</p><br/>";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Strength: {$strength}</p><br/>Weakness: {$weak}";
+$body .= "<p style='margin-left: 45px; text-align: left;'>To approve the {$fname}, locate user on your dashboard and click on the green tick, https://admin.certezaglobal.com.ng/users</p><br/>";
 
 $send = mail($to, $subject, $body, $headers);
 }
@@ -655,45 +694,45 @@ echo "Email Sent!";
 }
 
 
-// //Upload new article 
-// if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && isset($_POST['status']) && isset($_POST['content']) && isset($_POST['pix'])) {
+//Upload new article 
+if (isset($_POST['']) && isset($_POST['tags']) && isset($_POST['cat']) && isset($_POST['status']) && isset($_POST['content']) && isset($_POST['pix'])) {
 
 	
-// 	   	$user = $_SESSION['login'];
-// 	   	//get author's id
-// 	   	$sql = "SELECT * FROM `users` WHERE `user` = '$user'";
-// 		$result = query($sql);
-// 		$row = fetch_array($result);
-// 		$author_id = $row['id'];
+	   	$user = $_SESSION['login'];
+	   	//get author's id
+	   	$sql = "SELECT * FROM `users` WHERE `user` = '$user'";
+		$result = query($sql);
+		$row = fetch_array($result);
+		$author_id = $row['id'];
 
-// 		$title 		= $_POST['title'];
-// 		//check if same title exist
-// 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
-// 		$results = query($sqll);
-// 		if (row_count($results) > 0) {
-//     	//asign a new post_url 
-//       	$url = str_replace(' ', '-', $title).rand(0, 99);
-//     	} else {
-//    	 	$url = str_replace(' ', '-', $title); 
-//     	}
-// 		$tags 	= $_POST['tags'];
-// 		$cat 		= $_POST['cat'];
-// 		$status 	= $_POST['status'];
-// 		$content 		= $_POST['content']; 
-// 		$date_reg = date('D, jS M, Y');
-// 		$image = $_POST['pix'];
+		$title 		= $_POST['title'];
+		//check if same title exist
+		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
+		$results = query($sqll);
+		if (row_count($results) > 0) {
+    	//asign a new post_url 
+      	$url = str_replace(' ', '-', $title).rand(0, 99);
+    	} else {
+   	 	$url = str_replace(' ', '-', $title); 
+    	}
+		$tags 	= $_POST['tags'];
+		$cat 		= $_POST['cat'];
+		$status 	= $_POST['status'];
+		$content 		= $_POST['content']; 
+		$date_reg = date('D, jS M, Y');
+		$image = $_POST['pix'];
 
-//         // Insert article into db 
-//         $sqlt = "INSERT INTO article(`titles`, `tag`, `cat`, `status`, `content`, `image`, `date_uploaded`, `author`, `views`, `name`)";
-// 		$sqlt.= " VALUES('$title', '$tags', '$cat', '$status', '$content', '$image', '$date_reg', '$author_id', '0', '$url')";
-// 		$result = query($sqlt);
-// 		if ($result != 1) {
-// 			echo "Error! Please Consult Administrator.";
-// 		} else {
-// 			echo "Article Uploaded Successful!";
-// 			echo '<script>window.location.href ="./articles" </script>';
-// 		}
-// }
+        // Insert article into db 
+        $sqlt = "INSERT INTO article(`titles`, `tag`, `cat`, `status`, `content`, `image`, `date_uploaded`, `author`, `views`, `name`)";
+		$sqlt.= " VALUES('$title', '$tags', '$cat', '$status', '$content', '$image', '$date_reg', '$author_id', '0', '$url')";
+		$result = query($sqlt);
+		if ($result != 1) {
+			echo "Error! Please Consult Administrator.";
+		} else {
+			echo "Article Uploaded Successful!";
+			echo '<script>window.location.href ="./articles" </script>';
+		}
+}
 
 // //Upload new article 
 // if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && isset($_POST['status']) && isset($_POST['content']) && isset($_POST['pix'])) {
@@ -867,7 +906,7 @@ if (!empty($_FILES["user_image"]["name"])) {
 }	    	
 }
 
-//profile image for register from dashboard
+//ad Image
 if (!empty($_FILES["ad_image"]["name"])) {
 	
 	$target_dir = "../assets/images/ad_image/";

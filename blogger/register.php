@@ -15,8 +15,8 @@ if(row_count($result) == 0){
   header("location: ./ ");
 }
 
-if ($id !=== '1') {
- header("./home?m=<?php echo $id; ?>")
+if ($id !== '1') {
+ header("./home?m=<?php echo $id; ?>");
 }
 ?>
 <!DOCTYPE html>
@@ -32,8 +32,6 @@ if ($id !=== '1') {
    <link rel="stylesheet" href="./assets/vendors/css/vendor.bundle.base.css">
    <!-- endinject -->
    <!-- Plugin css for this page -->
-   <link rel="stylesheet" href="./assets/vendors/select2/select2.min.css">
-   <link rel="stylesheet" href="./assets/vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
    <!-- End plugin css for this page -->
    <!-- inject:css -->
    <!-- endinject -->
@@ -108,19 +106,19 @@ if ($id !=== '1') {
                    <form class="forms-sample">
                      <div class="form-group">
                        <label for="exampleInputUsername1">FaceBook</label>
-                       <input type="text" class="form-control" id="fb" >
+                       <input type="text" class="form-control" id="fb" value="https://facebook.com/" >
                      </div>
                      <div class="form-group">
                        <label for="exampleInputEmail1">LinkedIn</label>
-                       <input type="text" class="form-control" id="linkedin" >
+                       <input type="text" class="form-control" id="linkedin" value="https://linkedin.com/">
                      </div>
                      <div class="form-group">
                        <label for="exampleInputUsername1">Instagram</label>
-                       <input type="text" class="form-control" id="ig" >
+                       <input type="text" class="form-control" id="ig" value="https://instagram.com/">
                      </div>
                      <div class="form-group">
                        <label for="exampleInputPassword1">Twitter</label>
-                       <input type="text" class="form-control" id="twitter" >
+                       <input type="text" class="form-control" id="twitter" value="https://twitter.com/" >
                      </div>
                    </form>
                  </div>
@@ -142,41 +140,7 @@ if ($id !=== '1') {
                  </div>
                </div>
              </div>
-             <div class="col-12 grid-margin stretch-card">
-               <div class="card">
-                 <div class="card-body">
-                   <h4 class="card-title">Upload Profile Picture </h4>
-                   <p class="card-description"> </p>
-                   <form class="forms-sample">
-                     <div class="form-group">
-                           <label>Upload Picture</label>
-                               <div class="input-group col-xs-12">
-                                   <input type="file"  class="form-control file-upload-info" id="user_image" name="user_image" placeholder="Upload Image">
-                                   <span class="input-group-append">
-                                     <button class="file-upload-browse btn btn-primary" onclick="picture()" type="button">Upload
-                                     </button>
-                                   </span>
-                                   <br>
-                                   <div id="show_image"></div>
-                               </div>
-                           
-                       </div>
-
-
-                     <!-- <div class="form-group">
-                       <label>File upload</label>
-                       <div class="input-group col-xs-12">
-                         <input type="text"  class="form-control file-upload-info" id="propix" disabled placeholder="Upload Image">
-                         <span class="input-group-append">
-                           <button class="file-upload-browse btn btn-primary" id="propix" type="button">Upload</button>
-                         </span>
-                       </div>
-                     </div>
-                     <button type="button" id="pix" class="btn btn-primary mr-2">Update Picture</button> -->
-                   </form>
-                 </div>
-               </div>
-             </div>
+            
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
@@ -197,25 +161,10 @@ if ($id !=== '1') {
            </div>
          </div>
          <!-- Modal -->
-         <div class="modal fade" id="modal">
-             <div class="modal-dialog modal-dialog-centered" role="document">
-                 <div style="background: #FE5F75; color: #ff0000; border-radius: 20px 20px 20px 20px;" class="modal-content">
-                     <div class="modal-body">
-                         <div id="msg" style="color: white;" class="text-center"></div>
-                     </div>
-                 </div>
-             </div>
-         </div>
+        <?php include('includes/modal.php'); ?>
          <!-- content-wrapper ends -->
          <!-- partial:../../partials/_footer.html -->
-         <footer class="footer">
-           <div class="footer-inner-wraper">
-             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-               <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
-             </div>
-           </div>
-         </footer>
+         <?php include('includes/foot.php') ?>
          <!-- partial -->
        </div>
        <!-- main-panel ends -->
@@ -226,9 +175,7 @@ if ($id !=== '1') {
    <!-- plugins:js -->
    <script src="./assets/vendors/js/vendor.bundle.base.js"></script>
    <!-- endinject -->
-   <!-- Plugin js for this page -->
-   <script src="./assets/vendors/select2/select2.min.js"></script>
-   <script src="./assets/vendors/typeahead.js/typeahead.bundle.min.js"></script>
+   
    <!-- End plugin js for this page -->
    <!-- inject:js -->
    <script src="./assets/js/off-canvas.js"></script>
@@ -249,32 +196,7 @@ if ($id !=== '1') {
       
     });
     </script>
-    <script>
-    function picture(){
-    var picture = new FormData();
-    var files = $("#user_image").prop("files")[0];
-    picture.append("user_image", files);
-
-    if (files == null || files == "") {
-      $("#msg").html("Kindly select a picture");
-    } else {
-      $.ajax({
-        type: "post",
-        url: "functions/init.php",
-        data: picture,
-        contentType: false, 
-        processData: false,
-        success: function (data) {
-          $("#show_image").html(data);
-        },
-      });
-    }
-    if (files == null || files == "") {
-      $("#modal").modal();
-    }
     
-  }
-    </script>
    <!-- End custom js for this page -->
  </body>
 </html>

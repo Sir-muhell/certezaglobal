@@ -16,11 +16,14 @@ RewriteCond %{HTTP_HOST} ^certezaglobal\.com.ng [NC]
 RewriteCond %{SERVER_PORT} 80
 RewriteRule ^(.*)$ https://certezaglobal.com.ng/$1 [R,L]
 
-RewriteEngine On    # Turn on the rewriting engine
+RewriteEngine On    
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule    ^([A-Za-z0-9_-]+)$    post.php?id=$1    [NC,L]    # Handle page requests
+RewriteRule ^([\w-]+)$ post.php?name=$1 [L]
 
-
+RewriteEngine On    
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^category/([\w-]+)$ category/category.php?name=$1 [L]
 
 

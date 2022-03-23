@@ -82,7 +82,12 @@ if(empty($rowe)){
                     
                     <form class="forms-sample" id="case">
                       <h4 class="card-title">Edit Article</h4>
-                      <h6 style="color: red;">You are able to edit this Article because of Administative Priviledge</h6>
+                      <?php
+                        if ($id !== $author_id) { ?>
+                          <h6 style="color: red;">You are able to edit this Article because of Administative Priviledge</h6>
+                        <?php }
+                       ?>
+                      
                       <div class="form-group">
                         <label for="exampleInputName1">Title</label>
                         <input type="text" class="form-control" id="ntitle" value="<?php echo $rowe['titles']; ?>" placeholder="Name">
@@ -182,25 +187,10 @@ if(empty($rowe)){
             </div>
           </div>
           <!-- Modal -->
-          <div class="modal fade" id="modal">
-              <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div style="background: #FE5F75; color: #ff0000; border-radius: 20px 20px 20px 20px;" class="modal-content">
-                      <div class="modal-body">
-                          <div id="msg" style="color: white;" class="text-center"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+          <?php include('includes/modal.php'); ?>
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="footer-inner-wraper">
-              <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap dashboard templates</a> from Bootstrapdash.com</span>
-              </div>
-            </div>
-          </footer>
+          <?php include('includes/foot.php'); ?>
           <!-- partial -->
         </div>
         <!-- main-panel ends -->

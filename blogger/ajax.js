@@ -499,7 +499,7 @@ $("#esend").click(function () {
 
   });
 
-    //signup for a user for admin dashboard
+    //signup for a user from admin dashboard
   $("#new_user").click(function () {
     var fname   = $("#fname").val();
     var uname   = $("#uname").val();
@@ -515,8 +515,11 @@ $("#esend").click(function () {
     var ig      = $("#ig").val();
     var twitter = $("#twitter").val();
     var image   = $('#pic').val();
+    var edit    = 'Empty';
+    var strength = 'Empty';
+    var weak     = 'Empty';
 
-
+    // Using same sign up function in functions.php
     if (uname == "" || uname == null) {
       $("#msg").html("Please input your Username");
     } else {
@@ -529,20 +532,17 @@ $("#esend").click(function () {
           if (pword != cpword) {
             $("#msg").html("Password does not match");
           } else {
-            if (image == "" || image == null) {
-              $("#msg").html("Password does not match");
-            } else {
               if (wnum == "" || wnum == null) {
-                $("#msg").html("Password does not match");
+                $("#msg").html("Input WhatsApp Number");
               } else {
-                if (password == "" || password == null) {
-                  $("#msg").html("Password does not match");
+                if (niche == "" || niche == null) {
+                  $("#msg").html("Input Niche");
                 } else {
-                  if (password == "" || password == null) {
-                    $("#msg").html("Password does not match");
+                  if (spec == "" || spec == null) {
+                    $("#msg").html("input Specification");
                   } else {
-                    if (password == "" || password == null) {
-                      $("#msg").html("Password does not match");
+                    if (pnum == "" || pnum == null) {
+                      $("#msg").html("Input Phone Number");
                     } else {
                        $("#msg").html("Loading...");
 
@@ -557,15 +557,16 @@ $("#esend").click(function () {
                                   cpword: cpword,
                                   pnum  : pnum,
                                   wnum  : wnum,
-                                  edit  : edit,
                                   niche : niche,
                                   spec  : spec,
-                                  strength : strength,
-                                  weak   : weak,
                                   fbook : fbook,
                                   linkedin : linkedin,
                                   ig    : ig,
-                                  twitter : twitter
+                                  twitter : twitter,
+                                  image : image,
+                                  edit : edit,
+                                  strength : strength,
+                                  weak : weak
                                 },
                                 success: function (data) {
                                   $("#msg").html(data);
@@ -574,7 +575,7 @@ $("#esend").click(function () {
                     }
                   }
                 }
-              }}}}}
+              }}}}
 
     }
    $("#modal").modal();

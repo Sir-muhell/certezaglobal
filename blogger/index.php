@@ -1,16 +1,15 @@
 <?php 
 include('functions/init.php'); 
-
-$username = $_SESSION['login'];
-if(!empty($username)) {
+if (isset($_SESSION['login'])) {
+	$username = $_SESSION['login'];
 	$sql = "SELECT * FROM `users` WHERE `user` = '$username'";
 	$result = query($sql);
 	$row = fetch_array($result);
 	$id = $row['id'];
-    
-}else{
 	header("./home?m=<?php echo $id; ?>");	
+
 }
+
 
 ?>
 <!DOCTYPE html>	
@@ -156,15 +155,7 @@ if(!empty($username)) {
     
 	</center>
 	<!-- Modal -->
-    <div class="modal fade" id="modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div style="background: #FE5F75; color: #ff0000; border-radius: 20px 20px 20px 20px;" class="modal-content">
-                <div class="modal-body">
-                    <div id="msg" style="color: white;" class="text-center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include('includes/modal.php'); ?>
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>	
 	<script src="assets/vendors/bootstrap/js/jquery-3.2.1.min.js"></script>
 	<script src="assets/vendors/bootstrap/js/bootstrap.min.js"></script>

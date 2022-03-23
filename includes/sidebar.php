@@ -62,7 +62,7 @@
 											<?php  
 								
 							                     
-							                $sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = '$id' ORDER BY id DESC LIMIT 4";
+							                $sql = "SELECT * FROM article WHERE posted = 'publish' AND category = '$id' ORDER BY id DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 							                           
