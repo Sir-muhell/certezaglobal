@@ -9,7 +9,7 @@ echo $username;
 
 $id       = $_GET['m'];
 $_SESSION['id'] = $id;
-echo '$id';
+echo $id;
 // $sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
 // $result = query($sql);
 // $row = fetch_array($result);
@@ -42,7 +42,10 @@ echo '$id';
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../images/logo7.png" />
   </head>
-<?php include('includes/header.php'); ?>
+<?php
+echo $username;
+echo $id;
+ include('includes/header.php'); ?>
       <div class="container-fluid page-body-wrapper">
        <?php include('includes/sidebar.php'); ?>
         <!-- partial -->
