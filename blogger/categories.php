@@ -70,7 +70,7 @@ if(row_count($result) == 0){
                      <tr>
                       <thead>
                        <th>Category</th>
-                       <td>Delete</td>
+                       <!-- <td>Delete</td> -->
                        </thead>
                      </tr>
                      <?php
@@ -82,9 +82,9 @@ if(row_count($result) == 0){
                       <tbody>
                         <input id="username<?php echo $row['id']; ?>" hidden value="<?php echo $row['name']; ?>">
                        <td><?php echo $row['name']; ?></td>
-                       <td>
+                       <!-- <td>
                           <i onclick="del(<?php echo  $row['id']; ?>)" class="mdi mdi-delete" style="color: #001737; cursor: pointer ;"></i>
-                       </td>
+                       </td> -->
                        </tbody>
                      </tr>
                      <?php }?>
