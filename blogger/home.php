@@ -1,22 +1,21 @@
-<?php include('Functions/init.php');  
+<?php include('functions/init.php');  
 
 
  $username = $_SESSION['login'] ;
-echo $username; 
-// if(empty($username)) {
-//     header("location: ./ ");
-// }
+ 
+if(empty($username)) {
+    header("location: ./ ");
+}
 
 $id       = $_GET['m'];
 $_SESSION['id'] = $id;
-echo $id;
-// $sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
-// $result = query($sql);
-// $row = fetch_array($result);
-// if(row_count($result) == 0){
-//   session_destroy();
-//   header("location: ./ ");
-// }
+$sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
+$result = query($sql);
+$row = fetch_array($result);
+if(row_count($result) == 0){
+  session_destroy();
+  header("location: ./ ");
+}
 
 ?>
 <!DOCTYPE html>
@@ -42,10 +41,7 @@ echo $id;
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../images/logo7.png" />
   </head>
-<?php
-echo $username;
-echo $id;
- include('includes/header.php'); ?>
+<?php include('includes/header.php'); ?>
       <div class="container-fluid page-body-wrapper">
        <?php include('includes/sidebar.php'); ?>
         <!-- partial -->
