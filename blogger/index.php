@@ -1,17 +1,3 @@
-<?php 
-include('functions/init.php'); 
-if (isset($_SESSION['login'])) {
-	$username = $_SESSION['login'];
-	$sql = "SELECT * FROM `users` WHERE `user` = '$username'";
-	$result = query($sql);
-	$row = fetch_array($result);
-	$id = $row['id'];
-	header("./home?m=<?php echo $id; ?>");	
-
-}
-
-
-?>
 <!DOCTYPE html>	
 <html>
 <head>
