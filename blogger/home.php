@@ -1,14 +1,15 @@
 <?php include('functions/init.php');  
 
 
-//  $username = $_SESSION['login'] ;
- 
+ $username = $_SESSION['login'] ;
+echo $username; 
 // if(empty($username)) {
 //     header("location: ./ ");
 // }
 
-// $id       = $_GET['m'];
-// $_SESSION['id'] = $id;
+$id       = $_GET['m'];
+$_SESSION['id'] = $id;
+echo '$id';
 // $sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
 // $result = query($sql);
 // $row = fetch_array($result);
