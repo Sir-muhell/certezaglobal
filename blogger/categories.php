@@ -133,7 +133,7 @@ if(row_count($result) == 0){
            </div>
          </div>
          <!-- Modal -->
-         <?php include('includes/modal.php'); ?>ntent-wrapper ends -->
+         <?php include('includes/modal.php'); ?>
          <!-- partial:../../partials/_footer.html -->
          <?php include('includes/foot.php'); ?>
          <!-- partial -->

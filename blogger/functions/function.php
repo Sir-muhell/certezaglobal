@@ -862,8 +862,8 @@ if (isset($_POST['name']) && isset($_POST['product']) && isset($_POST['start']) 
 		$image = $_POST['image'];
 
         // Insert article into db 
-        $sqlt = "INSERT INTO ads(`name`, `product`, `start`, `end`, `contact`, `image`)";
-		$sqlt.= " VALUES('$name', '$product', '$start', '$end', '$contact', '$image')";
+        $sqlt = "INSERT INTO ads(`name`, `product`, `start`, `end`, `contact`, `image`, `status`)";
+		$sqlt.= " VALUES('$name', '$product', '$start', '$end', '$contact', '$image', '1')";
 		$result = query($sqlt);
 		if ($result != 1) {
 			echo "Error! Please Consult Administrator.";

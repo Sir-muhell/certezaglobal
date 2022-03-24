@@ -207,13 +207,13 @@ include("data/functions.php");
 							<strong>Advertisement</strong>
 							<div class="home_slider_next" >
 								 <?php          
-							    $sql = "SELECT * FROM ads";
+							    $sql = "SELECT * FROM ads ORDER BY rand()";
 							    $result=mysqli_query($con,$sql);
 							    $rowcount=mysqli_num_rows($result);
 						        if(!empty($result)) { 
                      			foreach($result as $row){
                        			?>
-								<img style="height: auto; width: 100%;" class="test1" src="blogger/<?php echo $row['image']; ?>">
+								<img style="height: auto; width: 100%;" class="test" src="blogger/<?php echo $row['image']; ?>">
 								
 								
 								<?php }} ?> 

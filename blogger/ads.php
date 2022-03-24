@@ -105,13 +105,9 @@ if ($id !== '1') {
                             <i onclick="del(<?php echo  $row['id']; ?>)" class="mdi mdi-delete" style="color: grey;"></i>
                             <?php
                             }else{
-                              if ($ver === '1') { ?>
-                            <i class="mdi mdi-cancel" onclick="ban(<?php echo  $row['id']; ?>)" style="color: red; cursor: pointer;"><input id="username" hidden value="<?php echo $row['name']; ?>"></i>
-                            <?php                            
-                            }else{
                              ?> 
                             <i class="mdi mdi-check-bold" onclick="approve(<?php echo  $row['id']; ?>)" onclick="approve(<?php echo  $row['id']; ?>)" style="color: green; cursor: pointer;"></i>
-                            <?php } }?>
+                            <?php }?>
 
                             <i onclick="del(<?php echo  $row['id']; ?>)" class="mdi mdi-delete" style="color: #001737; cursor: pointer ;"></i>
                             <?php
@@ -122,6 +118,7 @@ if ($id !== '1') {
                           </td>
                         </tr>
                       </tbody>
+                    </table>
                     
 
                       

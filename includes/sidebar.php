@@ -166,7 +166,7 @@
 						        if(!empty($result)) { 
                      			foreach($result as $row){
                        			?>
-								<img style="height: auto; width: 100%;" class="test2" src="blogger/<?php echo $row['image']; ?>">
+								<img style="height: auto; width: 100%;" class="test" src="blogger/<?php echo $row['image']; ?>">
 							<?php }} ?> 
 							</div>
 						</div>
@@ -305,7 +305,7 @@
 						        if(!empty($result)) { 
                      			foreach($result as $row){
                        			?>
-								<img style="height: auto; width: 100%;" class="test3" src="blogger/<?php echo $row['image']; ?>">
+								<img style="height: auto; width: 100%;" class="test" src="blogger/<?php echo $row['image']; ?>">
 							<?php }} ?> 
 							</div>
 						</div>

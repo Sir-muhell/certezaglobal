@@ -69,25 +69,13 @@ carousel();
 
 function carousel() {
   var i;
-  var x = document.getElementsByClassName("test1");
-  var y = document.getElementsByClassName("test2");
-  var z = document.getElementsByClassName("test3");
+  var x = document.getElementsByClassName("test");
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-    y[i].style.display = "none";
-    z[i].style.display = "none";  
+    x[i].style.display = "none";  
   }
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
   x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 3000); // Change image every 2 seconds
-
-  if (myIndex > y.length) {myIndex = 1}    
-  y[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 3000); // Change image every 2 seconds
-
-  if (myIndex > z.length) {myIndex = 1}    
-  z[myIndex-1].style.display = "block";  
   setTimeout(carousel, 3000); // Change image every 2 seconds
 }
 </script>
