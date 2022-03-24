@@ -213,7 +213,7 @@ include("data/functions.php");
 						        if(!empty($result)) { 
                      			foreach($result as $row){
                        			?>
-								<img style="height: auto; width: 100%;" class="test" src="blogger/<?php echo $row['image']; ?>">
+								<img style="height: auto; width: 100%;" class="test1" src="blogger/<?php echo $row['image']; ?>">
 								
 								
 								<?php }} ?> 
@@ -287,11 +287,11 @@ include("data/functions.php");
 				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tag']; ?></span> <i class="fa fa-eye ml-3" style="float: right;" > <span><?php echo $row['views']; ?></span>
 				                    </i></small>
 				                    <small class="post_meta mt-1"><a href="#"><i>by <?php
-				                    $author =  $row['author'];
-									$sql = "SELECT * FROM users WHERE id = '$author'";
-									$results=mysqli_query($con,$sql);
-									$roll = db_fetch_assoc($results);
-				                     echo ucwords($roll['name']); ?></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
+					                    $author =  $row['author'];
+										$sql = "SELECT * FROM users WHERE id = '$author'";
+										$results=mysqli_query($con,$sql);
+										$roll = db_fetch_assoc($results);
+					                     echo ucwords($roll['name']); ?></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
