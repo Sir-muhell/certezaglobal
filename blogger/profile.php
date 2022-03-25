@@ -1,20 +1,16 @@
- 
+ <?php
 
-  <?php include('functions/init.php');  
-
-
-$username = $_SESSION['login'] ;
+ $username = $_SESSION['login'] ;
+ $id = $_SESSION['id'];
  
 if(!isset($_SESSION['login'])) {
     header("location: ./ ");
 }
-
-$id       = $_GET['m'];
-$_SESSION['id'] = $id;
 $sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
 $result = query($sql);
 $row = fetch_array($result);
 if(row_count($result) == 0){
+  session_destroy();
   header("location: ./ ");
 }
 ?>

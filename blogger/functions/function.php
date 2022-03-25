@@ -32,6 +32,10 @@ function escape($string) {
 	return mysqli_real_escape_string($con, $string);
 }
 
+function redirect($location) {
+
+	return header("Location: {$location}");
+}
 
 function query($query) {
 		global $con;
