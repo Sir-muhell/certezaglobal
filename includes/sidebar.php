@@ -56,11 +56,12 @@
 			                       	?>
 										<!-- Top Stories Slider Item -->
 										<div class="owl-item">
-											<p style="font-size: 17spx"><strong><?php echo ucwords($rows['name']); 
+											<p style="font-size: "><strong><?php echo ucwords($rows['name']); 
 											$id = $rows['id'];
-											?></strong></p><br>
+											?></strong></p>
 											<?php  
-							                $sql = "SELECT * FROM article WHERE status = 'publish' AND cat = '$id' ORDER BY id DESC LIMIT 4";
+											$cat = $rows['name'];
+							                $sql = "SELECT * FROM article WHERE status = 'publish' AND cat = '$cat' ORDER BY id DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 							                           
@@ -73,11 +74,11 @@
                                 			?>
 
 							                <div class="side_post">
-												<a href="./<?php echo $row['id']; ?>">
+												<a href="./<?php echo $row['name']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" alt=""></div></div>
-														<div class="side_post_content"><br><br>
-															<div class="side_post_title"><?php echo $row['titles']; ?></div>
+														<div class="side_post_content">
+															<div class="side_post_title mt-2"><?php echo $row['titles']; ?></div>
 															<small class="post_meta"><?php
 															 $author =  $row['author'];
 															$sql = "SELECT * FROM users WHERE id = '$author'";
