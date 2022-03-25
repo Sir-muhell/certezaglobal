@@ -60,11 +60,7 @@
 											$id = $rows['id'];
 											?></strong></p><br>
 											<?php  
-											$sqls = "SELECT * FROM blog_categories WHERE id = '$id'";
-											$results=mysqli_query($con,$sqls);
-											$rows = db_fetch_assoc($results);
-											$cat = $rows['name'];
-							                $sql = "SELECT * FROM article WHERE status = 'publish' AND cat = '$cat' ORDER BY id DESC LIMIT 4";
+							                $sql = "SELECT * FROM article WHERE status = 'publish' AND cat = '$id' ORDER BY id DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 							                           
@@ -77,7 +73,7 @@
                                 			?>
 
 							                <div class="side_post">
-												<a href="./post?id=<?php echo $row['id']; ?>">
+												<a href="./<?php echo $row['id']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" alt=""></div></div>
 														<div class="side_post_content"><br><br>
