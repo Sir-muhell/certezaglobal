@@ -1,4 +1,4 @@
-<?php include('functions/init.php');  
+ <?php include('functions/init.php');  
 
 
  $username = $_SESSION['login'] ;
