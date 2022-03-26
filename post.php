@@ -138,7 +138,7 @@ if ($rowcounta == '0') {
 	<!-- Home -->
 
 	<div class="home">
-		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.jpg" data-speed="0.8"></div>
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" data-speed="0.8"></div>
 		<div class="home_content">
 			<div class="post_category trans_200"><a href="" class="trans_200"><?php echo $row['name']; echo $id;?></a></div>
 			<?php
