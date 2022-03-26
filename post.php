@@ -1,8 +1,7 @@
 <?php include("data/functions.php");
 $name=$_REQUEST['name'];
 session_start();
-
-if (empty($id)) {
+if ($name = '') {
 	header("location : error.php");
 }
 
@@ -20,17 +19,18 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 $add = $_SERVER['REMOTE_ADDR'];
 
 
-$sql = "SELECT * FROM article WHERE status = 'Publish' AND name = '".$name."'";
-
-$result = mysqli_query($con,$sql);
+$sql = "SELECT * FROM article WHERE status = 'publish' AND name = '$name'";
+$result=mysqli_query($con,$sql);
 $row = db_fetch_assoc($result);
-$view = $row['views'];
-$id = $row['id'];
-$_SESSION["postid"] = $id;
-$rowcouunt=mysqli_num_rows($row);
+$rowcount=mysqli_num_rows($result);
 if ($rowcount === '0') {
 	header("location : ./");
 }
+
+$view = $row['views'];
+$id = $row['id'];
+$_SESSION["postid"] = $id;
+
 
 //check if the post has been viewed once
 $sqla = "SELECT * FROM views WHERE p_id = '".$id."' AND address = '".$add."' ";
@@ -140,9 +140,10 @@ if ($rowcounta == '0') {
 	<div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/post.jpg" data-speed="0.8"></div>
 		<div class="home_content">
-			<div class="post_category trans_200"><a href="./category?id=<?php echo $id;?>" class="trans_200"><?php echo $rows['name'];?></a></div>
+			<div class="post_category trans_200"><a href="" class="trans_200"><?php echo $row['name']; echo $id;?></a></div>
 			<?php
-			$sql = "SELECT * FROM article WHERE name = ".$name." ";
+			$name=$_REQUEST['name'];
+			$sql = "SELECT * FROM article WHERE name = '$name' ";
 			$result=mysqli_query($con,$sql);
 			$rowcount=mysqli_num_rows($result);
 			$row = db_fetch_assoc($result);
@@ -164,60 +165,15 @@ if ($rowcounta == '0') {
 						
 						<!-- Top Panel -->
 						<div class="post_panel post_panel_top d-flex flex-row align-items-center justify-content-start">
-							<?php
-				
-				$cat = $row['category'];
-				
-				if ($cat === '1') {
-					
-				$author= 'Oluwabusolami Fumilayo Adepitan';
-				$pic = 'bubu';
-				}
-				else {
-				
-				if ( $cat === '2') {
-					$pic = 'temi';
-				}
-				else {
-			
-				if ($cat === '3') { 
+						<?php
 
-					$pic = 'sope';
-				}
-				else{
-
-				if ($cat === '4') { 
-					$pic = 'bolu';
-				}
-				else {
-
-				if ($cat === '5') { 
-					$pic = 'timi';
-				}		
-				else {
-
-				if ($cat === '6') {
-					$pic = 'eunice';		
-				}
-				else {
-
-				if ($cat === '7') {
-					$pic = 'sewanu';		
-				}
-			}
-				}
-				}	
-				}
-				}
-				
-
-
-				}
-
-				
-				?>
-							<div class="author_image"><div><img src="images/<?php echo $pic; ?>.jpg" alt="author"></div></div>
-							<div class="post_meta"><a href="#"><?php echo ucwords($row['author']); ?></a><span><?php echo ucwords($row['date']); ?></span><span><i class="fa fa-eye"> <?php echo $row['views']; ?></i></span></div>
+						$author = $row['author'];
+                          	$sqlq = "SELECT * FROM users WHERE `id` = '$author'";
+                          	$resultq = mysqli_query($con,$sqlq);
+                          	$rowq = db_fetch_assoc($resultq);
+						 ?>
+							<div class="author_image"><div><img src="blogger/<?php echo $rowq['pix'] ?>" alt="author"></div></div>
+							<div class="post_meta"><a href="#"><?php echo ucwords($rowq['name']); ?></a><span><?php echo ucwords($row['date_uploaded']); ?></span><span><i class="fa fa-eye"> <?php echo $row['views']; ?></i></span></div>
 							<div class="post_share ml-sm-auto">
 								<span>share</span>
 								<ul class="post_share_list">
@@ -247,7 +203,7 @@ if ($rowcounta == '0') {
 							$content = preg_replace('/font-family.+?;/', "", $string);
 							 ?>
 							<p class="post_p"><?php echo $content; ?></p>
-							<figure>
+							<!-- <figure>
 								<img src="blogadmin/images/<?php echo $row['photo']; ?>" alt="">
 								<figcaption>Lorem Ipsum Dolor Sit Amet</figcaption>
 							</figure>
@@ -256,20 +212,20 @@ if ($rowcounta == '0') {
 								<p class="post_p">Aliquam auctor lacus a dapibus pulvinar. Morbi in elit erat. Quisque et augue nec tortor blandit hendrerit eget sit amet sapien. Curabitur at tincidunt metus, quis porta ex. Duis lacinia metus vel eros cursus pretium eget.</p>
 								<div class="post_quote_source">Robert Morgan</div>
 							</div>
-							<p class="post_p">Donec orci dolor, pretium in luctus id, consequat vitae nibh. Quisque hendrerit, lorem sit amet mollis malesuada, urna orci volutpat ex, sed scelerisque nunc velit et massa. Sed maximus id erat vel feugiat. Phasellus bibendum nisi non urna bibendum elementum. Aenean tincidunt nibh vitae ex facilisis ultrices. Integer ornare efficitur ultrices. Integer neque lectus, venenatis at pulvinar quis, aliquet id neque. Mauris ultrices consequat velit, sed dignissim elit posuere in. Cras vitae dictum dui.</p>
+							<p class="post_p">Donec orci dolor, pretium in luctus id, consequat vitae nibh. Quisque hendrerit, lorem sit amet mollis malesuada, urna orci volutpat ex, sed scelerisque nunc velit et massa. Sed maximus id erat vel feugiat. Phasellus bibendum nisi non urna bibendum elementum. Aenean tincidunt nibh vitae ex facilisis ultrices. Integer ornare efficitur ultrices. Integer neque lectus, venenatis at pulvinar quis, aliquet id neque. Mauris ultrices consequat velit, sed dignissim elit posuere in. Cras vitae dictum dui.</p> -->
 
 							<!-- Post Tags -->
 							<div class="post_tags">
 								<ul>
-									<li class="post_tag"><a href="#"><?php  echo $row['tags']; ?></a></li>
+									<li class="post_tag"><a href="#"><?php  echo $row['tag']; ?></a></li>
 								</ul>
 							</div>
 						</div>
 						
 						<!-- Bottom Panel -->
 						<div class="post_panel bottom_panel d-flex flex-row align-items-center justify-content-start">
-							<div class="author_image"><div><img src="images/author.jpg" alt=""></div></div>
-							<div class="post_meta"><a href="#"><?php echo ucwords($row['author']); ?></a><span><?php echo ucwords($row['date']); ?></span></div>
+							<div class="author_image"><div><img src="blogger/<?php echo $rowq['pix'] ?>" alt="author"></div></div>
+							<div class="post_meta"><a href="#"><?php echo ucwords($rowq['name']); ?></a><span><?php echo ucwords($row['date_uploaded']); ?></span></div>
 							<div class="post_share ml-sm-auto">
 								<span>share</span>
 								<ul class="post_share_list">
@@ -299,24 +255,24 @@ if ($rowcounta == '0') {
 							<div class="section_title">Related posts by same author </div><br>
 							<div class="grid clearfix">
 								<?php  
-								$cat = $row['category'];
-								$sql = "SELECT * FROM blogs WHERE category = ".$cat." LIMIT 3 "; 
+								$cat = $row['cat'];
+								$sql = "SELECT * FROM article WHERE cat = '$cat' LIMIT 3 "; 
 								$result=mysqli_query($con,$sql);
-							    $rowcount=mysqli_num_rows($result);
+							     $rowcount=mysqli_num_rows($result);
 
 							   foreach($result as $row) {
                                 ?>
 
 	                        
 				                <div class="card card_small_with_image grid-item">
-				                  <a href="./post?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
+				                  <a href="./<?php echo $row['id']; ?>">
+				                      <img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
+				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['titles']; ?></a></div>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tag']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
 				                    </i></small>
-				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
+				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <!-- <?php echo ucwords($rowq['author']); ?> --></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
 				                  </div>
 				                </div>
 	                        

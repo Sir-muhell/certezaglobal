@@ -110,7 +110,7 @@ if(row_count($result) == 0){
                             if ($id === '1') { ?>
                               
                             <i class="mdi mdi-cancel" style="color: grey;"><input id="username" hidden value="<?php echo $row['name']; ?>"></i>
-                            <i onclick="del(<?php echo  $row['id']; ?>)" class="mdi mdi-delete" style="color: grey;"></i>
+                            <i class="mdi mdi-delete" style="color: grey;"></i>
                             <?php
                             }else{
                               if ($ver === '1') { ?>
@@ -118,7 +118,7 @@ if(row_count($result) == 0){
                             <?php                            
                             }else{
                              ?> 
-                            <i class="mdi mdi-check-bold" onclick="approve(<?php echo  $row['id']; ?>)" onclick="approve(<?php echo  $row['id']; ?>)" style="color: green; cursor: pointer;"></i>
+                            <i class="mdi mdi-check-bold" onclick="approve(<?php echo  $row['id']; ?>)" style="color: green; cursor: pointer;"></i>
                             <?php } ?>
 
                             <i onclick="del(<?php echo  $row['id']; ?>)" class="mdi mdi-delete" style="color: #001737; cursor: pointer ;"></i>
@@ -280,6 +280,7 @@ if(row_count($result) == 0){
 
     function del(id){
       var del = $('#username'+id).val();
+      console.log(del);
       $.ajax({
         type: "post",
         url: "functions/init.php",

@@ -186,7 +186,7 @@ function register($fname, $uname, $email, $pword, $pnum, $wnum, $niche, $spec, $
 	$date = date('Y:m:d');
 	
 $sql = "INSERT INTO users(`name`, `user`, `email`, `password`, `phone`, `w_num`, `niche`, `spec`, `facebook`, `linkedin`, `instagram`, `twitter`, `date_reg`, `activator`, `activated`, `verified`, `pix`)";
-$sql.= " VALUES('$fname', '$uname', '$email', '$pword', '$pnum', '$wnum', '$niche', '$spec', '$fbook', '$linkedin', '$ig', '$twitter', '$date', '$activator', 0 , 2, 'assets/images/logo7.png')";
+$sql.= " VALUES('$fname', '$uname', '$email', '$pword', '$pnum', '$wnum', '$niche', '$spec', '$fbook', '$linkedin', '$ig', '$twitter', '$date', '$activator', 0 , 2, 'assets/images/user.png')";
 $result = query($sql);
 
 //redirect to verify function
@@ -196,7 +196,7 @@ $link = "https://admin.certezaglobal.com.ng/./activate?key=".$activator;
 $_SESSION['usermail'] = $email;
 
 mail_mailer($email, $activator, $subj, $link);
-$sqls = "SELECT * FROM `users` WHERE `user` = '1'";
+$sqls = "SELECT * FROM `users` WHERE `id` = '1'";
 $results = query($sqls);
 $rows = fetch_array($results);
 $admin = $rows['email'];
@@ -656,13 +656,13 @@ if (isset($_POST['ban'])) {
 
 }
 
-//Ban users
+//Delete users
 if (isset($_POST['del'])) {
-	$user 		= $_POST['ban'];
+	$user 		= $_POST['del'];
 	$sql = "DELETE FROM users WHERE `name` = '$user'";
 				$result = query($sql);
 
-				echo 'User Banned!';
+				echo 'User Deleted!';
 				echo '<script>window.location.href ="./users" </script>';
 
 }
@@ -951,5 +951,38 @@ if (!empty($_FILES["ad_image"]["name"])) {
 	<?php
 }
 }	    	
+}
+
+
+//Upload new Category 
+	if (isset($_POST['short'])) {
+
+		$short = $_POST['short'];
+
+        // Insert article into db 
+        $sqlt = "UPDATE details SET short_des = '$short'";
+		$result = query($sqlt);
+		if ($result != 1) {
+			echo "Error! Please Consult Administrator.";
+		} else {
+			echo "Details Updated";
+			echo '<script> location.reload(); </script>';
+		}
+}
+
+//Upload new Category 
+	if (isset($_POST['long'])) {
+
+		$long = $_POST['long'];
+
+        // Insert article into db 
+        $sqlt = "UPDATE details SET long_des = '$long'";
+		$result = query($sqlt);
+		if ($result != 1) {
+			echo "Error! Please Consult Administrator.";
+		} else {
+			echo "Details Updated";
+			echo '<script> location.reload(); </script>';
+		}
 }
 ?> 

@@ -87,7 +87,7 @@ if(empty($rowe)){
                           <h6 style="color: red;">You are able to edit this Article because of Administative Priviledge</h6>
                         <?php }
                        ?>
-                      
+                      <input id="title" hidden value="<?php echo $rowe['titles']; ?>">
                       <div class="form-group">
                         <label for="exampleInputName1">Title</label>
                         <input type="text" class="form-control" id="ntitle" value="<?php echo $rowe['titles']; ?>" placeholder="Name">
@@ -136,7 +136,12 @@ if(empty($rowe)){
 
                         <textarea class="form-control" id="summernote"><?php echo $rowe['content']; ?></textarea>
                       </div>
-                      <button type="button" id="nwrite" style="width: 100%" class=" btn btn-primary mr-2">Upload Article</button>
+                      <div class="row col-12">
+                        <button type="button" id="nwrite" class=" btn btn-primary  col-6">Update Article</button>
+                        <p class="col-1"></p>
+                        <button type="button" onclick="del(<?php echo  $row['id']; ?>)" class=" btn btn-danger col-5">Delete Article</button>
+                      </div>
+                      
                     </form>
 
                      <?php 
@@ -252,6 +257,20 @@ if(empty($rowe)){
     }
     
   }
+    </script>
+    <script>
+      function del(id){
+      var del = getElementById('ntitle').value();
+      console.log(del);
+      $.ajax({
+        type: "post",
+        url: "functions/init.php",
+        data: {del: del},
+        success: function (data) {
+          $("#msg").html(data);
+        },
+      });
+    }
     </script>
   </body>
 </html>

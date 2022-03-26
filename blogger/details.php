@@ -13,6 +13,9 @@ if(row_count($result) == 0){
   session_destroy();
   header("location: ./ ");
 }
+if ($id !== '1') {
+ header("./home?m=<?php echo $id; ?>");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,6 +62,11 @@ if(row_count($result) == 0){
                 </ol>
               </nav>
             </div>
+            <?php
+            $sqls = "SELECT * FROM `details`";
+            $results = query($sqls);
+            $rows = fetch_array($results);
+            ?>
             <div class="row">
               <div class="col-12 grid-margin stretch-card">
                 <div class="card">
@@ -69,10 +77,10 @@ if(row_count($result) == 0){
                       <div class="form-group">
                             <label>About Certeza Global</label>
                                 <div class="input-group col-xs-12">
-                                    <textarea class="form-control" id="short"><?php echo $row['about']; ?></textarea>
+                                    <textarea class="form-control" id="short"><?php echo $rows['short_des']; ?></textarea>
                                 </div>
                       </div>
-                       <button class="btn btn-primary mr-2" id="short" type="button">Update</button>
+                       <button class="btn btn-primary mr-2" id="s_des" type="button">Update</button>
                     </form>
                   </div>
                 </div>
@@ -86,10 +94,10 @@ if(row_count($result) == 0){
                       <div class="form-group">
                             <label>About Certeza Global</label>
                                 <div class="input-group col-xs-12">
-                                    <textarea class="form-control" id="summernote"><?php echo $row['about']; ?></textarea>
+                                    <textarea class="form-control" id="summernote"><?php echo $rows['long_des']; ?></textarea>
                                 </div>
                       </div>
-                       <button class="btn btn-primary mr-2" id="long" type="button">Update</button>
+                       <button class="btn btn-primary mr-2" id="l_des" type="button">Update</button>
                     </form>
                   </div>
                 </div>

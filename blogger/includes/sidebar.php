@@ -59,7 +59,7 @@
                 </ul>
               </div>
             </li>
-            <?php } ?>
+            
             
             <li class="nav-item">
               <a class="nav-link" href="./details">
@@ -68,11 +68,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/charts/chartjs.html">
+              <a class="nav-link" href="./subscribers">
                 <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
                 <span class="menu-title">Subscribers</span>
               </a>
             </li>
+            <?php } ?>
            <!--  <li class="nav-item">
               <a class="nav-link" href="pages/tables/basic-table.html">
                 <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>

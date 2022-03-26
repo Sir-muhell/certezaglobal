@@ -583,7 +583,7 @@ $("#esend").click(function () {
  });  
   
 //Short description
-$("#short").click(function () {
+$("#s_des").click(function () {
     var short        = $("#short").val();
 
     if (short == null || short == "") {
@@ -605,17 +605,17 @@ $("#short").click(function () {
 
 
 //Long description
-$("#short").click(function () {
-    var long        = $("#summernote").val();
+$("#l_des").click(function () {
+    var long  = $("#summernote").val();
 
     if (long == null || long == "") {
-      $("#msg").html("Kindly select a user");
+      $("#msg").html("Kindly");
     } else {
       $("#msg").html("Sending...");
       $.ajax({
         type: "post",
         url: "functions/init.php",
-        data: {user: user, message: message, subject: subject},
+        data: {long: long},
         success: function (data) {
           $("#msg").html(data);
         },
