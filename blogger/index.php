@@ -25,7 +25,7 @@
 <body class="container" style="background-color: #e6e6e6;">
 	
 	<center>
-	<section style="margin-top:10%; width: 70%;" id="si">
+	<section style="margin-top:10%; width: 90%;" id="si">
 		<form class="form">
 			<div class="card" style="border-radius: 30px;">
 				<div class="card-body ">
@@ -42,8 +42,8 @@
 				    	<button type="button" id="login" style="width: 35%;" class="btn btn-danger">Sign In </button>
 				    	<br><br>
 				    <div>
-				    <div style="margin-right: 60px;">
-				    	<a href="./forgot" style="color: black;">Forgot password</a> &nbsp; | &nbsp; <span style="color: black; cursor: pointer;" onclick="signup();">Sign Up</span>
+				    <div style="margin-right: ">
+				    	<span><a href="./forgot" style="color: black;">Forgot password</a> &nbsp; | &nbsp; <a style="color: black; cursor: pointer;" onclick="signup();">Sign Up</a></span>
 				    </div>
 					
 				</div>
@@ -129,10 +129,10 @@
 						</div>
 					</div><br>
 					<div class="form-group col-lg-12" style="margin-bottom: 70px;">
-				    	<button type="button" id="submit" style="width: 98%;" class="btn btn-danger" >REGISTER</button>
+				    	<button type="button" id="submit" style="width: 98%;" class="btn btn-danger" >REGISTER</button><br><br>
 				    <div>
-				    <div style="margin-right: 60px;">
-				    	 <span style="color: black; cursor: pointer;" onclick="signin();">Sign Up</span>
+				    <div style="">
+				    	 <span style="color: black; cursor: pointer;" onclick="signin();">Sign In</span>
 				    </div>					
 				</div>
 			</div>

@@ -484,7 +484,7 @@ $("#esend").click(function () {
     } else {
       if (message == null || message == "") {
         $("#msg").html("Kindly type your message");
-      }
+      }else{
       $("#msg").html("Sending...");
       $.ajax({
         type: "post",
@@ -494,7 +494,7 @@ $("#esend").click(function () {
           $("#msg").html(data);
         },
       });
-    }
+    }}
     $("#modal").modal
 
   });
@@ -581,5 +581,49 @@ $("#esend").click(function () {
    $("#modal").modal();
 
  });  
-   
+  
+//Short description
+$("#short").click(function () {
+    var short        = $("#short").val();
+
+    if (short == null || short == "") {
+      $("#msg").html("Kindly input a short description");
+    } else {
+      $("#msg").html("Sending...");
+      $.ajax({
+        type: "post",
+        url: "functions/init.php",
+        data: {short: short},
+        success: function (data) {
+          $("#msg").html(data);
+        },
+      });
+    }
+    $("#modal").modal
+
+  });
+
+
+//Long description
+$("#short").click(function () {
+    var long        = $("#summernote").val();
+
+    if (long == null || long == "") {
+      $("#msg").html("Kindly select a user");
+    } else {
+      $("#msg").html("Sending...");
+      $.ajax({
+        type: "post",
+        url: "functions/init.php",
+        data: {user: user, message: message, subject: subject},
+        success: function (data) {
+          $("#msg").html(data);
+        },
+      });
+    }
+    $("#modal").modal
+
+  });
+
+
   });

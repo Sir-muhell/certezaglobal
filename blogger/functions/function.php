@@ -186,7 +186,7 @@ function register($fname, $uname, $email, $pword, $pnum, $wnum, $niche, $spec, $
 	$date = date('Y:m:d');
 	
 $sql = "INSERT INTO users(`name`, `user`, `email`, `password`, `phone`, `w_num`, `niche`, `spec`, `facebook`, `linkedin`, `instagram`, `twitter`, `date_reg`, `activator`, `activated`, `verified`, `pix`)";
-$sql.= " VALUES('$fname', '$uname', '$email', '$pword', '$pnum', '$wnum', '$niche', '$spec', '$fbook', '$linkedin', '$ig', '$twitter', '$date', '$activator', 0 , 2, '../images/logo7.png')";
+$sql.= " VALUES('$fname', '$uname', '$email', '$pword', '$pnum', '$wnum', '$niche', '$spec', '$fbook', '$linkedin', '$ig', '$twitter', '$date', '$activator', 0 , 2, 'assets/images/logo7.png')";
 $result = query($sql);
 
 //redirect to verify function
@@ -649,6 +649,17 @@ if (isset($_POST['approve'])) {
 if (isset($_POST['ban'])) {
 	$user 		= $_POST['ban'];
 	$sql = "UPDATE users SET `verified` = '0' WHERE `name` = '$user'";
+				$result = query($sql);
+
+				echo 'User Banned!';
+				echo '<script>window.location.href ="./users" </script>';
+
+}
+
+//Ban users
+if (isset($_POST['del'])) {
+	$user 		= $_POST['ban'];
+	$sql = "DELETE FROM users WHERE `name` = '$user'";
 				$result = query($sql);
 
 				echo 'User Banned!';

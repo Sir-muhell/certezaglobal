@@ -62,18 +62,18 @@
             <?php } ?>
             
             <li class="nav-item">
-              <a class="nav-link" href="pages/forms/basic_elements.html">
+              <a class="nav-link" href="./details">
                 <span class="icon-bg"><i class="mdi mdi-format-list-bulleted menu-icon"></i></span>
-                <span class="menu-title"></span>
+                <span class="menu-title">Website Details</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/charts/chartjs.html">
                 <span class="icon-bg"><i class="mdi mdi-chart-bar menu-icon"></i></span>
-                <span class="menu-title">Charts</span>
+                <span class="menu-title">Subscribers</span>
               </a>
             </li>
-            <li class="nav-item">
+           <!--  <li class="nav-item">
               <a class="nav-link" href="pages/tables/basic-table.html">
                 <span class="icon-bg"><i class="mdi mdi-table-large menu-icon"></i></span>
                 <span class="menu-title" style="">Tables</span>
@@ -94,7 +94,7 @@
                   <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
                 </ul>
               </div>
-            </li>
+            </li> -->
             <li class="nav-item documentation-link">
               <!-- <a class="nav-link" href="http://www.bootstrapdash.com/demo/connect-plus-free/jquery/documentation/documentation.html" target="_blank">
                 <span class="icon-bg">
