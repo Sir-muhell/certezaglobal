@@ -113,11 +113,12 @@ if ($rowcounta == '0') {
 								<?php 
 								}	 
 								?>
-								<li class="dropdown active">
+								<li class="dropdown">
 									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
 									</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<?php
+
 										$sqls = "SELECT * FROM blog_categories";
 										$results=mysqli_query($con,$sqls);
 										$rows = db_fetch_assoc($results);
@@ -138,16 +139,20 @@ if ($rowcounta == '0') {
 	<!-- Home -->
 
 	<div class="home">
-		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" data-speed="0.8"></div>
-		<div class="home_content">
-			<div class="post_category trans_200"><a href="" class="trans_200"><?php echo $row['name']; echo $id;?></a></div>
-			<?php
+		<?php
 			$name=$_REQUEST['name'];
 			$sql = "SELECT * FROM article WHERE name = '$name' ";
 			$result=mysqli_query($con,$sql);
 			$rowcount=mysqli_num_rows($result);
 			$row = db_fetch_assoc($result);
+			$cat = $row['cat'];
+			$sqlz = "SELECT * FROM blog_categories WHERE name = '$cat'";
+			$resultz=mysqli_query($con,$sqlz);
+			$rowz = db_fetch_assoc($resultz);
 			?>
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/cat/<?php echo $rowz['img']; ?>" data-speed="0.8"></div>
+		<div class="home_content">
+			<div class="post_category trans_200"><a href="" class="trans_200"><?php echo $rowz['name'];?></a></div>
 			<div class="post_title"><?php echo $row['titles'];?></div>
 		</div>
 	</div>
@@ -200,20 +205,13 @@ if ($rowcounta == '0') {
 
 						<div class="post_body">
 							<?php  $string = $row['content'];
-							$content = preg_replace('/font-family.+?;/', "", $string);
 							 ?>
-							<p class="post_p"><?php echo $content; ?></p>
-							<!-- <figure>
-								<img src="blogadmin/images/<?php echo $row['photo']; ?>" alt="">
-								<figcaption>Lorem Ipsum Dolor Sit Amet</figcaption>
+							
+							<figure>
+								<img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" alt="">
 							</figure>
-							<p class="post_p">Maecenas vitae sem varius, imperdiet nisi a, tristique nisi. Sed scelerisque suscipit leo cursus accumsan. Donec vel turpis quam. Mauris non nisl nec nunc gravida ullamcorper id vestibulum magna. Donec non velit finibus, laoreet arcu nec, facilisis augue. Aliquam sed purus id erat accumsan congue. Mauris semper ullamcorper nibh non pellentesque. Aenean euismod purus sit amet quam vehicula ornare.</p>
-							<div class="post_quote">
-								<p class="post_p">Aliquam auctor lacus a dapibus pulvinar. Morbi in elit erat. Quisque et augue nec tortor blandit hendrerit eget sit amet sapien. Curabitur at tincidunt metus, quis porta ex. Duis lacinia metus vel eros cursus pretium eget.</p>
-								<div class="post_quote_source">Robert Morgan</div>
-							</div>
-							<p class="post_p">Donec orci dolor, pretium in luctus id, consequat vitae nibh. Quisque hendrerit, lorem sit amet mollis malesuada, urna orci volutpat ex, sed scelerisque nunc velit et massa. Sed maximus id erat vel feugiat. Phasellus bibendum nisi non urna bibendum elementum. Aenean tincidunt nibh vitae ex facilisis ultrices. Integer ornare efficitur ultrices. Integer neque lectus, venenatis at pulvinar quis, aliquet id neque. Mauris ultrices consequat velit, sed dignissim elit posuere in. Cras vitae dictum dui.</p> -->
-
+							<p class="post_p"><?php echo $string; ?></p>
+							
 							<!-- Post Tags -->
 							<div class="post_tags">
 								<ul>
@@ -265,7 +263,7 @@ if ($rowcounta == '0') {
 
 	                        
 				                <div class="card card_small_with_image grid-item">
-				                  <a href="./<?php echo $row['id']; ?>">
+				                  <a href="./<?php echo $row['name']; ?>">
 				                      <img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
 				                  </a>
 				                  <div class="card-body">

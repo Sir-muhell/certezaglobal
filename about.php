@@ -144,7 +144,7 @@
 						<div class="post_quote">
 								<p class="post_p">Certeza Global is a blog inspired by Oluwabusolami Adepitan, to help unveil the confidence in women of different sectors of life as ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained subscribe to this site so you receive notifications on every article.</p>
 						</div>
-						<p class="post_p">Meet the team with the wild vision and Imagination, about to set the world on fire.</p>
+						<p class="post_p">Meet the team with the wild vision and Imagination.</p>
 
 					<section class="teams col-sm-12" style="width:100%;">
 						<div class="container">

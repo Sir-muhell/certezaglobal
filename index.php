@@ -107,7 +107,7 @@ include("data/functions.php");
 										$rowcount=mysqli_num_rows($results);
 										?>
 										<div class="home_slider_item_title">
-											<a href="./<?php echo $rows['name']; ?>"><?php echo $rows['name'];?></a><br>
+											<a href="./<?php echo $rows['name']; ?>"><?php echo $rows['titles'];?></a><br>
 											<?php if ($rowcount == '0') { ?>
 											<a href="#">Welcome to Certeza Global</a><br>
 										<?php 	} ?>
