@@ -83,7 +83,7 @@ include("data/functions.php");
 			<div class="owl-carousel owl-theme home_slider">
 
 				<?php
-				$sql = "SELECT * FROM blog_categories ORDER BY rand() LIMIT 3";
+				$sql = "SELECT * FROM blog_categories ORDER BY rand()";
 				$result=mysqli_query($con,$sql);
 				$row = db_fetch_assoc($result);
 				 if(!empty($result)) { 

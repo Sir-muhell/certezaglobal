@@ -609,7 +609,7 @@ $("#l_des").click(function () {
     var long  = $("#summernote").val();
 
     if (long == null || long == "") {
-      $("#msg").html("Kindly");
+      $("#msg").html("Kindly input description");
     } else {
       $("#msg").html("Sending...");
       $.ajax({

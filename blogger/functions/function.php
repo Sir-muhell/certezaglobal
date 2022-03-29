@@ -545,7 +545,7 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		$tags 	= $_POST['tags'];
 		$cat 		= $_POST['cat'];
 		$status 	= $_POST['status'];
-		$content 		= $_POST['content']; 
+		$content 		= clean($_POST['content']); 
 		$date_reg = date('D, jS M, Y');
 		$image = $_POST['pix'];
 
@@ -617,7 +617,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$tags 	= $_POST['ntags'];
 		$cat 		= $_POST['ncat'];
 		$status 	= $_POST['nstatus'];
-		$content 		= $_POST['ncontent']; 
+		$content 		= escape($_POST['ncontent']); 
 		$date_edit = date('D, jS M, y');
 		$image = $_POST['npix'];
 		$pid = $_POST['p_id'];

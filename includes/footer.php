@@ -39,10 +39,11 @@
 					<div class="footer_content">
 						<div class="subscribe_title">Subscribe</div>
 							<form action="subscribe.php">
-									<input type="email " class="sub_input" name="name" placeholder="Your Full Name" required="required">
+									<input type="email " class="sub_input" name="name" id="name" placeholder="Your Full Name" required="required">
 									<br><br>
-									<input type="text " class="sub_input" name="email" placeholder="Your Email" required="required">
-								<button class="sub_button" type="button">
+									<input type="text " class="sub_input" name="email" id="email" placeholder="Your Email" required="required">
+									<p id="msg" style="color: white;"> </p>
+								<button class="sub_button" id="subscribe" type="button">
 									<svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										 width="19px" height="13px" viewBox="0 0 19 13" enable-background="new 0 0 19 13" xml:space="preserve">
 										<polygon fill="#FFFFFF" points="12.475,0 11.061,0 17.081,6.021 0,6.021 0,7.021 17.038,7.021 11.06,13 12.474,13 18.974,6.5 "/>
@@ -61,6 +62,7 @@
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js" defer></script>
 <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="ajax.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/masonry/masonry.js"></script>
 <script>

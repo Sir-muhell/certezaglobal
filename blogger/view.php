@@ -93,7 +93,7 @@ if(empty($rowe)){
                         <input type="text" class="form-control" id="ntitle" value="<?php echo $rowe['titles']; ?>" placeholder="Name">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">Tags (Seprate multiple tags with comma)</label>
+                        <label for="exampleInputEmail3">Tags (Seprate multiple tags with space)</label>
                         <input type="text" class="form-control" id="ntags" value="<?php echo $rowe['tag']; ?>" placeholder="Tags">
                         <input type="text" hidden id="pid" value="<?php echo $vid ?>">
                       </div>
@@ -113,7 +113,7 @@ if(empty($rowe)){
                       <div class=" form-group">
                         <label for="exampleSelectGender">Status</label>
                         <select id="nstatus" class="form-control">
-                          <option diabled>Choose Status</option>
+                          <option disabled>Choose Status</option>
                           <option>Publish</option>
                           <option>Draft</option>
                         </select>
@@ -122,7 +122,7 @@ if(empty($rowe)){
                         <label>Upload Article Image</label>
                         <div class="row">
                           <div class="col-8">
-                            <input type="file"  class="form-control file-upload-info " name="article_image" id="article_image" placeholder="Upload Image">
+                            <input type="file"  class="form-control file-upload-info " value="<?php echo  $row['image']; ?>" name="article_image" id="article_image" placeholder="Upload Image">
                           </div>
                           <div class="col-4" id="show_image">
                             <button type="button" onclick="picture()" style="width: 100%; height: 45px;" class="btn btn-primary mr-2">Change</button>

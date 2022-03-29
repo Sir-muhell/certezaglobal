@@ -70,13 +70,13 @@ if(row_count($result) == 0){
                         <input type="text" class="form-control" id="title" placeholder="Name">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail3">Tags (Seprate multiple tags with comma)</label>
+                        <label for="exampleInputEmail3">Tags (Seprate multiple tags with space)</label>
                         <input type="text" class="form-control" id="tags" placeholder="Tags">
                       </div>
                       <div class="form-group">
                         <label for="exampleSelectGender">Category</label>
                         <select id="cat" class="form-control">
-                          <option diabled>Choose Category</option>
+                          <option disabled>Choose Category</option>
                             <?php
                             $sql = "SELECT * FROM blog_categories ";
                             $res = query($sql);
@@ -108,7 +108,7 @@ if(row_count($result) == 0){
                       <div class="form-group">
                         <label for="exampleTextarea1">Type Article</label>
 
-                        <textarea class="form-control" id="summernote"></textarea>
+                        <textarea class="form-control" rows="20" id="summernote"></textarea>
                       </div>
                       <button type="button" id="write" style="width: 100%" class=" btn btn-primary mr-2">Upload Article</button>
                     </form>
@@ -150,14 +150,14 @@ if(row_count($result) == 0){
     <!-- End custom js for this page -->
 
     <script src="./assets/summernote/summernote-bs4.min.js"></script>
-    <script>
+    <!-- <script>
         $('#summernote').summernote({
 
         tabsize: 2,
         height: 300
       
     });
-    </script>
+    </script> -->
     <script>
     function picture(){
     var picture = new FormData();

@@ -77,7 +77,7 @@
                                 			?>
 
 							                <div class="side_post">
-												<a href="./<?php echo $row['id']; ?>">
+												<a href="./<?php echo $row['name']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" alt=""></div></div>
 														<div class="side_post_content"><br><br>
