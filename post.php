@@ -1,5 +1,5 @@
 <?php include("data/functions.php");
-$name=$_REQUEST['name'];
+$name = $_REQUEST['name'];
 session_start();
 if ($name = '') {
 	header("location : error.php");
@@ -18,11 +18,12 @@ if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
 
 $add = $_SERVER['REMOTE_ADDR'];
 
-
-$sql = "SELECT * FROM article WHERE status = 'publish' AND name = '$name'";
+$name=$_REQUEST['name'];
+$sql = "SELECT * FROM article WHERE name = '$name' ";
 $result=mysqli_query($con,$sql);
-$row = db_fetch_assoc($result);
 $rowcount=mysqli_num_rows($result);
+$row = db_fetch_assoc($result);
+
 if ($rowcount === '0') {
 	header("location : ./");
 }
@@ -288,8 +289,8 @@ if ($rowcounta == '0') {
 									<div class="col-xl-8">
 										<div class="post_comment_form_container">
 											<form id="frm-comment">
-												<input type="hidden" name="comment_id" id="commentId" placeholder="Name" />
-												<input type="hidden" id="post_id" name="post_id" value="<?php echo $_GET['id']; ?>">
+												<input type="hidden" name="comment_id" id="commentId" />
+												<input type="hidden" id="post_id" value="<?php echo $id; ?>">
 												<input type="text" class="comment_input comment_input_name" placeholder="Your Name" id="name" required="required">
 												<input type="email" class="comment_input comment_input_email" placeholder="Your Email" required="required" id="email">
 												<textarea class="comment_text" placeholder="Your Comment" required="required" id="comment"></textarea>
@@ -322,8 +323,8 @@ if ($rowcounta == '0') {
 				</div>
 				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>
-				<script src="comment.js"></script>
 				<script src="plugins/parallax-js-master/parallax.min.js"></script>
 				<script src="js/post.js"></script>
+				<script src="comment.js"></script>
 	</body>
 </html>

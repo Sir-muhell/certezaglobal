@@ -4,17 +4,25 @@
             }
 
             $("#submitButton").click(function () {
+                event.preventDefault(post_id);
                 var str = $("#frm-comment").serialize();
-                var username        = $("#name").val();
-                var useremail       = $("#email").val();
-                var usercontent     = $("#comment").val();
-                var postid          = $("#post_id").val();
-                var comment_id      = $('#comment_id').val();
+                var name        = $("#name").val();
+                var email       = $("#email").val();
+                var comment     = $("#comment").val();
+                var post_id          = $("#post_id").val();
+                var comment_id      = $('#commentId').val();
+                 
+                console.log(email);
+                console.log(name);
+                console.log(comment);
+                console.log(post_id);
+                console.log(comment_id);
+
+
 
                 var a = document.forms["frm-comment"]["name"].value;
                 var b = document.forms["frm-comment"]["email"].value;
                 var c = document.forms["frm-comment"]["comment"].value;
-                
 
                 if (a === null || a === "") {
                 document.getElementById("msgs").innerHTML = "Please Input your Full Name &#128579";
@@ -36,15 +44,15 @@
  
                 }
              
-                console.log(str);
                  
                  
                  
             }
+                
 
                 $.ajax({
                     url: "com_add.php",
-                    data: str,
+                    data: {comment_id: comment_id, comment: comment, email: email, name: name, post_id: post_id},
                     type: 'post',
                     success: function (response)
                     {
@@ -65,6 +73,7 @@
                         }
                     }
                 });
+                $('#post_id').val(post_id);
             });
             
             $(document).ready(function () {

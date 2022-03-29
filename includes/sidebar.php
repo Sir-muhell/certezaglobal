@@ -56,8 +56,12 @@
 			                       	?>
 										<!-- Top Stories Slider Item -->
 										<div class="owl-item">
-											<p style="font-size: 17spx"><strong><?php echo ucwords($rows['name']); 
-											$id = $rows['id'];
+											<?php
+											$name = $rows['name']; 
+											$name  = str_replace('-', ' ', $name);
+											?>
+											<p style="font-size: 17spx"><strong><?php echo ucwords($name); 
+											$id = $rows['name'];
 											?></strong></p><br>
 											<?php  
 							                $sql = "SELECT * FROM article WHERE status = 'publish' AND cat = '$id' ORDER BY id DESC LIMIT 4";
