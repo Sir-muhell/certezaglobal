@@ -1097,8 +1097,8 @@ section
 {
 	width: 143px;
 	height: 36px;
-	background: rgba(45,223,128,0.1);
-	color: rgba(45,223,128,1);
+	background: rgba(64,64,64,0.1);
+	color: rgba(0,0,0,1);
 	border: none;
 	outline: none;
 	border-radius: 18px;
@@ -1113,7 +1113,7 @@ section
 .comment_button:hover
 {
 	background: rgba(45,223,128,1);
-	color: #FFFFFF;
+	color: rgba(0,0,0,1);
 }
 
 /*********************************

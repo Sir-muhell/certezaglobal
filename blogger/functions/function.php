@@ -594,7 +594,7 @@ if (!empty($_FILES["article_image"]["name"])) {
 }
 
 //Edit article 
-if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) && isset($_POST['nstatus']) && isset($_POST['ncontent']) && isset($_POST['npix']) && isset($_POST['p_id'])) {
+if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) && isset($_POST['nstatus']) && isset($_POST['ncontent']) && isset($_POST['npix']) && isset($_POST['p_id']) && isset($_POST['url'])) {
 
 	
 	   	$user = $_SESSION['login'];
@@ -605,6 +605,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$author_id = $row['id'];
 
 		$title 		= $_POST['ntitle'];
+		$url 	= strtolower($title);
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
@@ -623,7 +624,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$pid = $_POST['p_id'];
 
         // Edit article in db 
-        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `name` = '$url', `date_edit` = '$date_edit'  WHERE `id` = '$pid'";
+        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `name` = '$title'  WHERE `id` = '$pid'";
 		$result = query($sql);
         
 		if ($result != 1) {
@@ -954,7 +955,7 @@ if (!empty($_FILES["ad_image"]["name"])) {
 }
 
 
-//Upload new Category 
+//Upload short Web details
 	if (isset($_POST['short'])) {
 
 		$short = $_POST['short'];
@@ -970,7 +971,7 @@ if (!empty($_FILES["ad_image"]["name"])) {
 		}
 }
 
-//Upload new Category 
+//Upload Long Web Details 
 	if (isset($_POST['long'])) {
 
 		$long = $_POST['long'];
@@ -983,6 +984,21 @@ if (!empty($_FILES["ad_image"]["name"])) {
 		} else {
 			echo "Details Updated";
 			echo '<script> location.reload(); </script>';
+		}
+}
+
+//Delete Article
+	if (isset($_POST['del_article'])) {
+
+		$long = $_POST['del_article'];
+
+        // Insert article into db 
+        $sqlt = "DELETE FROM article WHERE `name` = '$long'";
+		$result = query($sqlt);
+		if ($result != 1) {
+			echo "Error! Please Consult Administrator.";
+		} else {
+			echo '<script> window.location.href ="./articles" </script>';
 		}
 }
 ?> 

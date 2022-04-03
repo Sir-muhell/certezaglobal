@@ -360,6 +360,7 @@ $("#about").click(function () {
 $("#nwrite").click(function () {
     // var image = document.getElementById('img');
     var ntitle        = $("#ntitle").val();
+    var url           = $("#url").val();
     var ntags  = $("#ntags").val();
     var ncat        = $("#ncat").val();
     var ncontent   = $("#summernote").val();
@@ -384,7 +385,7 @@ $("#nwrite").click(function () {
             $.ajax({
               type: "post",
               url: "functions/init.php",
-              data: { ntitle: ntitle, ntags: ntags, ncat: ncat, nstatus: nstatus, ncontent: ncontent, npix: npix, p_id: p_id},
+              data: { ntitle: ntitle, ntags: ntags, ncat: ncat, nstatus: nstatus, ncontent: ncontent, npix: npix, p_id: p_id, url: url},
               success: function (data) {
                 $("#msg").html(data);
               },
@@ -621,6 +622,23 @@ $("#l_des").click(function () {
         },
       });
     }
+    $("#modal").modal
+
+  });
+
+$("#del").click(function () {
+    var del_article = $("#title").val();
+    console.log(del_article );
+      $("#msg").html("Deleting...");
+      $.ajax({
+        type: "post",
+        url: "functions/init.php",
+        data: {del_article: del_article},
+        success: function (data) {
+          $("#msg").html(data);
+        },
+      });
+    
     $("#modal").modal
 
   });

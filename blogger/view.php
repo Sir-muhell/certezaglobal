@@ -64,6 +64,7 @@ if(empty($rowe)){
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="./home?m=<?php echo $id; ?>">Home</a></li>
+                  <li class="breadcrumb-item"><a href="./articles">All Articles</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Edit Article</li>
                 </ol>
               </nav>
@@ -87,10 +88,11 @@ if(empty($rowe)){
                           <h6 style="color: red;">You are able to edit this Article because of Administative Priviledge</h6>
                         <?php }
                        ?>
-                      <input id="title" hidden value="<?php echo $rowe['titles']; ?>">
+                      <input id="title" hidden value="<?php echo $rowe['name']; ?>">
                       <div class="form-group">
                         <label for="exampleInputName1">Title</label>
                         <input type="text" class="form-control" id="ntitle" value="<?php echo $rowe['titles']; ?>" placeholder="Name">
+                        <input type="text" id="url" name="" hidden value="<?php echo $rowe['name']; ?>" >
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail3">Tags (Seprate multiple tags with space)</label>
@@ -139,7 +141,7 @@ if(empty($rowe)){
                       <div class="row col-12">
                         <button type="button" id="nwrite" class=" btn btn-primary  col-6">Update Article</button>
                         <p class="col-1"></p>
-                        <button type="button" onclick="del(<?php echo  $row['id']; ?>)" class=" btn btn-danger col-5">Delete Article</button>
+                        <button type="button" id="del" class=" btn btn-danger col-5">Delete Article</button>
                       </div>
                       
                     </form>
@@ -258,20 +260,7 @@ if(empty($rowe)){
     
   }
     </script>
-    <script>
-      function del(id){
-      var del = getElementById('ntitle').value();
-      console.log(del);
-      $.ajax({
-        type: "post",
-        url: "functions/init.php",
-        data: {del: del},
-        success: function (data) {
-          $("#msg").html(data);
-        },
-      });
-    }
-    </script>
+    
   </body>
 </html>
 

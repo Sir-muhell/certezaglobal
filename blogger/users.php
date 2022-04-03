@@ -73,6 +73,7 @@ if(row_count($result) == 0){
                           <th> Picture</th>
                           <th> Email </th>
                           <th> Number </th>
+                          <th> WhatsApp   </th>
                           <th> Status </th>
                         </tr>
                       </thead>
@@ -100,6 +101,7 @@ if(row_count($result) == 0){
                           <td><img src= '<?php echo $row['pix'] ?>' alt='image' ></td>
                           <td><?php echo $row['email'] ?></td>
                           <td><?php echo $row['phone'] ?></td>
+                          <td><a href="https://wa.me/<?php echo $row['w_num'] ?>"><?php echo $row['w_num'] ?></a></td>
                           <td><?php echo $status ?></td>
                           <td>
                           <span class="icon-sm">
@@ -147,6 +149,7 @@ if(row_count($result) == 0){
                           <th> Picture</th>
                           <th> Email </th>
                           <th> Number </th>
+                          <th> WhatsApp</th>
                           <th> Status </th>
                         </tr>
                       </thead>
@@ -174,6 +177,7 @@ if(row_count($result) == 0){
                           <td><img src= '<?php echo $row['pix'] ?>' alt='image' ></td>
                           <td><?php echo $row['email'] ?></td>
                           <td><?php echo $row['phone'] ?></td>
+                          <td><a href="https://wa.me/<?php echo $row['w_num'] ?>"><?php echo $row['w_num'] ?></a></td>
                           <td><?php echo $status ?></td>
                           
                         </tr>

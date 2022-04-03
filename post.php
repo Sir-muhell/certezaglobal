@@ -34,7 +34,7 @@ $_SESSION["postid"] = $id;
 
 
 //check if the post has been viewed once
-$sqla = "SELECT * FROM views WHERE p_id = '".$id."' AND address = '".$add."' ";
+$sqla = "SELECT * FROM views WHERE p_id = '$id' AND address = '$add' ";
 $resulta = mysqli_query($con,$sqla);
 $rowa = db_fetch_assoc($resulta);
 $rowcounta=mysqli_num_rows($resulta);
@@ -48,12 +48,13 @@ if ($rowcounta == '0') {
 			if (! $resultb) {
 			    $resultb = mysqli_error($con);
 			}
-	$sqls = "SELECT * FROM views WHERE p_id = '".$id."' AND address = '".$add."' ";
+	$sqls = "SELECT * FROM article WHERE id = '$id' ";
 	$results = mysqli_query($con,$sqls);
 	$row = db_fetch_assoc($results);
+	$views = $row['views'];
 
-	$view = ++$view;
-	$sqlss = "UPDATE blogs SET views = '".$view."' WHERE id = '".$id."'";
+	$view = ++$views;
+	$sqlss = "UPDATE article SET views = '$view' WHERE id = '$id'";
 	$resultss = mysqli_query($con, $sqlss);
 }
 
@@ -63,7 +64,7 @@ if ($rowcounta == '0') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Post</title>
+<title><?php echo $name; ?> | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Demo project">
@@ -271,7 +272,13 @@ if ($rowcounta == '0') {
 				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['titles']; ?></a></div>
 				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tag']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
 				                    </i></small>
-				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <!-- <?php echo ucwords($rowq['author']); ?> --></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
+				                    <small class="post_meta mt-1" style=""><a href="#"><i>by 
+				                    	<?php
+									 $author =  $row['author'];
+									$sql = "SELECT * FROM users WHERE id = '$author'";
+									$results=mysqli_query($con,$sql);
+									$roll = db_fetch_assoc($results);
+           						echo ucwords($roll['name']); ?></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
@@ -286,7 +293,7 @@ if ($rowcounta == '0') {
 							<div class="post_comment">
 								<div class="section_title">Post Comment</div>
 								<div class="row">
-									<div class="col-xl-8">
+									<div class="col-lg-12">
 										<div class="post_comment_form_container">
 											<form id="frm-comment">
 												<input type="hidden" name="comment_id" id="commentId" />
