@@ -12,7 +12,7 @@ function db_fetch_assoc($res){
 include("fetch_data.php");
 
 
-//Upload new Category 
+//Subscribers
 	if (isset($_POST['name']) && isset($_POST['email'])) {
 
 		$name = $_POST['name'];
@@ -26,7 +26,7 @@ include("fetch_data.php");
 		if ($result != 1) {
 			echo "Error! Please Consult Administrator.";
 		} else {
-			echo "hank you for subscribing!";
+			echo "Thank you for subscribing!";
 			
 		}
 }

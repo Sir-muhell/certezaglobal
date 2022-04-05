@@ -1006,4 +1006,20 @@ if (!empty($_FILES["ad_image"]["name"])) {
 			echo '<script> window.location.href ="./articles" </script>';
 		}
 }
+
+//Delete category
+	if (isset($_POST['del_cat'])) {
+
+		$long = $_POST['del_cat'];
+
+        // Insert article into db 
+  //       $sqlt = "DELETE FROM blog_categories WHERE `name` = '$long'";
+		// $result = query($sqlt);
+		// if ($result != 1) {
+		// 	echo "Error! Please Consult Administrator.";
+		// } else {
+		// 	echo '<script> location.reload(); </script>';
+		// }
+		echo '<script> location.reload(); </script>';
+}
 ?> 

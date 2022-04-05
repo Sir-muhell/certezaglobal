@@ -168,7 +168,7 @@ if(row_count($result) == 0){
         $.ajax({
           type: "post",
           url: "functions/init.php",
-          data: {del: del},
+          data: {del_cat: del_cat},
           success: function (data) {
             $("#msg").html(data);
           },
