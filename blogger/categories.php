@@ -69,8 +69,8 @@ if(row_count($result) == 0){
                      <table class="table table-bordered">
                      <tr>
                       <thead>
-                       <th><strong>Category</strong></th>
-                       <!-- <td>Delete</td> -->
+                       <th>Category</th>
+                       <td>Delete</td>
                        </thead>
                      </tr>
                      <?php
@@ -82,9 +82,9 @@ if(row_count($result) == 0){
                       <tbody>
                         <input id="username<?php echo $row['id']; ?>" hidden value="<?php echo $row['name']; ?>">
                        <td><?php echo $row['name']; ?></td>
-                       <!-- <td>
+                       <td>
                           <i onclick="del(<?php echo  $row['id']; ?>)" class="mdi mdi-delete" style="color: #001737; cursor: pointer ;"></i>
-                       </td> -->
+                       </td>
                        </tbody>
                      </tr>
                      <?php }?>
@@ -93,7 +93,7 @@ if(row_count($result) == 0){
                    <table class="table table-bordered">
                      <tr>
                       <thead>
-                       <th><strong>Category</strong></th>
+                       <th>Category<</th>
                        </thead>
                      </tr>
                      <?php
@@ -114,7 +114,7 @@ if(row_count($result) == 0){
                  </div>
                </div>
              </div>
-             <?php if ($id === '1') { ?>
+             <?php if ($id === '1' || '15') { ?>
                <div class="col-md-6 grid-margin">
                <div class="card">
                  <div class="card-body">
