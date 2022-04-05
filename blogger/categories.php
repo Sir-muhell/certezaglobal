@@ -162,7 +162,7 @@ if(row_count($result) == 0){
    <script src="./assets/js/select2.js"></script>
     <script>
       function del(id){
-        var del = $('#username'+id).val();
+        var del_cat = $('#username'+id).val();
 
         console.log(del);
         $.ajax({
