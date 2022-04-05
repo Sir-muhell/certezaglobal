@@ -14,7 +14,7 @@ if(row_count($result) == 0){
   session_destroy();
   header("location: ./ ");
 }
-if ($id !== '1') {
+if ($id !== '1' || '15') {
  header("./home?m=<?php echo $id; ?>");
 }
 ?>

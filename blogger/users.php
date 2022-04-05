@@ -63,7 +63,7 @@ if(row_count($result) == 0){
                     <h4 class="card-title">All Users</h4>
                     </p>
                     <?php 
-                    if ($id === '1') { ?>
+                    if ($id === '1' || '15') { ?>
                       
                     <table class="table table-bordered">
                       <thead>
