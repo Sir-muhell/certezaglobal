@@ -65,7 +65,7 @@ if(row_count($result) == 0){
                  <div class="card-body">
                    <h4 class="card-title">All Categories</h4>
                    <?php 
-                   if ($id === '1' || '15') { ?>
+                   if ($id === '1' || $id ==== '15') { ?>
                      <table class="table table-bordered">
                      <tr>
                       <thead>
@@ -93,7 +93,7 @@ if(row_count($result) == 0){
                    <table class="table table-bordered">
                      <tr>
                       <thead>
-                       <th>Category</th>
+                       <th><strong>Category</strong></th>
                        </thead>
                      </tr>
                      <?php
