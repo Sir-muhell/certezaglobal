@@ -163,6 +163,8 @@ if(row_count($result) == 0){
     <script>
       function del(id){
         var del = $('#username'+id).val();
+
+        console.log(del);
         $.ajax({
           type: "post",
           url: "functions/init.php",
