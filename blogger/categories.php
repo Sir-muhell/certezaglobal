@@ -164,7 +164,7 @@ if(row_count($result) == 0){
       function del(id){
         var del_cat = $('#username'+id).val();
 
-        console.log(del);
+        console.log(del_cat);
         $.ajax({
           type: "post",
           url: "functions/init.php",
