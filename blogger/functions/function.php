@@ -258,11 +258,12 @@ $niche = $niche;
 $strength = $strength;
 
 
-$body = "<p style='margin-left: 45px; margin-top: 34px; text-align: left;'>Hello Administrator, <br/> {$fanme} has Signed up to be a writer in Certeza Global. <br/> The following are {$fname}'s details you need to know. <br/> </p>";
+$body = "<p style='margin-left: 45px; margin-top: 34px; text-align: left;'>Hello Administrator, <br/> {$fname} has Signed up to be a writer in Certeza Global. <br/> The following are {$fname}'s details you need to know. <br/> </p>";
 $body .= "<p style='margin-left: 45px; text-align: left;'>Niche: {$niche}</p><br/>";
-$body .= "<p style='margin-left: 45px; text-align: left;'>Specialization: {$spec}</p><br/>";
-$body .= "<p style='margin-left: 45px; text-align: left;'>Editors used: {$edit}</p><br/>";
-$body .= "<p style='margin-left: 45px; text-align: left;'>Strength: {$strength}</p><br/>Weakness: {$weak}";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Specialization: {$spec}</p>";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Editors used: {$edit}</p>";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Strength: {$strength}</p>";
+$body .= "<p style='margin-left: 45px; text-align: left;'>Weakness: {$weak}</p>";
 $body .= "<p style='margin-left: 45px; text-align: left;'>To approve the {$fname}, locate user on your dashboard and click on the green tick, https://admin.certezaglobal.com.ng/users</p><br/>";
 
 $send = mail($to, $subject, $body, $headers);

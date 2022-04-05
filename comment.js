@@ -4,13 +4,12 @@
             }
 
             $("#submitButton").click(function () {
-                event.preventDefault(post_id);
                 var str = $("#frm-comment").serialize();
-                var name        = $("#name").val();
-                var email       = $("#email").val();
-                var comment     = $("#comment").val();
-                var post_id          = $("#post_id").val();
-                var comment_id      = $('#commentId').val();
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var comment = $("#comment").val();
+                var post_id = $("#post_id").val();
+                var comment_id  = $('#commentId').val();
                  
                 console.log(email);
                 console.log(name);
@@ -30,7 +29,7 @@
                 } else {
 
                      if (b === null || b === "") {
-                document.getElementById("msgs").innerHTML = "Your Emial can`t be empty &#128580";
+                document.getElementById("msgs").innerHTML = "Your Email can't be empty &#128580";
                     return false;
                 } else {
 

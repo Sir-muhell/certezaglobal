@@ -56,6 +56,8 @@ if ($rowcounta == '0') {
 	$view = ++$views;
 	$sqlss = "UPDATE article SET views = '$view' WHERE id = '$id'";
 	$resultss = mysqli_query($con, $sqlss);
+	$sqlss = "UPDATE article SET views = '$view' WHERE id = '$id'";
+	$resultss = mysqli_query($con, $sqlss);
 }
 
 
@@ -324,9 +326,9 @@ if ($rowcounta == '0') {
 							</div>
 						</div>
 					</div>
-					<div class="load_more">
+					<!-- <div class="load_more">
 						<div id="load_more" class="load_more_button text-center trans_200">Load More</div>
-					</div>
+					</div> -->
 				</div>
 				<?php include("includes/sidebar.php"); ?>
 				<?php include("includes/footer.php"); ?>

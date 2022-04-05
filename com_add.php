@@ -3,7 +3,6 @@ require("data/functions.php");
 
 if(isset($_POST['comment_id']) && isset($_POST['comment']) && isset($_POST['email']) && isset($_POST['name']) && isset($_POST['post_id'])) {
 
-
 $commentId 			= $_POST['comment_id'];
 $comment 			= $_POST['comment'];
 $email 				= $_POST['email'];
