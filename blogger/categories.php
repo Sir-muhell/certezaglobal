@@ -69,7 +69,7 @@ if(row_count($result) == 0){
                      <table class="table table-bordered">
                      <tr>
                       <thead>
-                       <th>Category</th>
+                       <th><strong>Category</strong></th>
                        <!-- <td>Delete</td> -->
                        </thead>
                      </tr>
