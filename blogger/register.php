@@ -17,7 +17,7 @@ if(row_count($result) == 0){
   header("location: ./ ");
 }
 
-if ($id != '1' || $id != '15') {
+if ($id != '1' || '15') {
  header("location: ./home?m=$id");
 }
 ?>
