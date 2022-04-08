@@ -7,15 +7,17 @@
 if(!isset($_SESSION['login'])) {
     header("location: ./ ");
 }
+
 $sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
 $result = query($sql);
 $row = fetch_array($result);
+
 if(row_count($result) == 0){
   session_destroy();
   header("location: ./ ");
 }
 
-if ($id != '1') {
+if ($id != '15') {
  header("./home?m=<?php echo $id; ?>");
 }
 ?>
