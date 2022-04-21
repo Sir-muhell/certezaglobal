@@ -254,9 +254,7 @@ if(empty($rowe)){
         },
       });
     }
-    if (files == null || files == "") {
-      $("#modal").modal();
-    }
+    
     
   }
     </script>

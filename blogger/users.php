@@ -63,7 +63,7 @@ if(row_count($result) == 0){
                     <h4 class="card-title">All Users</h4>
                     </p>
                     <?php 
-                    if ($id === '1' || '15') { ?>
+                    if ($id === '1') { ?>
                       
                     <table class="table table-bordered">
                       <thead>
@@ -109,7 +109,7 @@ if(row_count($result) == 0){
                             <?php
                             $user = $row['name'];
                             $id   = $row['id'];
-                            if ($id === '1' || '15') { ?>
+                            if ($id === '1') { ?>
                               
                             <i class="mdi mdi-cancel" style="color: grey;"><input id="username" hidden value="<?php echo $row['name']; ?>"></i>
                             <i class="mdi mdi-delete" style="color: grey;"></i>
