@@ -39,7 +39,7 @@ if(row_count($result) == 0){
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../images/logo7.png" />
+    <link rel="icon" type="image/png" href="../images/logo7.png" />
   </head>
 <?php include('includes/header.php'); ?>
       <div class="container-fluid page-body-wrapper">

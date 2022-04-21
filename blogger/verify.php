@@ -29,7 +29,7 @@ if(!isset($_SESSION['usermail'])) {
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../images/logo7.png" />
+    <link rel="icon" type="image/png" href="../images/logo7.png" />
 </head>
 <body class="container" style="background-color: #e6e6e6;">
     <center>

@@ -40,7 +40,7 @@ if ($id != 1 || 15) {
    <!-- Layout styles -->
    <link rel="stylesheet" href="./assets/css/style.css">
    <!-- End layout styles -->
-   <link rel="shortcut icon" href="../images/logo7.png" />
+   <link rel="icon" type="image/png" href="../images/logo7.png" />
    <link href="./assets/summernote/summernote-bs4.css" rel="stylesheet">
  </head>
  <body>
