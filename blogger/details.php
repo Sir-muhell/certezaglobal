@@ -6,6 +6,7 @@ include('functions/init.php');
 if(!isset($_SESSION['login'])) {
     header("location: ./ ");
 }
+
 $sql = "SELECT * FROM `users` WHERE `user` = '$username' AND `id` = '$id'";
 $result = query($sql);
 $row = fetch_array($result);
@@ -13,9 +14,12 @@ if(row_count($result) == 0){
   session_destroy();
   header("location: ./ ");
 }
-if ($id > 2) {
+
+$num = $id;
+if($id > '2') {
  header("./home?m=<?php echo $id; ?>");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
