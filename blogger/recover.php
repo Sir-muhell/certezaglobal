@@ -65,7 +65,7 @@ if(!isset($_GET['key'])) {
 						<input type="text" name="" id="data" hidden value="<?php echo $row['email']; ?>">
 					</div><br>
 					<div class="form-group">
-				    	<button type="button" id="update" style="width: 35%;" class="btn btn-danger">Recover </button>
+				    	<button type="button" id="update" style="width: 35%;" class="btn btn-danger">Sign In </button>
 				    	<br><br>
 				    <div>
 					
