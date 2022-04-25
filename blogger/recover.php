@@ -62,7 +62,7 @@ if(!isset($_GET['key'])) {
 					</div><br>
 					<div class="form-group">
 						<input class="form-control" type="password" id="cfpassword" autocomplete="off" name="" style="width:70%"placeholder="Confirm New Passsword" required>
-						<input type="text" name="" id="data" hidden value="<?php echo $row['email']; ?>">
+						<input type="text" name="" id="data" value="<?php echo $row['email']; ?>">
 					</div><br>
 					<div class="form-group">
 				    	<button type="button" id="update" style="width: 35%;" class="btn btn-danger">Sign In </button>
