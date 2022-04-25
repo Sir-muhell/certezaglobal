@@ -66,7 +66,7 @@ if ($id > 2) {
            <div class="row">
              <div class="col-md-12 grid-margin stretch-card">
                <div class="card">
-                 <div class="card-body">
+                 <div class="card-body" style="overflow-x: auto;">
                    <h4 class="card-title">All Subscribers</h4>
                    
                     <table class="table table-bordered">
