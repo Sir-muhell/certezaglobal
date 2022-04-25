@@ -13,7 +13,7 @@ $("#subscribe").click(function () {
 		      $("#msg").html("Sending...");
 		      $.ajax({
 		        type: "post",
-		        url: "functions/init.php",
+		        url: "data/functions.php",
 		        data: {name: name, email: email},
 		        success: function (data) {
 		          $("#msg").html(data);
