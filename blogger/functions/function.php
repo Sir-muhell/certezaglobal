@@ -365,7 +365,7 @@ if(isset($_POST['ffemail'])) {
 
 	//redirect to verify function
 	$subj = "RESET YOUR PASSWORD";
-	$link = "https://certezaglobal.com.ng/./recover?key=".$activator;
+	$link = "https://admin.certezaglobal.com.ng/./recover?key=".$activator;
 
 	$_SESSION['email'] = $email;
 
