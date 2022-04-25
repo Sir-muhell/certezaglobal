@@ -55,11 +55,11 @@ if ($id > 2) {
        <div class="main-panel">
         <div class="content-wrapper">
            <div class="page-header">
-             <h3 class="page-title"> Categories </h3>
+             <h3 class="page-title"> Subscribers </h3>
              <nav aria-label="breadcrumb">
                <ol class="breadcrumb">
                  <li class="breadcrumb-item"><a href="./home?m=<?php echo $id; ?>">Home</a></li>
-                 <li class="breadcrumb-item active" aria-current="page">Category</li>
+                 <li class="breadcrumb-item active" aria-current="page">Subscribers</li>
                </ol>
              </nav>
            </div>
@@ -67,14 +67,14 @@ if ($id > 2) {
              <div class="col-md-12 grid-margin stretch-card">
                <div class="card">
                  <div class="card-body">
-                   <h4 class="card-title">All Categories</h4>
-                   <?php 
-                   if ($id === '1') { ?>
+                   <h4 class="card-title">All Subscribers</h4>
+                   
                      <table class="table table-bordered">
                      <tr>
                       <thead>
-                       <th>Category</th>
+                       <th>Name</th>
                        <td>Email</td>
+                       <td>Date</td>
                        </thead>
                      </tr>
                      <?php
@@ -84,36 +84,13 @@ if ($id > 2) {
                      ?>
                      <tr>
                       <tbody>
-                        
                        <td><?php echo $row['name']; ?></td>
                        <td><?php echo $row['email']; ?></td>
                        <td><?php echo $row['date']; ?></td>
                        </tbody>
                      </tr>
-                     <?php }?>
                    </table>
-                   <?php }else { ?>
-                   <table class="table table-bordered">
-                     <tr>
-                      <thead>
-                       <th>Category</th>
-                       </thead>
-                     </tr>
-                     <?php
-                     $sql = "SELECT * FROM blog_categories ";
-                      $res = query($sql);
-                      foreach($res as $row) { 
-                     ?>
-                     <tr>
-                      <tbody>
-                        <input id="username<?php echo $row['id']; ?>" hidden value="<?php echo $row['name']; ?>">
-                       <td><?php echo $row['name']; ?></td>
-                      
-                       </tbody>
-                     </tr>
-                     <?php }?>
-                   </table>
-                  <?php } ?>
+                  
                  </div>
                </div>
              </div>
@@ -149,19 +126,7 @@ if ($id > 2) {
    <script src="./assets/js/file-upload.js"></script>
    <script src="./assets/js/typeahead.js"></script>
    <script src="./assets/js/select2.js"></script>
-    <script>
-      function del(id){
-        var del = $('#username'+id).val();
-        $.ajax({
-          type: "post",
-          url: "functions/init.php",
-          data: {del: del},
-          success: function (data) {
-            $("#msg").html(data);
-          },
-        });
-      }
-    </script>
+    
  </body>
 </html>
 
