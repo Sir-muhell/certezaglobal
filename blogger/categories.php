@@ -70,7 +70,7 @@ if ($id > 2) {
                  <div class="card-body">
                    <h4 class="card-title">All Categories</h4>
                    <?php 
-                   if ($id === '1' || $id === '15') { ?>
+                   if ($id < 3) { ?>
                      <table class="table table-bordered">
                      <tr>
                       <thead>
@@ -98,7 +98,7 @@ if ($id > 2) {
                    <table class="table table-bordered">
                      <tr>
                       <thead>
-                       <th>Category<</th>
+                       <th>Category</th>
                        </thead>
                      </tr>
                      <?php
@@ -119,7 +119,7 @@ if ($id > 2) {
                  </div>
                </div>
              </div>
-             <?php if ($id === '1' || '15') { ?>
+             <?php if ($id < 3) { ?>
                <div class="col-md-6 grid-margin">
                <div class="card">
                  <div class="card-body">
