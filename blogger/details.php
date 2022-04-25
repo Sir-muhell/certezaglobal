@@ -14,9 +14,6 @@ if(row_count($result) == 0){
   header("location: ./ ");
 }
 if ($id !== '1') {
-  if ($id !== '15') {
-   header("./home?m=<?php echo $id; ?>");
-  }
  header("./home?m=<?php echo $id; ?>");
 }
 ?>
