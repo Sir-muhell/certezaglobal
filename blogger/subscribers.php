@@ -69,13 +69,13 @@ if ($id > 2) {
                  <div class="card-body">
                    <h4 class="card-title">All Subscribers</h4>
                    
-                     <table class="table table-bordered">
+                    <table class="table table-bordered">
                      <tr>
                       <thead>
                        <th>Name</th>
                        <td>Email</td>
                        <td>Date</td>
-                       </thead>
+                      </thead>
                      </tr>
                      <?php
                      $sql = "SELECT * FROM subscribers ";
@@ -87,8 +87,9 @@ if ($id > 2) {
                        <td><?php echo $row['name']; ?></td>
                        <td><?php echo $row['email']; ?></td>
                        <td><?php echo $row['date']; ?></td>
-                       </tbody>
+                      </tbody>
                      </tr>
+                   <?php } ?>
                    </table>
                   
                  </div>
