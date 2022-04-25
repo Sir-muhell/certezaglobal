@@ -14,7 +14,7 @@ if(row_count($result) == 0){
   header("location: ./ ");
 }
 if ($id > 2) {
- header("location: ./home?m=<?php echo $id; ?>");
+ header("location: ./home?m=<?php echo $id; ?>;");
 }
 ?>
 <!DOCTYPE html>
