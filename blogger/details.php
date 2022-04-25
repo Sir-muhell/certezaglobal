@@ -15,8 +15,8 @@ if(row_count($result) == 0){
   header("location: ./ ");
 }
 
-$num = $id;
-if($id > '2') {
+
+if($id !== 1) {
  header("./home?m=<?php echo $id; ?>");
 }
 
