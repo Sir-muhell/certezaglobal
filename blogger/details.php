@@ -13,10 +13,7 @@ if(row_count($result) == 0){
   session_destroy();
   header("location: ./ ");
 }
-if ($id !== '1' ) {
-  if ($id !== '15') {
-   header("location: ./home?m=<?php echo $id; ?>");
-  }
+if ($id > 2) {
  header("location: ./home?m=<?php echo $id; ?>");
 }
 ?>
