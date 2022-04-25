@@ -4,9 +4,9 @@ if(isset($_SESSION['login'])) {
 
     unset($_SESSION['login']);
 }
- $email = $_SESSION['usermail'];
-if(!isset($_SESSION['usermail'])) {
-    header("location: ./signup ");
+ $email = $_SESSION['email'];
+if(!isset($_SESSION['email'])) {
+    header("location: ./ ");
 }
 ?>
 <!DOCTYPE html>

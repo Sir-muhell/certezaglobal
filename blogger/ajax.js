@@ -118,7 +118,7 @@ $(document).ready(function () {
   $("#update").click(function () {
     var fpassword = $("#fpassword").val();
     var cfpassword = $("#cfpassword").val();
-    var mail = $("#data").text();
+    var mail = $("#data").val();
     console.log(mail);
 
     if (fpassword == "" || fpassword == null) {

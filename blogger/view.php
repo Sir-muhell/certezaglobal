@@ -131,7 +131,8 @@ if(empty($rowe)){
                           </div>
                         </div>
                         <img class="img-fluid" width="50px" height="auto" src="assets/images/article_images/<?php echo $rowe['image']; ?>" />
-                          <input type="text" name="" id="pic" hidden value="<?php echo $target_file; ?>">
+                        <?php $target_file = $rowe['image']; ?>
+                          <input type="text" name="" hidden id="pic" value="<?php echo $target_file; ?>">
                       </div>
                       <div class="form-group">
                         <label for="exampleTextarea1">Textarea</label>

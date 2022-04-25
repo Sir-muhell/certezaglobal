@@ -33,17 +33,17 @@
 						<h2>Sign In </h2>
 					</div>
 					<div class="form-group" style="margin-top:50px ">
-						<input class="form-control" type="text" id="username" name="" style="width:70%"placeholder="Username" required>
+						<input class="form-control" type="text" id="username" autocomplete="off" name="" style="width:70%"placeholder="Username" required>
 					</div><br>
 					<div class="form-group">
-						<input class="form-control" type="password" id="password" name="" style="width:70%"placeholder="Password" required>
+						<input class="form-control" type="password" id="password" autocomplete="off" name="" style="width:70%"placeholder="Password" required>
 					</div><br>
 					<div class="form-group">
 				    	<button type="button" id="login" style="width: 35%;" class="btn btn-danger">Sign In </button>
 				    	<br><br>
 				    <div>
 				    <div style="margin-right: ">
-				    	<span><a href="./forgot" style="color: black;">Forgot password</a> &nbsp; | &nbsp; <a style="color: black; cursor: pointer;" onclick="signup();">Sign Up</a></span>
+				    	<span><a onclick="forgot()" style="color: black; cursor: pointer;">Forgot password</a> &nbsp; | &nbsp; <a style="color: black; cursor: pointer;" onclick="signup();">Sign Up</a></span>
 				    </div>
 					
 				</div>
@@ -138,6 +138,29 @@
 			</div>
 		</form>
 	</section>
+
+	<section style="margin-top:10%; width: 90%;" id="fg">
+		<form class="form">
+			<div class="card" style="border-radius: 30px;">
+				<div class="card-body ">
+					<div>
+						<h2>Forgot Password </h2>
+					</div>
+					<div class="form-group" style="margin-top:50px ">
+						<input class="form-control" type="text" id="femail" autocomplete="off" name="" style="width:70%"placeholder="Email" required>
+					</div><br>
+					<div class="form-group">
+				    	<button type="button" id="forgot" style="width: 35%;" class="btn btn-danger">Recover </button>
+				    	<br><br>
+				    <div>
+				    <div style="margin-right: ">
+				    	<span><a onclick="signin()" style="color: black; cursor: pointer;">Sign In</a> &nbsp; | &nbsp; <a style="color: black; cursor: pointer;" onclick="signup();">Sign Up</a></span>
+				    </div>
+					
+				</div>
+			</div>
+		</form>
+	</section>
     
 	</center>
 	<!-- Modal -->
@@ -150,21 +173,30 @@
 	<script>
 		var a = document.getElementById("si");
 		var b = document.getElementById("su");
+		var c = document.getElementById("fg");
 
 		a.style.display = "block";
 		b.style.display = "none";
+		c.style.display = "none";
 
 		function signup() {
 			a.style.display = "none";
 			b.style.display = "block";
+			c.style.display = "none";
 
 		}
 
 		function signin() {
 			a.style.display = "block";
 			b.style.display = "none";
+			c.style.display = "none";
 		}
 
+		function forgot() {
+			a.style.display = "none";
+			b.style.display = "none";
+			c.style.display = "block";
+		}
 
 	</script>
 	
