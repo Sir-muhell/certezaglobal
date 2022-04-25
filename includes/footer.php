@@ -4,6 +4,11 @@
 	<?php
 	$address = $_SERVER['REQUEST_URI']; 
 	?>
+	<?php
+	$sqlf = "SELECT * FROM details ";
+	$resultf = mysqli_query($con,$sqlf);
+	$rowf = db_fetch_assoc($resultf);
+	?>
 	<br><br><br><br><br>
 	<footer class="footer">
 		<div class="container">
@@ -12,7 +17,7 @@
 					<div class="footer_content">
 						<div class="subscribe_title">About Us</div>
 						<div class="footer_social">
-							<p style="color: #fff">Certeza Global is a blog inspired, to help unveil the confidence in women of different sectors of life that has been ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained... <a href="./about" style="color: grey; border: none;">Read more</a></p>
+							<p style="color: #fff"><?php echo $rowf['short_des']; ?>... <a href="./about" style="color: grey; border: none;">Read more</a></p>
 						</div>
 						
 					</div>

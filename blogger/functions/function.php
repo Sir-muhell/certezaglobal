@@ -519,10 +519,10 @@ if (isset($_POST['about'])) {
 	$about 		= $_POST['about'];
 	$user = $_SESSION['login'];
 	$sql = "UPDATE users SET `about` = '$about' WHERE `user` = '$user'";
-				$result = query($sql);
+	$result = query($sql);
 
-				echo 'Updating...';
-				echo '<script> location.reload(); </script>';
+	echo 'Updating...';
+	echo '<script> location.reload(); </script>';
 
 }
 
@@ -837,7 +837,7 @@ if (isset($_POST['']) && isset($_POST['tags']) && isset($_POST['cat']) && isset(
 
 // 	}
 
-//Upload new Category 
+//Add new Category 
 	if (isset($_POST['category'])) {
 
 		$category = $_POST['category'];
@@ -847,7 +847,7 @@ if (isset($_POST['']) && isset($_POST['tags']) && isset($_POST['cat']) && isset(
 		$sqlt.= " VALUES('$category')";
 		$result = query($sqlt);
 		if ($result != 1) {
-			echo "Error! Please Consult Administrator.";
+			
 		} else {
 			echo "Category Added Successful!";
 			echo '<script> location.reload(); </script>';
@@ -979,10 +979,10 @@ if (!empty($_FILES["ad_image"]["name"])) {
 //Upload Long Web Details 
 	if (isset($_POST['long'])) {
 
-		$long = $_POST['long'];
+		$longer = clean($_POST['long']);
 
         // Insert article into db 
-        $sqlt = "UPDATE details SET long_des = '$long'";
+        $sqlt = "UPDATE details SET long_des = '$longer'";
 		$result = query($sqlt);
 		if ($result != 1) {
 			echo "Error! Please Consult Administrator.";

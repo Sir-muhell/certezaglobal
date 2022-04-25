@@ -153,7 +153,7 @@ if ("$name" == '') {
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./<?php echo  $row['id'];?>"><?php echo $row['name']; ?></a></ul>
+										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>

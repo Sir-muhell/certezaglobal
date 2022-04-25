@@ -590,7 +590,7 @@ $("#s_des").click(function () {
     if (short == null || short == "") {
       $("#msg").html("Kindly input a short description");
     } else {
-      $("#msg").html("Sending...");
+      $("#msg").html("Updating...");
       $.ajax({
         type: "post",
         url: "functions/init.php",
@@ -600,19 +600,19 @@ $("#s_des").click(function () {
         },
       });
     }
-    $("#modal").modal
+    $("#modal").modal();
 
   });
 
 
 //Long description
 $("#l_des").click(function () {
-    var long  = $("#summernote").val();
+    var long  = $("#long").val();
 
     if (long == null || long == "") {
       $("#msg").html("Kindly input description");
     } else {
-      $("#msg").html("Sending...");
+      $("#msg").html("Updating...");
       $.ajax({
         type: "post",
         url: "functions/init.php",
@@ -622,7 +622,7 @@ $("#l_des").click(function () {
         },
       });
     }
-    $("#modal").modal
+    $("#modal").modal();
 
   });
 
@@ -639,7 +639,7 @@ $("#del").click(function () {
         },
       });
     
-    $("#modal").modal
+    $("#modal").modal();
 
   });
 

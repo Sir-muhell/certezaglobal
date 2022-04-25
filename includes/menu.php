@@ -43,14 +43,14 @@
 				<?php }
 
 				else { ?>
-						<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
+						<li><a href="./<?php echo $row['name']; ?>">Latest Articles</a></li>
 				<?php 
 				}	 
 				?>
-				<li class="dropdown menu_mm">
-									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false">Categories
+				<li class="dropdown">
+									<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" >Categories
 									</a>
-									<div style="position: static; overflow: hidden;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<div class="dropdown-menu" style="position: fixed; transform-style: none;" aria-labelledby="navbarDropdown">
 										<?php
 										$sql = "SELECT * FROM blog_categories";
 										$result=mysqli_query($con,$sql);
@@ -58,7 +58,7 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./category/<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a></ul>
+										<ul style="margin-bottom: 15px; overflow: hidden;"><a class="container" style="color: black" href="./category/<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>
