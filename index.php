@@ -61,7 +61,11 @@ include("data/functions.php");
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul><a class="container" style="color: black" href="./category/<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></ul>
+										<?php
+										$cat_name = $row['name'];
+										$cat_name = str_replace('-', ' ', $cat_name);
+										?>
+										<ul><a class="container" style="color: black" href="./category/<?php echo  $row['name'];?>"><?php echo $cat_name; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>

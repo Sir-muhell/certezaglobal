@@ -34,7 +34,7 @@
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="./">Home</a></li>
 				<?php
-						$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
+						$sql = "SELECT * FROM article WHERE status = 'publish' ORDER BY id DESC LIMIT 1";
 						$result=mysqli_query($con,$sql);
 						$row = db_fetch_assoc($result);
 						$rowcount=mysqli_num_rows($result);	
@@ -58,7 +58,11 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul style="margin-bottom: 15px; overflow: hidden;"><a class="container" style="color: black" href="./category/<?php echo $row['name']; ?>"><?php echo $row['name']; ?></a></ul>
+										<?php
+										$cat_name = $row['name'];
+										$cat_name = str_replace('-', ' ', $cat_name);
+										 ?>
+										<ul style="margin-bottom: 15px; overflow: hidden;"><a class="container" style="color: black" href="./category/<?php echo $row['name']; ?>"><?php echo $cat_name; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>

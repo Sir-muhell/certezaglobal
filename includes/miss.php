@@ -13,7 +13,11 @@
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<li style="margin-top: 20px"><a href="category/<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></li>
+										<?php
+										$cat_name = $row['name'];
+										$cat_name = str_replace('-', ' ', $cat_name);
+										 ?>
+										<li style="margin-top: 20px"><a href="category/<?php echo  $row['name'];?>"><?php echo $cat_name; ?></a></li>
 										<?php }} ?>
 									</ul>
 								</div>
@@ -28,7 +32,11 @@
 												 if(!empty($result)) { 
 												foreach($result as $row){ 
 												?>
-												<li><a href="category/<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></li>
+												<?php
+												$cat_name = $row['name'];
+												$cat_name = str_replace('-', ' ', $cat_name);
+										 		?>
+												<li><a href="category/<?php echo  $row['name'];?>"><?php echo $cat_name; ?></a></li>
 												<?php }} ?>
 											</ul>
 										</li>

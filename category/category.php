@@ -27,7 +27,7 @@ if ("$name" == '') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><?php echo $row['name']; ?> | Category | Certeza Global</title>
+<title><?php echo $row['title']; ?> | Category | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Certeza Global">
@@ -83,7 +83,11 @@ if ("$name" == '') {
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul><a class="container" style="color: black" href="./<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></ul>
+										<?php
+										$cat_name = $row['name'];
+										$cat_name = str_replace('-', ' ', $cat_name);
+										 ?>
+										<ul><a class="container" style="color: black" href="./<?php echo  $row['name'];?>"><?php echo $cat_name; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>
@@ -153,7 +157,11 @@ if ("$name" == '') {
 										 if(!empty($result)) { 
 										foreach($result as $row){ 
 										?>
-										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./<?php echo  $row['name'];?>"><?php echo $row['name']; ?></a></ul>
+										<?php
+										$cat_name = $row['name'];
+										$cat_name = str_replace('-', ' ', $cat_name);
+										 ?>
+										<ul style="margin-bottom: 15px; overflow: hidden; position: ;"><a class="container" style="color: black" href="./<?php echo  $row['name'];?>"><?php echo $cat_name; ?></a></ul>
 									    <?php }} ?>
 									</div>
 								</li>
@@ -175,8 +183,11 @@ if ("$name" == '') {
 			$row = db_fetch_assoc($result);
 			?>
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="../images/cat/<?php echo $row['img']; ?>" ></div>
-		<div class="home_content">	
-			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($row['name']); ?></div>
+		<div class="home_content">
+			<?php
+			$cat_name = $row['name'];
+			$cat_name = str_replace('-', ' ', $cat_name); ?>	
+			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($cat_name); ?></div>
 			
 			<?php 
 			$sqle = "SELECT * FROM article WHERE status = 'Publish' AND category = '$id' LIMIT 1  ";
@@ -799,11 +810,12 @@ if ("$name" == '') {
 				<div class="col-lg-4 order-lg-2 order-2">
 					<div class="footer_content">
 						<div class="subscribe_title">Subscribe</div>
-							<form action="subscribe.php">
-									<input type="email " class="sub_input" name="name" placeholder="Your Full Name" required="required">
+							<form>
+									<input type="email " class="sub_input" name="name" id="name" autocomplete="off" placeholder="Your Full Name" required="required">
 									<br><br>
-									<input type="text " class="sub_input" name="email" placeholder="Your Email" required="required">
-								<button class="sub_button" type="button">
+									<input type="text " class="sub_input" name="email" id="email" autocomplete="off" placeholder="Your Email" required="required">
+									<p id="msg" style="color: white;"> </p>
+								<button class="sub_button" id="subscribe" type="button">
 									<svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 										 width="19px" height="13px" viewBox="0 0 19 13" enable-background="new 0 0 19 13" xml:space="preserve">
 										<polygon fill="#FFFFFF" points="12.475,0 11.061,0 17.081,6.021 0,6.021 0,7.021 17.038,7.021 11.06,13 12.474,13 18.974,6.5 "/>

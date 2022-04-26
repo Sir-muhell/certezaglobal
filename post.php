@@ -61,15 +61,21 @@ if ($rowcounta == '0') {
 }
 
 
+	$sqlc = "SELECT * FROM article WHERE name = '$name' ";
+	$resultc=mysqli_query($con,$sqlc);
+	$rowcountc=mysqli_num_rows($resultc);
+	$rowc = db_fetch_assoc($resultc);
+	$string = $rowc['content'];
+	$string = (strlen($string) > 13) ? substr($string,0,10).'...' : $string;
  ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><?php echo $name; ?> | Certeza Global</title>
+<title><?php echo $row['titles']; ?> | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Demo project">
+<meta name="description" content="<?php echo $string; ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -256,9 +262,10 @@ if ($rowcounta == '0') {
 						<div class="similar_posts">
 							<div class="section_title">Related posts by same author </div><br>
 							<div class="grid clearfix">
-								<?php  
+								<?php
+								$name=$_REQUEST['name'];  
 								$cat = $row['cat'];
-								$sql = "SELECT * FROM article WHERE cat = '$cat' LIMIT 3 "; 
+								$sql = "SELECT * FROM article WHERE cat = '$cat' AND article NOT IN (SELECT * FROM article WHERE name = '$name') LIMIT 3 "; 
 								$result=mysqli_query($con,$sql);
 							     $rowcount=mysqli_num_rows($result);
 
@@ -268,7 +275,7 @@ if ($rowcounta == '0') {
 	                        
 				                <div class="card card_small_with_image grid-item">
 				                  <a href="./<?php echo $row['name']; ?>">
-				                      <img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: 350px;height: auto">
+				                      <img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
 				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['titles']; ?></a></div>
