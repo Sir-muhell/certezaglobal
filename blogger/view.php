@@ -243,7 +243,7 @@ if(empty($rowe)){
     <script src="./assets/js/select2.js"></script>
     <!-- End custom js for this page -->
 
-    <!-- <script src="./assets/summernote/summernote-bs4.min.js"></script>
+    <script src="./assets/summernote/summernote-bs4.min.js"></script>
     <script>
         $('#summernote').summernote({
 
@@ -251,7 +251,7 @@ if(empty($rowe)){
         height: 200
       
     });
-    </script> -->
+    </script>
     <script>
     function picture(){
     var picture = new FormData();

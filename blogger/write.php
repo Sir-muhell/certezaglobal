@@ -150,14 +150,14 @@ if(row_count($result) == 0){
     <!-- End custom js for this page -->
 
     <script src="./assets/summernote/summernote-bs4.min.js"></script>
-    <!-- <script>
+    <script>
         $('#summernote').summernote({
 
         tabsize: 2,
         height: 300
       
     });
-    </script> -->
+    </script>
     <script>
     function picture(){
     var picture = new FormData();
