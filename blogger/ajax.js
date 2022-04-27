@@ -367,6 +367,7 @@ $("#nwrite").click(function () {
     var nstatus    = $("#nstatus").val();
     var npix = $("#pic").val();
     var p_id = $("#pid").val();
+    var ndate = $("#ndate").val();
     
     if (ntitle == "" || ntitle == null) {
       $("#msg").html("Input a Title");
@@ -385,7 +386,7 @@ $("#nwrite").click(function () {
             $.ajax({
               type: "post",
               url: "functions/init.php",
-              data: { ntitle: ntitle, ntags: ntags, ncat: ncat, nstatus: nstatus, ncontent: ncontent, npix: npix, p_id: p_id, url: url},
+              data: { ntitle: ntitle, ntags: ntags, ncat: ncat, nstatus: nstatus, ncontent: ncontent, npix: npix, ndate: ndate, p_id: p_id, url: url},
               success: function (data) {
                 $("#msg").html(data);
               },

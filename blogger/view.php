@@ -139,6 +139,23 @@ if(empty($rowe)){
 
                         <textarea class="form-control" id="summernote"><?php echo $rowe['content']; ?></textarea>
                       </div>
+                     
+                      <?php 
+                      $state = $rowe['status'];
+                      if ($state === 'Draft') { ?>
+                      <div class="form-group">
+                        <label for="exampleTextarea1">Date</label>
+                        <input class="form-control" type="text" id="ndate" value="<?php echo $rowe['date_uploaded']; ?>">
+                      </div>
+                      <?php  
+                      }else{ ?>
+                      <div class="form-group">
+                        <input class="form-control" hidden type="text" id="ndate" value="<?php echo $rowe['date_uploaded']; ?>">
+                      </div>
+                      <?php 
+                      }
+                      ?>
+                      
                       <div class="row col-12">
                         <button type="button" id="nwrite" class=" btn btn-primary  col-6">Update Article</button>
                         <p class="col-1"></p>

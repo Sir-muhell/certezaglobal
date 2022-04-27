@@ -602,7 +602,7 @@ if (!empty($_FILES["article_image"]["name"])) {
 }
 
 //Edit article 
-if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) && isset($_POST['nstatus']) && isset($_POST['ncontent']) && isset($_POST['npix']) && isset($_POST['p_id']) && isset($_POST['url'])) {
+if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) && isset($_POST['nstatus']) && isset($_POST['ncontent']) && isset($_POST['npix']) && isset($_POST['p_id']) && isset($_POST['url']) && isset($_POST['ndate'])) {
 
 	
 	   	$user = $_SESSION['login'];
@@ -631,9 +631,10 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$date_edit = date('D, jS M, y');
 		$image = $_POST['npix'];
 		$pid = $_POST['p_id'];
+		$ndate = $_POST['ndate'];
 
         // Edit article in db 
-        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `name` = '$title'  WHERE `id` = '$pid'";
+        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `date_uploaded` = '$ndate', `name` = '$title'  WHERE `id` = '$pid'";
 		$result = query($sql);
         
 		if ($result != 1) {
