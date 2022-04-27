@@ -608,7 +608,7 @@ $("#s_des").click(function () {
 
 //Long description
 $("#l_des").click(function () {
-    var long  = $("#long").val();
+    var long  = $("#summernote").val();
 
     if (long == null || long == "") {
       $("#msg").html("Kindly input description");

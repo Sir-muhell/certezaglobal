@@ -968,7 +968,7 @@ if (!empty($_FILES["ad_image"]["name"])) {
 //Upload short Web details
 	if (isset($_POST['short'])) {
 
-		$short = $_POST['short'];
+		$short = escape($_POST['short']);
 
         // Insert article into db 
         $sqlt = "UPDATE details SET short_des = '$short'";
@@ -984,7 +984,7 @@ if (!empty($_FILES["ad_image"]["name"])) {
 //Upload Long Web Details 
 	if (isset($_POST['long'])) {
 
-		$longer = clean($_POST['long']);
+		$longer = escape($_POST['long']);
 
         // Insert article into db 
         $sqlt = "UPDATE details SET long_des = '$longer'";

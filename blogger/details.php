@@ -94,7 +94,7 @@ if ($id > 2) {
                       <div class="form-group">
                             <label>About Certeza Global</label>
                                 <div class="input-group col-xs-12">
-                                    <textarea class="form-control" rows="10" id="long"><?php echo $rows['long_des']; ?></textarea>
+                                    <textarea class="form-control" rows="10" id="summernote"><?php echo $rows['long_des']; ?></textarea>
                                 </div>
                       </div>
                        <button class="btn btn-primary mr-2" id="l_des" type="button">Update</button>

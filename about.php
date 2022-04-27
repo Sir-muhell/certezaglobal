@@ -107,12 +107,23 @@
 						<!-- Post Body -->
 
 						<div class="post_body">
-							
+							<?php
+							$sqlf = "SELECT * FROM details ";
+							$resultf = mysqli_query($con,$sqlf);
+							$rowf = db_fetch_assoc($resultf);
+							$des = $rowf['long_des'];
+							?>
 							
 							<figure>
 								<img src="blogadmin/images/<?php echo $row['photo']; ?>" alt="">
 								
 							</figure>
+							<?php
+							if (!empty($des)) { ?>
+								<p class="post_p"><?php echo $des; ?></p>
+							<?php	
+							 } else {
+							?>
 								<p class="post_p"><i>"I want to unveil the giant in women along with me; I am not keeping this to myself alone"</i>
 
 						<br>This was the statement I made few years back, "I am never going to keep this to myself alone, a lot of women out there are victims of this so I won't keep this to myself". 
@@ -145,7 +156,7 @@
 								<p class="post_p">Certeza Global is a blog inspired by Oluwabusolami Adepitan, to help unveil the confidence in women of different sectors of life as ordained by God. Also, to build your confidence with many others that are victims of this. To get Updated, informed and entertained subscribe to this site so you receive notifications on every article.</p>
 						</div>
 						<p class="post_p">Meet the team with the wild vision and Imagination.</p>
-
+						<?php } ?>
 					<section class="teams col-sm-12" style="width:100%;">
 						<div class="container">
 
