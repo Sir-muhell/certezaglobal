@@ -818,9 +818,21 @@ section
 {
 	color: #c26d7a;
 }
+.footer_social_whatsapp:hover i
+{
+	color: #25d366;
+}
+.footer_social_podcast:hover i
+{
+	color: #b150e2;
+}
 .footer_social_google:hover i
 {
 	color: #dd4b39;
+}
+.footer_social_telegram:hover i
+{
+	color: #229ed9;
 }
 .copyright
 {
