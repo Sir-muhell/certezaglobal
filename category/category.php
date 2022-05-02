@@ -794,11 +794,13 @@ if ("$name" == '') {
 						<div><a href="../"><img class="" src="../images/logo7.png" style="height: 40px;"></a></div>
 						<div class="footer_social">
 							<ul style="margin: 50px 0px 50px 0px">
-								<li class="footer_social_facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li class="footer_social_twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li class="footer_social_instagram"><a href="https://instagram.com/certezaglobal/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-								<li class="footer_social_google"><a href="https://wa.me/2347051532319"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-								<li class="footer_social_google"><a href="mailto: certezaglobal11@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+								<li class="footer_social_facebook"><a href="https://facebook.com/certezaglobalblog/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="footer_social_twitter"><a href="https://twitter.com/certezaglobal/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="footer_social_instagram"><a href="https://instagram.com/certeza_global/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li class="footer_social_whatsapp"><a href="https://wa.me/2347051532319/" target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+								<li class="footer_social_google"><a href="mailto: certezaglobal11@gmail.com" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+								<li class="footer_social_podcast"><a href="https://anchor.fm/ceteza-global/" target="_blank"><i class="fa fa-podcast" aria-hidden="true"></i></a></li>
+								<li class="footer_social_telegram"><a href="https://t.me/+NYabgLlu2fBmMTJk/" target="_blank"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 						<div class="copyright">

@@ -2,7 +2,7 @@
 $name = $_REQUEST['name'];
 session_start();
 if ($name = '') {
-	header("location : error.php");
+	header("location : ./error");
 }
 
 
@@ -25,7 +25,7 @@ $rowcount=mysqli_num_rows($result);
 $row = db_fetch_assoc($result);
 
 if ($rowcount === '0') {
-	header("location : ./");
+	header("location : ./error");
 }
 
 $view = $row['views'];
@@ -61,9 +61,12 @@ if ($rowcounta == '0') {
 }
 
 
-	$sqlc = "SELECT * FROM article WHERE name = '$name' ";
+	$sqlc = "SELECT * FROM article WHERE name = '$name' AND status = 'Publish' ";
 	$resultc=mysqli_query($con,$sqlc);
 	$rowcountc=mysqli_num_rows($resultc);
+	if ($rowcountc == 0) {
+		header("location : ./error");
+	}
 	$rowc = db_fetch_assoc($resultc);
 	$string = $rowc['content'];
 	$string = (strlen($string) > 13) ? substr($string,0,10).'...' : $string;

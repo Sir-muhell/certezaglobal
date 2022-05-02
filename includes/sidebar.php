@@ -206,7 +206,7 @@
 										<div class="owl-item">
 											<br>
 											<?php
-											 $sql = "SELECT * FROM article ORDER BY views DESC LIMIT 4";
+											 $sql = "SELECT * FROM article WHERE status = 'Publish' ORDER BY views DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 
