@@ -544,6 +544,7 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
 		$title = strtolower($title);
+		$title = trim($title);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
       	$url = str_replace(' ', '-', $title).rand(0, 99);
@@ -618,6 +619,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
 		$title = strtolower($title);
+		$title = trim($title);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
       	$url = str_replace(' ', '-', $title).rand(0, 99);

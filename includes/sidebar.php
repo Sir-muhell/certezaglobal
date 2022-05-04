@@ -59,6 +59,7 @@
 											<?php
 											$name = $rows['name']; 
 											$name  = str_replace('-', ' ', $name);
+											$name = ucfirst($name);
 											?>
 											<p style="font-size: 17spx"><strong><?php echo ucwords($name); 
 											$id = $rows['name'];

@@ -61,6 +61,7 @@
 										<?php
 										$cat_name = $row['name'];
 										$cat_name = str_replace('-', ' ', $cat_name);
+										$cat_name = ucfirst($cat_name);
 										 ?>
 										<ul style="margin-bottom: 15px; overflow: hidden;"><a class="container" style="color: black" href="./category/<?php echo $row['name']; ?>"><?php echo $cat_name; ?></a></ul>
 									    <?php }} ?>
