@@ -554,7 +554,7 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		$tags 	= $_POST['tags'];
 		$cat 		= $_POST['cat'];
 		$status 	= $_POST['status'];
-		$content 		= clean($_POST['content']); 
+		$content 		= escape($_POST['content']); 
 		$date_reg = date('D, jS M, Y');
 		$image = $_POST['pix'];
 
