@@ -27,7 +27,7 @@ if ("$name" == '') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title><?php echo $row['title']; ?> | Category | Certeza Global</title>
+<title><?php echo $row['title']; ?> Category | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Certeza Global">
@@ -119,16 +119,31 @@ if ("$name" == '') {
 	</header>
 
 	<!-- Menu -->
+	<div class="top-search-area">
+    <!-- Search Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- Close Button -->
+            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <!-- Form -->
+            <form action="../search" method="post" name="form">
+            	<div class="row" style="margin-left: 3px; margin-right: 3px;">
+            		<input type="search" name="search" class="form-control col-10" placeholder="Search here..." required="yes">
+              		<button class="btn col-2" type="submit" name="submit"><i class="fa fa-search"></i></button>
+            	</div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 		<div class="logo menu_mm"><a href="../"><img src="../images/logo_b.jpg"></a></div>
-		<div class="search">
-			<form action="../search" method="post" name="form">
-				<input type="text" name="search" class="header_search_input" placeholder="Search here..." required>
-				<!-- <div class="post_category trans_200"></div> -->
-			</form>
-		</div>
 		<nav class="menu_nav">
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="../">Home</a></li>
@@ -170,6 +185,7 @@ if ("$name" == '') {
 										
 			</ul>
 		</nav>
+		<button data-toggle="modal" data-target="#Modal" class="btn"><i class="fa fa-search"></i></button>
 	</div>
 
 
@@ -226,7 +242,7 @@ if ("$name" == '') {
 
 	                        
 				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="post?id=<?php echo $row['id']; ?>">
+				                  <a href="./<?php echo $row['name']; ?>">
 				                      <img src="../blogger/assets/images/article_images<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
@@ -537,7 +553,7 @@ if ("$name" == '') {
                                 			?>
 
 							                <div class="side_post">
-												<a href="./post?id=<?php echo $row['id']; ?>">
+												<a href="./<?php echo $row['name']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
 														<div class="side_post_content">
@@ -672,7 +688,7 @@ if ("$name" == '') {
 
 											<!-- Most viewed Videos Post -->
 											<div class="side_post">
-												<a href="./post?id=<?php echo $row['id']; ?>">
+												<a href="./<?php echo $row['name']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
 														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
 														<div class="side_post_content">

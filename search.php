@@ -38,7 +38,7 @@ if(empty($_POST['search'])) {
 							<ul>
 								<li ><a href="./">Home</a></li>
 								<?php
-										$sql = "SELECT * FROM blogs ORDER BY id DESC LIMIT 1";
+										$sql = "SELECT * FROM article ORDER BY id DESC LIMIT 1";
 										$result=mysqli_query($con,$sql);
 										$row = db_fetch_assoc($result);
 										$rowcount=mysqli_num_rows($result);	
@@ -47,7 +47,7 @@ if(empty($_POST['search'])) {
 								<?php }
 
 								else { ?>
-										<li><a href="./post?id=<?php echo $row['id']; ?>">Latest Articles</a></li>
+										<li><a href="./<?php echo $row['name']; ?>">Latest Articles</a></li>
 								<?php 
 								}	 
 								?>
@@ -90,54 +90,64 @@ if(empty($_POST['search'])) {
 			<div class="row row-lg-eq-height">
 
 				<!-- Post Content -->
+				
 
 				<div class="col-lg-9">
+				<?php
+				if(!empty($_POST['search'])) {
+							    $search_keyword = $_POST['search'];
+							   }
+							   $sql = "SELECT * FROM article WHERE titles LIKE '%$search_keyword%' OR content LIKE '%$search_keyword%'  OR tag LIKE '%$search_keyword%' AND status = 'publish' ORDER BY id DESC ";
+							                        
+							                       
+							  $result=mysqli_query($con,$sql);
+							  $rowcount=mysqli_num_rows($result);
+							                           
+							 if ($rowcount==0) { ?>
+       										<div style="margin-bottom: -50px; margin-top: 30px;">	
+                            <p style="color:#E9573F;  "><b>Sorry your search for:<u style="color:black"><?php echo $search_keyword?></u> returned zero results</b></p>
+                            <p><b style="color:#717478">Suggestions<b><br><span style="color:#FFA500">Your search item is not available on Our Website<br>Try being more specific with key words<br>Enter key word using title<br>Try search using category<br>Try again later<br></span></p>
+                            <p><a href="http://www.google.com/search?q= <?php echo $search_keyword?>" target="_blank" title="Look up <?php echo $search_keyword ?> on Google" style="color:#37BC9B">Click here</a> to try the 
+                            search on google</p>
+                           </div>
+                        <?php
+                        }
+                        else{ ?>
+                        	<div style="margin-bottom: -50px; margin-top: 30px;">
+                        		<p style="color:#4FC1E9; "><b>You searched for:<u style="color:black"><?php echo $search_keyword?></u></b></p>
+                            <p style="color:#37BC9B"><b>Results(<?php echo$rowcount?>)...</b></p>
+                        	</div>
+                            
+        <?php }             
+                              
+				?>
 					<div class="post_content">
 
 						
 						<div class="similar_posts">
 							<div class="grid clearfix">
 								<?php   
-								if(!empty($_POST['search'])) {
-							                      $search_keyword = $_POST['search'];
-							                     }
-							                   $sql = "SELECT * FROM blogs WHERE title LIKE '%$search_keyword%' OR content LIKE '%$search_keyword%'  OR tags LIKE '%$search_keyword%' OR author LIKE '%$search_keyword%'  AND posted = 'publish' ORDER BY id DESC ";
-							                        
-							                       
-							                        $result=mysqli_query($con,$sql);
-							                        $rowcount=mysqli_num_rows($result);
-							                           
-							                  
-                        
-						                            if ($rowcount!==0) {
-						       
-						                           
-						                        
-						                            echo "<p style='color:#4FC1E9'><b>You searched for:<u style=color:black> $search_keyword</u></b></p>";
-						                            echo "<p style='color:#37BC9B; margin-buttom:'><b>Results($rowcount)..</b></p>";
-						                        }
-
-						                    
-                            					foreach($result as $row){
+                  foreach($result as $row){
                                 ?>
 
-	                        
-				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="post?id=<?php echo $row['id']; ?>">
-				                      <img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+	                       
+	                   	<div class="card card_small_with_image grid-item" style="margin-top: 90px;" >
+				                  <a href="./<?php echo $row['name']; ?>">
+				                      <img src="blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                    <div class="card-title card-title-small"><a href="single?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tags']; ?></span> <i class="fa fa-eye ml-3" > <span><?php echo $row['views']; ?></span>
+				                    <div class="card-title card-title-small"><a href="./<?php echo $row['name']; ?>"><?php echo $row['titles']; ?></a></div>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tag']; ?></span> <i class="fa fa-eye ml-3" style="float: right;" > <span><?php echo $row['views']; ?></span>
 				                    </i></small>
-				                    <small class="post_meta mt-1" style="m"><a href="#"><i>by <?php echo ucwords($row['author']); ?></i></a><span><?php echo $row['date']; ?></span></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by <?php
+					                    $author =  $row['author'];
+															$sql = "SELECT * FROM users WHERE id = '$author'";
+															$results=mysqli_query($con,$sql);
+															$roll = db_fetch_assoc($results);
+					                     echo ucwords($roll['name']); ?></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
 				                  </div>
 				                </div>
-	                        
-	                    <?php }
-
-	                    
-	                    ?>
+	                    <?php } ?>
 							
 
 							

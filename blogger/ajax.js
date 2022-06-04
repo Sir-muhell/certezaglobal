@@ -497,7 +497,7 @@ $("#esend").click(function () {
         },
       });
     }}
-    $("#modal").modal
+    $("#modal").modal();
 
   });
 

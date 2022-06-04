@@ -19,17 +19,33 @@
 		</div>
 	</header>
 
-	<!-- Menu -->
+	 <!-- ***** Top Search Area Start ***** -->
+  <div class="top-search-area">
+    <!-- Search Modal -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- Close Button -->
+            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <!-- Form -->
+            <form action="./search" method="post" name="form">
+            	<div class="row" style="margin-left: 3px; margin-right: 3px;">
+            		<input type="search" name="search" class="form-control col-10" placeholder="Search here..." required="yes">
+              		<button class="btn col-2" type="submit" name="submit"><i class="fa fa-search"></i></button>
+            	</div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+	<div class="menu d-flex flex-column align-items-end justify-content-start text-right trans_400">
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 		<div class="logo menu_mm"><a href="./"><img src="images/logo_b.jpg"></a></div>
-		<div class="search">
-			<form action="./search" method="post" name="form">
-				<input type="text" name="search" class="header_search_input" placeholder="Search here..." required>
-				<!-- <div class="post_category trans_200"></div> -->
-			</form>
-		</div>
+		
 		<nav class="menu_nav">
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="./">Home</a></li>
@@ -72,6 +88,11 @@
 										
 			</ul>
 		</nav>
+			
+				<button data-toggle="modal" data-target="#Modal" class="btn"><i class="fa fa-search"></i></button>
+				<!-- <div class="post_category trans_200"></div> -->
+		
+		
 	</div>
 
 

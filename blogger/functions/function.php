@@ -552,7 +552,7 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
    	 	$url = str_replace(' ', '-', $title); 
     	}
 		$tags 	= $_POST['tags'];
-		$cat 		= $_POST['cat'];
+		$cat 		= $_POST['cat']; 
 		$status 	= $_POST['status'];
 		$content 		= escape($_POST['content']); 
 		$date_reg = date('D, jS M, Y');
@@ -683,11 +683,20 @@ if (isset($_POST['del'])) {
 //email users
 if (isset($_POST['user']) && isset($_POST['message']) && isset($_POST['subject'])) {
 	$user = $_POST['user'];
-	$sql = "SELECT * FROM `users` WHERE `user` = '$user'";
-	$result = query($sql);
-	$row = fetch_array($result);
-	$email = $row['email'];
 
+	if ($user === 'All Users') {
+	$sql = "SELECT * FROM `users`";
+	$result = query($sql);
+	$row_count = row_count($result);
+	$alert = "Email Sent to ".$row_count." Users !";
+	} else {
+	$sql = "SELECT * FROM `users`  WHERE `user` = '$user'";
+	$result = query($sql);
+	$alert = "Email Sent to ".$user." !";
+	}
+	
+	foreach ($result as $row) {
+	$email = $row['email'];
 	$name = $_SESSION['login'];
 	$sqlz = "SELECT * FROM `users` WHERE `user` = '$name'";
 	$resultz = query($sqlz);
@@ -696,7 +705,9 @@ if (isset($_POST['user']) && isset($_POST['message']) && isset($_POST['subject']
 	$message =  $_POST['message'];
 	$subject =  $_POST['subject'];
 	email_user($email, $subject, $message, $fname);
-	
+
+	}
+	echo $alert;
 	}
 
 function email_user($email, $subject, $message, $fname) {
@@ -718,7 +729,6 @@ $body = "<strong><h3 style='margin-top: 20px; text-align: center; font-size: 25p
 $body .= "<p style='margin-left: 20px; margin-right: 20px;'>{$message}</p>";
 $body .= "<p style='margin-top: 10px; margin-right: 20px; text-align: right;'>Best Regards <br> {$sender} <br><i>Certeza Global</i></p>";
 $send = mail($to, $subject, $body, $headers);
-echo "Email Sent!";
 }
 
 

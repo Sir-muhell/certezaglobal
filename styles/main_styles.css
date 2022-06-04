@@ -1871,3 +1871,26 @@ section
 {
 	border-bottom: solid 1px rgba(255,255,255,1);
 }
+
+.top-search-area .modal-content {
+  border: none; }
+  .top-search-area .modal-content .modal-body {
+    padding: 50px; }
+    @media only screen and (max-width: 767px) {
+      .top-search-area .modal-content .modal-body {
+        padding: 50px 15px; } }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      .top-search-area .modal-content .modal-body {
+        padding: 50px; } }
+    .top-search-area .modal-content .modal-body button.close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 10;
+      font-size: 14px; }
+      .top-search-area .modal-content .modal-body button.close-btn.btn {
+        padding: 0;
+        background-color: transparent; }
+        .top-search-area .modal-content .modal-body button.close-btn.btn:focus, .top-search-area .modal-content .modal-body button.close-btn.btn:hover {
+          box-shadow: none;
+          color: #017478; }
