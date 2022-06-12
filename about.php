@@ -169,7 +169,7 @@
 								$rowcount = db_fetch_assoc($resultt);
 								$rowt = db_fetch_assoc($resultt);
 
-								foreach ($rowt as $team) { ?>
+								foreach ($resultt as $team) { ?>
 
 								<div class="item">
 					              <div class="shadow-effect">
