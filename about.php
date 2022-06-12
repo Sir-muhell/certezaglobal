@@ -167,6 +167,7 @@
 					          	$sqlt = "SELECT * FROM users WHERE id != '2' ";
 								$resultt = mysqli_query($con,$sqlt);
 								$rowcount = db_fetch_assoc($resultt);
+								$rowt = db_fetch_assoc($resultt);
 
 								foreach ($rowt as $team) { ?>
 
