@@ -163,226 +163,46 @@
 					      <div class="row">
 					        <div class="col-sm-12">
 					          <div id="customers-teams" class="owl-carousel">
+					          	<?php 
+					          	$sqlt = "SELECT * FROM users WHERE id != '2' ";
+								$resultt = mysqli_query($con,$sqlt);
+								$rowf = db_fetch_assoc($resultt);
 
-					            <!--team 1 -->
-					            <div class="item">
+								foreach ($rowf as $team) { ?>
+
+									<div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/bubu.webp" alt="team">
-					                <h6>Oluwabusolami Fumilayo Adepitan </h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Founder/ Lifestyle</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon" href="https://facebook.com/profile.php?id=100071220171889">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon" href="#">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" href="https://linkedin.com/in/adepitan-oluwabusolami-funmilayo-635bab1b5/" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" id="socialicon" href="https://www.instagram.com/oluwabusolami_adepitan/">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
+					                <img class="img-circle" src="./blogger/<?php echo $rowf['pix']; ?>" alt="team">
+					                <h6><?php echo $rowf['name']; ?></h6>
+										<div id="pastexp">
+											<h5 id="pastexphead"><?php echo $rowf['niche']; ?></h5>
+										</div>
+									<div class="social-icons" id="teamsocial">
+										<a class="social-icon social-icon--facebook" id="socialicon" href="<?php echo $rowf['facebook']; ?>">
+											<img src="https://i.imgur.com/c9JxYPS.png">
+										</a>
+																
+										<a class="social-icon social-icon--twitter" id="socialicon" href="<?php echo $rowf['twitter']; ?>">
+											<img src="https://i.imgur.com/VHB4APa.png">
+										</a>
+										<a class="social-icon social-icon--linkedin" href="<?php echo $rowf['linkedin']; ?>" id="socialicon">
+											<img src="https://i.imgur.com/egfJ4V2.png">
+										</a>
+																
+										<a class="social-icon social-icon--instagram" id="socialicon" href="<?php echo $rowf['instagram']; ?>">
+											<img src="https://i.imgur.com/cgH07pQ.png">
+										</a>
+									</div>  
 						            </div>
 						          </div>
-						            <!--END OF team 1 -->
-											
-											
-											
-					                       <!--team 2 -->
-					            <div class="item">
-					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/sope.webp" alt="team">
-					                <h6>Mosope Adeyemi</h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Fashion</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon" href="https://facebook.com/adeyemi.mosope.3">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" href="https://www.instagram.com/lifewithsope/" id="socialicon">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
-						            </div>
-						          </div>
-					            <!--END OF team 2 -->
-											
-											
-											
-					                       <!--team 3 -->
-					            <div class="item">
-					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/bolu.webp" alt="team">
-					                <h6>Boluwatifenisola Olajide</h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Career</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" href="https://www.facebook.com/profile.php?id=100017933266795" id="socialicon">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" id="socialicon">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
-						            </div>
-						          </div>
-					            <!--END OF team 3 -->
+						           
+								<?php
+								}
+					          	?>
+					            
+					            
 					           
-											<div class="item">
-					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/eunice.webp" alt="team">
-					                <h6>Adesiji-Adelekan .A. Eunice</h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Art and Justice</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" id="socialicon">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
-						            </div>
-						          </div>
-
-
-						          <div class="item">
-					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/hannah.webp" alt="team">
-					                <h6>Oluwayemisi Hannah Tiwo</h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Content Creator/ Graphics Designer</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" id="socialicon">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
-						            </div>
-						          </div>
-
-						          <div class="item">
-					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/temi.webp" alt="team">
-					                <h6>Aanuoluwapo .O. Soleye</h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Politics/Society</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" href="https://www.instagram.com/my_name_is_orirenitemi/" id="socialicon">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
-						            </div>
-						          </div>
-
-						          <div class="item">
-					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/timi.webp" alt="team">
-					                <h6>Oluwatimileyin .O.Adepitan</h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Parenting</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" id="socialicon">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
-						            </div>
-						          </div>
-
-						          <div class="item">
-					              <div class="shadow-effect">
-					                <img class="img-circle" src="images/sewanu.webp" alt="team">
-					                <h6>Sewanu Zosu</h6>
-														<div id="pastexp">
-															<h5 id="pastexphead">Health and Fitness</h5>
-														</div>
-													<div class="social-icons" id="teamsocial">
-														<a class="social-icon social-icon--facebook" id="socialicon">
-															<img src="https://i.imgur.com/c9JxYPS.png">
-														</a>
-																				
-														<a class="social-icon social-icon--twitter" id="socialicon">
-															<img src="https://i.imgur.com/VHB4APa.png">
-														</a>
-														<a class="social-icon social-icon--linkedin" id="socialicon">
-															<img src="https://i.imgur.com/egfJ4V2.png">
-														</a>
-																				
-														<a class="social-icon social-icon--instagram" id="socialicon">
-															<img src="https://i.imgur.com/cgH07pQ.png">
-														</a>
-													</div>  
-						            </div>
-						          </div>
-											
+																			
 					          </div>
 					        </div>
 					      </div>
