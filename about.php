@@ -176,7 +176,7 @@
 					                <img class="img-circle" src="./blogger/<?php echo $team['pix']; ?>" alt="team">
 					                <h6><?php echo $team['name']; ?></h6>
 										<div id="pastexp">
-											<h5 id="pastexphead"><?php echo $rowf['niche']; ?></h5>
+											<h5 id="pastexphead"><?php echo $team['niche']; ?></h5>
 										</div>
 									<div class="social-icons" id="teamsocial">
 										<a class="social-icon social-icon--facebook" id="socialicon" href="<?php echo $team['facebook']; ?>">
