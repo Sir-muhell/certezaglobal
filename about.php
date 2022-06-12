@@ -163,20 +163,19 @@
 					      <div class="row">
 					        <div class="col-sm-12">
 					          <div id="customers-teams" class="owl-carousel">
-
-					          <?php 
+								<?php 
 					          	$sqlt = "SELECT * FROM users WHERE id != '2' ";
 								$resultt = mysqli_query($con,$sqlt);
-								$rowf = db_fetch_assoc($resultt);
+								$rowcount = db_fetch_assoc($resultt);
 
-								foreach ($rowf as $team) { ?>
+								foreach ($rowt as $team) { ?>
 
 								<div class="item">
 					              <div class="shadow-effect">
 					                <img class="img-circle" src="./blogger/<?php echo $team['pix']; ?>" alt="team">
 					                <h6><?php echo $team['name']; ?></h6>
 										<div id="pastexp">
-											<h5 id="pastexphead"><?php echo $team['niche']; ?></h5>
+											<h5 id="pastexphead"><?php echo $rowf['niche']; ?></h5>
 										</div>
 									<div class="social-icons" id="teamsocial">
 										<a class="social-icon social-icon--facebook" id="socialicon" href="<?php echo $team['facebook']; ?>">
@@ -200,9 +199,6 @@
 								<?php
 								}
 					          	?>
-
-						          
-											
 					          </div>
 					        </div>
 					      </div>
