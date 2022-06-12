@@ -163,46 +163,46 @@
 					      <div class="row">
 					        <div class="col-sm-12">
 					          <div id="customers-teams" class="owl-carousel">
-					          	<?php 
+
+					          <?php 
 					          	$sqlt = "SELECT * FROM users WHERE id != '2' ";
 								$resultt = mysqli_query($con,$sqlt);
 								$rowf = db_fetch_assoc($resultt);
 
 								foreach ($rowf as $team) { ?>
 
-									<div class="item">
+								<div class="item">
 					              <div class="shadow-effect">
-					                <img class="img-circle" src="./blogger/<?php echo $rowf['pix']; ?>" alt="team">
-					                <h6><?php echo $rowf['name']; ?></h6>
+					                <img class="img-circle" src="./blogger/<?php echo $team['pix']; ?>" alt="team">
+					                <h6><?php echo $team['name']; ?></h6>
 										<div id="pastexp">
-											<h5 id="pastexphead"><?php echo $rowf['niche']; ?></h5>
+											<h5 id="pastexphead"><?php echo $team['niche']; ?></h5>
 										</div>
 									<div class="social-icons" id="teamsocial">
-										<a class="social-icon social-icon--facebook" id="socialicon" href="<?php echo $rowf['facebook']; ?>">
+										<a class="social-icon social-icon--facebook" id="socialicon" href="<?php echo $team['facebook']; ?>">
 											<img src="https://i.imgur.com/c9JxYPS.png">
 										</a>
 																
-										<a class="social-icon social-icon--twitter" id="socialicon" href="<?php echo $rowf['twitter']; ?>">
+										<a class="social-icon social-icon--twitter" id="socialicon" href="<?php echo $team['twitter']; ?>">
 											<img src="https://i.imgur.com/VHB4APa.png">
 										</a>
-										<a class="social-icon social-icon--linkedin" href="<?php echo $rowf['linkedin']; ?>" id="socialicon">
+										<a class="social-icon social-icon--linkedin" href="<?php echo $team['linkedin']; ?>" id="socialicon">
 											<img src="https://i.imgur.com/egfJ4V2.png">
 										</a>
 																
-										<a class="social-icon social-icon--instagram" id="socialicon" href="<?php echo $rowf['instagram']; ?>">
+										<a class="social-icon social-icon--instagram" id="socialicon" href="<?php echo $team['instagram']; ?>">
 											<img src="https://i.imgur.com/cgH07pQ.png">
 										</a>
 									</div>  
 						            </div>
-						          </div>
+						        </div>
 						           
 								<?php
 								}
 					          	?>
-					            
-					            
-					           
-																			
+
+						          
+											
 					          </div>
 					        </div>
 					      </div>
