@@ -95,7 +95,7 @@ if(row_count($result) == 0){
                         </select>
                       </div>
                       <div class="form-group" id="upload">
-                        <label>Upload Article Image</label>
+                        <label>Upload Article Image (Only jpeg, jpg and png image formats are allowed)</label>
                         <div class="row">
                           <div class="col-8">
                             <input type="file"  class="form-control file-upload-info " name="article_image" id="article_image" placeholder="Upload Image">

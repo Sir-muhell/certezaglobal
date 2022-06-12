@@ -160,7 +160,7 @@ if(row_count($result) == 0){
                     <p class="card-description"> </p>
                     <form class="forms-sample">
                       <div class="form-group">
-                            <label>Upload Picture</label>
+                            <label>Upload Picture(Only jpeg, jpg and png image formats are allowed)</label>
                                 <div class="input-group col-xs-12">
                                     <input type="file"  class="form-control file-upload-info" id="propix" placeholder="Upload Image">
                                     <span class="input-group-append">
