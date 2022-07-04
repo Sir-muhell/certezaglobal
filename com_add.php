@@ -34,4 +34,14 @@ while($row = mysqli_fetch_array($rsl)) {
         <div class='comment_content'>
         <p><?php echo $row['comments'];  ?></p><hr>
         </div></div></li>
+        <?php 
+    }
+    
+   
+}
+        <?php 
+    }
+    
+   
+}
 ?>
