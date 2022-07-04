@@ -34,21 +34,17 @@ $("#submitButton").click(function() {
       var post_id = $("#post_id").val();
       var comment_id  = '0';
 
-      
-      var a = document.forms["frm-comment"]["name"].value;
-      var b = document.forms["frm-comment"]["email "].value;
-      var c = document.forms["frm-comment"]["comment"].value;
-      if (a === null || a === "") {
+      if (names === null || names === "") {
 	      document.getElementById("msgs").innerHTML = "Please Input your Full Name &#128579";
 	          return false;
 	      } else {
 
-	           if (b === null || b === "") {
+	           if (emails === null || emails === "") {
 	      document.getElementById("msgs").innerHTML = "Your Email can't be empty &#128580";
 	          return false;
 	      } else {
 
-	            if (c === null || c === "") {
+	            if (comment === null || comment === "") {
 	      document.getElementById("msgs").innerHTML = "Please Input your Comment &#129488";
 	          return false;
 	      }else {

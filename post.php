@@ -369,6 +369,5 @@ if ($rowcounta == '0') {
 				<?php include("includes/footer.php"); ?>
 				<script src="plugins/parallax-js-master/parallax.min.js"></script>
 				<script src="js/post.js"></script>
-				<script src="ajax.js"></script>
 	</body>
 </html>
