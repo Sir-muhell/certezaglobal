@@ -54,10 +54,7 @@ $("#submitButton").click(function() {
 	      }else {
 
 	      document.getElementById("msgs").innerHTML = "Submitting...";
-	      }else{
-
-	      
-
+	     
         $.ajax({
               url: "com_add.php",
               data: {comment_id: comment_id, comment: comment, email: email, name: name, post_id: post_id},
@@ -67,11 +64,13 @@ $("#submitButton").click(function() {
                 document.getElementById("msgs").innerHTML = "Comment Added Succesfully! &#128519";
               },
             });
-      
-     }
+       }
+
+	      }
 	   
 	  }
-	  }
+
+     
       
       
     });
