@@ -53,12 +53,10 @@ $("#submitButton").click(function() {
 	          return false;
 	      }else {
 
-	      document.getElementById("msgs").innerHTML = "Submitting";
-	      }
+	      document.getElementById("msgs").innerHTML = "Submitting...";
+	      }else{
 
-	      }
-	   
-	  }
+	      
 
         $.ajax({
               url: "com_add.php",
@@ -70,7 +68,10 @@ $("#submitButton").click(function() {
               },
             });
       
-     
+     }
+	   
+	  }
+	  }
       
       
     });
