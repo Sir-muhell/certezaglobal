@@ -302,7 +302,7 @@ if ($rowcounta == '0') {
 							</div>
 
 							<!-- Post Comment -->
-							<div class="post_comment">
+							<!-- <div class="post_comment">
 								<div class="section_title">Post Comment</div>
 								<div class="row">
 									<div class="col-lg-12">
@@ -319,7 +319,7 @@ if ($rowcounta == '0') {
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
 							<!-- Comments -->
 							<div class="comments">
