@@ -618,7 +618,6 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
 		$url = strtolower($title);
-		$url = trim($url);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
       	$url = str_replace(' ', '-', $url).rand(0, 99);
@@ -635,7 +634,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$ndate = $_POST['ndate'];
 
         // Edit article in db 
-        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `date_uploaded` = '$ndate', `name` = '$title'  WHERE `id` = '$pid'";
+        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `date_uploaded` = '$ndate', `name` = '$url'  WHERE `id` = '$pid'";
 		$result = query($sql);
         
 		if ($result != 1) {
