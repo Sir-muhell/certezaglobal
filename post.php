@@ -341,9 +341,9 @@ if ($rowcounta == '0') {
 						                           <li class='comment'>
 				                                    <div class='comment_body' style='margin-bottom: -30px'>
 				                                    <div class='comment_panel d-flex flex-row align-items-center justify-content-start'>
-				                                    <small class='post_meta'><a href='#'><b><?php echo $row['comment_sender'];  ?></b></a><span><?php echo $row['commentedon'];  ?> at <?php echo $row['timer'];  ?></span></small>+
-				                                    <!-- <button type='button' style='outline: none' onClick='postReply(" + commentId + ")' class='reply_button ml-auto'>Reply</button>
-				                                    </div> -->
+				                                    <small class='post_meta'><a href='#'><b><?php echo $row['comment_sender'];  ?></b></a><span><?php echo $row['commentedon'];  ?> at <?php echo $row['timer'];  ?></span></small>
+				                                    <!-- <button type='button' style='outline: none' onClick='postReply(" + commentId + ")' class='reply_button ml-auto'>Reply</button> -->
+				                                    </div>
 				                                    <div class='comment_content'>
 				                                    <p><?php echo $row['comments'];  ?></p><hr>
 				                                    </div></div></li>
