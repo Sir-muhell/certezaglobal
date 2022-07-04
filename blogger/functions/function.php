@@ -543,13 +543,13 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		$title = strtolower($title);
-		$title = trim($title);
+		$url = strtolower($title);
+		$url = trim($url);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
-      	$url = str_replace(' ', '-', $title).rand(0, 99);
+      	$url = str_replace(' ', '-', $url).rand(0, 99);
     	} else {
-   	 	$url = str_replace(' ', '-', $title); 
+   	 	$url = str_replace(' ', '-', $url); 
     	}
 		$tags 	= $_POST['tags'];
 		$cat 		= $_POST['cat']; 
@@ -614,17 +614,16 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$author_id = $row['id'];
 
 		$title 		= $_POST['ntitle'];
-		$url 	= strtolower($title);
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		$title = strtolower($title);
-		$title = trim($title);
+		$url = strtolower($title);
+		$url = trim($url);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
-      	$url = str_replace(' ', '-', $title).rand(0, 99);
+      	$url = str_replace(' ', '-', $url).rand(0, 99);
     	} else {
-   	 	$url = str_replace(' ', '-', $title); 
+   	 	$url = str_replace(' ', '-', $url); 
     	}
 		$tags 	= $_POST['ntags'];
 		$cat 		= $_POST['ncat'];

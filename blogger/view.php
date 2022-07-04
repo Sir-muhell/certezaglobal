@@ -79,7 +79,7 @@ if(empty($rowe)){
                     $result = query($sqll);
                     $row = fetch_array($result);
                     $author_id = $row['author'];
-                    if ($author_id === $id || $id === '1') { ?>
+                    if ($author_id === $id || $id === '1' || $id === '2') { ?>
                     
                     <form class="forms-sample" id="case">
                       <h4 class="card-title">Edit Article</h4>
