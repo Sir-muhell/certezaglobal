@@ -268,7 +268,7 @@ if ($rowcounta == '0') {
 								<?php
 								$name=$_REQUEST['name'];  
 								$cat = $row['cat'];
-								$sql = "SELECT * FROM article WHERE cat = '$cat' AND name != '$name' LIMIT 3 "; 
+								$sql = "SELECT * FROM article WHERE `cat` = '$cat' AND `name` != '$name' LIMIT 3 "; 
 								$result=mysqli_query($con,$sql);
 							     $rowcount=mysqli_num_rows($result);
 
