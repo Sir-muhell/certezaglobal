@@ -28,8 +28,8 @@ $("#submitButton").click(function() {
       
       //adds 
       var str = $("#frm-comment").serialize();
-      var names = $("#name").val();
-      var emails = $("#email").val();
+      var names = $("#comname").val();
+      var emails = $("#comemail").val();
       var comment = $("#comment").val();
       var post_id = $("#post_id").val();
       var comment_id  = '0';
