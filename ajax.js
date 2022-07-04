@@ -35,8 +35,8 @@ $("#submitButton").click(function() {
       var comment_id  = $('#commentId').val();
 
       
-      var a = document.forms["frm-comment"]["names"].value;
-      var b = document.forms["frm-comment"]["emails"].value;
+      var a = document.forms["frm-comment"]["name"].value;
+      var b = document.forms["frm-comment"]["email"].value;
       var c = document.forms["frm-comment"]["comment"].value;
       if (a === null || a === "") {
 	      document.getElementById("msgs").innerHTML = "Please Input your Full Name &#128579";
