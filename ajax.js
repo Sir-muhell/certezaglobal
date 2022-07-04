@@ -1,8 +1,8 @@
 $(document).ready(function () {
 	//Long description
 $("#subscribe").click(function () {
-    var name  = $("#name").val();
-    var email = $("#email").val();
+    var name  = $("#sub_name").val();
+    var email = $("#sub_email").val();
 
     if (name == null || name == "") {
       $("#msg").html("Kindly input your name");
@@ -36,7 +36,7 @@ $("#submitButton").click(function() {
 
       
       var a = document.forms["frm-comment"]["name"].value;
-      var b = document.forms["frm-comment"]["email"].value;
+      var b = document.forms["frm-comment"]["email "].value;
       var c = document.forms["frm-comment"]["comment"].value;
       if (a === null || a === "") {
 	      document.getElementById("msgs").innerHTML = "Please Input your Full Name &#128579";
@@ -61,9 +61,10 @@ $("#submitButton").click(function() {
               type: 'post',
               success: function (data) {
                 $("#output").html(data);
-                document.getElementById("msgs").innerHTML = "Comment Added Succesfully! &#128519";
+                
               },
             });
+        document.getElementById("msgs").innerHTML = "Comment Added Succesfully! &#128519";
        }
 
 	      }
