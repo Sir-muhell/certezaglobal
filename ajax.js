@@ -28,15 +28,15 @@ $("#submitButton").click(function() {
       
       //adds 
       var str = $("#frm-comment").serialize();
-      var name = $("#name").val();
-      var email = $("#email").val();
+      var names = $("#name").val();
+      var emails = $("#email").val();
       var comment = $("#comment").val();
       var post_id = $("#post_id").val();
       var comment_id  = $('#commentId').val();
 
       
-      var a = document.forms["frm-comment"]["name"].value;
-      var b = document.forms["frm-comment"]["email"].value;
+      var a = document.forms["frm-comment"]["names"].value;
+      var b = document.forms["frm-comment"]["emails"].value;
       var c = document.forms["frm-comment"]["comment"].value;
       if (a === null || a === "") {
 	      document.getElementById("msgs").innerHTML = "Please Input your Full Name &#128579";
@@ -57,7 +57,7 @@ $("#submitButton").click(function() {
 	     
         $.ajax({
               url: "com_add.php",
-              data: {comment_id: comment_id, comment: comment, email: email, name: name, post_id: post_id},
+              data: {comment_id: comment_id, comment: comment, email: emails, name: names, post_id: post_id},
               type: 'post',
               success: function (data) {
                 $("#output").html(data);
