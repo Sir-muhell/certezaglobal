@@ -210,7 +210,7 @@ if ("$name" == '') {
 			$resulte=mysqli_query($con,$sqle);
 			$rowe = db_fetch_assoc($resulte);
 			?>
-			<div>Author - <a href="" style="color: white;"><?php echo ucwords( $rowe['name']); ?></a></div>
+			<div>Author - <a href="" style="color: white;"><?php echo ucwords( $rowe['name']); ?><?php echo $id; ?></a></div>
 
 		</div>
 	</div>
@@ -248,9 +248,9 @@ if ("$name" == '') {
 				                  <div class="card-body">
 				                  	<?php   
 				                  	$author =  $row['author'];
-									$sql = "SELECT * FROM users WHERE id = '$author'";
-									$results=mysqli_query($con,$sql);
-									$rows = db_fetch_assoc($result);
+														$sql = "SELECT * FROM users WHERE id = '$author'";
+														$results=mysqli_query($con,$sql);
+														$rows = db_fetch_assoc($result);
 
                                 	?>
 				                    <div class="card-title card-title-small"><a href="<?php echo $row['name']; ?>"><?php echo $row['title']; ?></a></div>
