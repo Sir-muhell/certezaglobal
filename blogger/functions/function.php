@@ -543,14 +543,15 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		$title = strtolower($title);
-		$title = trim($title);
+		
+		
 		if (row_count($results) > 0) {
     	//asign a new post_url 
       	$url = str_replace(' ', '-', $title).rand(0, 99);
     	} else {
    	 	$url = str_replace(' ', '-', $title); 
     	}
+    	$url = strtolower($url);
 		$tags 	= $_POST['tags'];
 		$cat 		= $_POST['cat']; 
 		$status 	= $_POST['status'];
@@ -618,14 +619,15 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		$title = strtolower($title);
-		$title = trim($title);
+		
+		
 		if (row_count($results) > 0) {
     	//asign a new post_url 
       	$url = str_replace(' ', '-', $title).rand(0, 99);
     	} else {
    	 	$url = str_replace(' ', '-', $title); 
     	}
+    	$url = strtolower($url);
 		$tags 	= $_POST['ntags'];
 		$cat 		= $_POST['ncat'];
 		$status 	= $_POST['nstatus'];
@@ -636,7 +638,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$ndate = $_POST['ndate'];
 
         // Edit article in db 
-        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `date_uploaded` = '$ndate', `name` = '$title'  WHERE `id` = '$pid'";
+        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `date_uploaded` = '$ndate', `name` = '$url'  WHERE `id` = '$pid'";
 		$result = query($sql);
         
 		if ($result != 1) {

@@ -337,24 +337,27 @@ $("#about").click(function () {
             if (content == "" || content == null) {
              $("#msg").html("Please write articles in text box "); 
             }else{
-
-            $("#msg").html("Uploading, Please wait!");
-            $.ajax({
-              type: "post",
-              url: "functions/init.php",
-              data: { title: title, tags: tags, cat: cat, status: status, content: content, pix: pix},
-              success: function (data) {
-                $("#msg").html(data);
-              },
-            });
+              if (pix == "" || pix == null) {
+                $("#msg").html("Please add an Image ");
+              }else{
+                  $("#msg").html("Uploading, Please wait!");
+                  $.ajax({
+                    type: "post",
+                    url: "functions/init.php",
+                    data: { title: title, tags: tags, cat: cat, status: status, content: content, pix: pix},
+                    success: function (data) {
+                      $("#msg").html(data);
+                    },
+                  });
+                  }
+                }
+              }
+            }
           }
-        }
-      }
-    }
-    
-      $("#modal").modal();
-    
-});
+          
+            $("#modal").modal();
+          
+      });
 
 //edit article
 $("#nwrite").click(function () {

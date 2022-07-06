@@ -267,8 +267,8 @@ if ($rowcounta == '0') {
 							<div class="grid clearfix">
 								<?php
 								$name=$_REQUEST['name'];  
-								$cat = $row['cat'];
-								$sql = "SELECT * FROM article WHERE cat = '$cat' AND article NOT IN (SELECT * FROM article WHERE name = '$name') LIMIT 3 "; 
+								$cat = $row['cat']; 
+								$sql = "SELECT * FROM article WHERE `cat` = '$cat' AND `name` != '$name' LIMIT 3 ";
 								$result=mysqli_query($con,$sql);
 							     $rowcount=mysqli_num_rows($result);
 
@@ -302,7 +302,7 @@ if ($rowcounta == '0') {
 							</div>
 
 							<!-- Post Comment -->
-							<div class="post_comment">
+							<!-- <div class="post_comment">
 								<div class="section_title">Post Comment</div>
 								<div class="row">
 									<div class="col-lg-12">
@@ -319,10 +319,10 @@ if ($rowcounta == '0') {
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 
 							<!-- Comments -->
-							<div class="comments">
+							<!-- <div class="comments">
 								<div class="section_title">Comments <span></span></div>
 								<div class="row">
 									<div class="col-lg-12">
@@ -333,7 +333,7 @@ if ($rowcounta == '0') {
 										</div>
 									</div>
 								</div>	
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!-- <div class="load_more">
