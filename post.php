@@ -268,7 +268,7 @@ if ($rowcounta == '0') {
 								<?php
 								$name=$_REQUEST['name'];  
 								$cat = $row['cat'];
-								$sql = "SELECT * FROM article WHERE `cat` = '$cat' AND `name` != '$name' LIMIT 3 "; 
+								$sql = "SELECT * FROM article WHERE cat = '$cat' AND article NOT IN (SELECT * FROM article WHERE name = '$name') LIMIT 3 "; 
 								$result=mysqli_query($con,$sql);
 							     $rowcount=mysqli_num_rows($result);
 
@@ -302,7 +302,7 @@ if ($rowcounta == '0') {
 							</div>
 
 							<!-- Post Comment -->
-							<!-- <div class="post_comment">
+							<div class="post_comment">
 								<div class="section_title">Post Comment</div>
 								<div class="row">
 									<div class="col-lg-12">
@@ -319,7 +319,7 @@ if ($rowcounta == '0') {
 										</div>
 									</div>
 								</div>
-							</div> -->
+							</div>
 
 							<!-- Comments -->
 							<div class="comments">
@@ -328,32 +328,7 @@ if ($rowcounta == '0') {
 									<div class="col-lg-12">
 										<div class="comments_container">
 											<ul class="comment_list">
-												<div id="output">
-						                    <?php 
-						                    $post = $id;
-						                
-						                    $sql = "SELECT * FROM comment  WHERE $post = post_id  ORDER BY comment_id asc";
-						                    $rsl =  mysqli_query($con, $sql);
-
-						                    while($row = mysqli_fetch_array($rsl)) {
-
-						                    ?>      
-						                           <li class='comment'>
-				                                    <div class='comment_body' style='margin-bottom: -30px'>
-				                                    <div class='comment_panel d-flex flex-row align-items-center justify-content-start'>
-				                                    <small class='post_meta'><a href='#'><b><?php echo $row['comment_sender'];  ?></b></a><span><?php echo $row['commentedon'];  ?> at <?php echo $row['timer'];  ?></span></small>
-				                                    <!-- <button type='button' style='outline: none' onClick='postReply(" + commentId + ")' class='reply_button ml-auto'>Reply</button> -->
-				                                    </div>
-				                                    <div class='comment_content'>
-				                                    <p><?php echo $row['comments'];  ?></p><hr>
-				                                    </div></div></li>
-						                      
-						                    <?php 
-						                    }
-						              
-						                 
-						                ?>
-						                </div>
+												<div id="output"></div>
 											</ul>
 										</div>
 									</div>
@@ -369,5 +344,6 @@ if ($rowcounta == '0') {
 				<?php include("includes/footer.php"); ?>
 				<script src="plugins/parallax-js-master/parallax.min.js"></script>
 				<script src="js/post.js"></script>
+				<script src="comment.js"></script>
 	</body>
 </html>

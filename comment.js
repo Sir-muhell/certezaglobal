@@ -43,6 +43,9 @@
  
                 }
              
+                 
+                 
+                 
             }
                 
 
@@ -51,7 +54,6 @@
                     data: {comment_id: comment_id, comment: comment, email: email, name: name, post_id: post_id},
                     type: 'post',
                     success: function (response)
-
                     {
                        
                        var result = [' + response + '];
@@ -68,11 +70,9 @@
                             alert("Failed to add comments !");
                             return false;
                         }
-
                     }
                 });
                 $('#post_id').val(post_id);
-                listComment();
             });
             
             $(document).ready(function () {
