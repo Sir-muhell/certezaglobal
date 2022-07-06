@@ -647,6 +647,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		}
 }
 
+
 //approve users
 if (isset($_POST['approve'])) {
 	$user 		= $_POST['approve'];
