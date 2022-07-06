@@ -10,14 +10,6 @@
                 var comment = $("#comment").val();
                 var post_id = $("#post_id").val();
                 var comment_id  = $('#commentId').val();
-                 
-                console.log(email);
-                console.log(name);
-                console.log(comment);
-                console.log(post_id);
-                console.log(comment_id);
-
-
 
                 var a = document.forms["frm-comment"]["name"].value;
                 var b = document.forms["frm-comment"]["email"].value;
@@ -55,7 +47,7 @@
                     type: 'post',
                     success: function (response)
                     {
-                       
+                       $("#output").html(response);
                        var result = [' + response + '];
                        if (response)
                         {

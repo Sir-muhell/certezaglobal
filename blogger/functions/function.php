@@ -619,14 +619,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		
-		
-		if (row_count($results) > 0) {
-    	//asign a new post_url 
-      	$url = str_replace(' ', '-', $title).rand(0, 99);
-    	} else {
    	 	$url = str_replace(' ', '-', $title); 
-    	}
     	$url = strtolower($url);
 		$tags 	= $_POST['ntags'];
 		$cat 		= $_POST['ncat'];
