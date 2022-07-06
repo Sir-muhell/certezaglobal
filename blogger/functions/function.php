@@ -543,13 +543,13 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		$url = strtolower($title);
-		$url = trim($url);
+		$title = strtolower($title);
+		$title = trim($title);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
-      	$url = str_replace(' ', '-', $url).rand(0, 99);
+      	$url = str_replace(' ', '-', $title).rand(0, 99);
     	} else {
-   	 	$url = str_replace(' ', '-', $url); 
+   	 	$url = str_replace(' ', '-', $title); 
     	}
 		$tags 	= $_POST['tags'];
 		$cat 		= $_POST['cat']; 
@@ -614,15 +614,17 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$author_id = $row['id'];
 
 		$title 		= $_POST['ntitle'];
+		$url 	= strtolower($title);
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		$url = strtolower($title);
+		$title = strtolower($title);
+		$title = trim($title);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
-      	$url = str_replace(' ', '-', $url).rand(0, 99);
+      	$url = str_replace(' ', '-', $title).rand(0, 99);
     	} else {
-   	 	$url = str_replace(' ', '-', $url); 
+   	 	$url = str_replace(' ', '-', $title); 
     	}
 		$tags 	= $_POST['ntags'];
 		$cat 		= $_POST['ncat'];
@@ -634,7 +636,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 		$ndate = $_POST['ndate'];
 
         // Edit article in db 
-        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `date_uploaded` = '$ndate', `name` = '$url'  WHERE `id` = '$pid'";
+        $sql = "UPDATE article SET `titles` = '$title', `tag` = '$tags', `cat` = '$cat', `status` = '$status', `content` = '$content', `image` = '$image', `date_uploaded` = '$ndate', `name` = '$title'  WHERE `id` = '$pid'";
 		$result = query($sql);
         
 		if ($result != 1) {
