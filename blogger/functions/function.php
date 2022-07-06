@@ -543,7 +543,6 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-
 		$title = strtolower($title);
 		$title = trim($title);
 		if (row_count($results) > 0) {
@@ -552,7 +551,6 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
     	} else {
    	 	$url = str_replace(' ', '-', $title); 
     	}
-    	$url = strtolower($url);
 		$tags 	= $_POST['tags'];
 		$cat 		= $_POST['cat']; 
 		$status 	= $_POST['status'];
@@ -648,6 +646,7 @@ if (isset($_POST['ntitle']) && isset($_POST['ntags']) && isset($_POST['ncat']) &
 			echo '<script>window.location.href ="./articles" </script>';
 		}
 }
+
 
 //approve users
 if (isset($_POST['approve'])) {
