@@ -543,7 +543,9 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		//check if same title exist
 		$sqll = "SELECT * FROM `article` WHERE `titles` = '$title'";
 		$results = query($sqll);
-		
+
+		$title = strtolower($title);
+		$title = trim($title);
 		if (row_count($results) > 0) {
     	//asign a new post_url 
       	$url = str_replace(' ', '-', $title).rand(0, 99);
