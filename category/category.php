@@ -202,8 +202,8 @@ if ("$name" == '') {
 		<div class="home_content">
 			<?php
 			$cat_name = $row['name'];
-			$cat_name = str_replace('-', ' ', $cat_name); ?>	
-			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($cat_name); ?></div>
+			$cat_names = str_replace('-', ' ', $cat_name); ?>	
+			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($cat_names); ?></div>
 			
 			<?php 
 			$sqle = "SELECT * FROM users WHERE cat = '$id' LIMIT 1  ";
