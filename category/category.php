@@ -446,7 +446,7 @@ if ("$name" == '') {
 				$sql = "SELECT * FROM users WHERE cat = '7'" ;
 				$result =mysqli_query($con,$sql);
 				$row = db_fetch_assoc($result);
-				$author1 = $row['about']; 
+				$author7 = $row['about']; 
 
 				if (!empty($author7)) { ?>
 					<p class="post_p"><?php echo $author7; ?> </p><br>
