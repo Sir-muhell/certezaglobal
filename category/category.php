@@ -241,20 +241,20 @@ if ("$name" == '') {
                                 ?>
 
 	                        
-				                <div class="card card_small_with_image grid-item" style="margin-top: 90px" >
-				                  <a href="./<?php echo $row['name']; ?>">
-				                      <img src="../blogger/assets/images/article_images<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
+				                <div class="card card_small_with_image grid-item" style="margin-top: 90px;" >
+				                  <a href="../<?php echo $row['name']; ?>">
+				                      <img src="../blogger/assets/images/article_images/<?php echo $row['image']; ?>" class="card-img-top img-fluid" alt="post_image" style="width: auto;height: auto">
 				                  </a>
 				                  <div class="card-body">
-				                  	<?php   
-				                  	$author =  $row['author'];
-														$sql = "SELECT * FROM users WHERE id = '$author'";
-														$results=mysqli_query($con,$sql);
-														$rows = db_fetch_assoc($result);
-
-                                	?>
-				                    <div class="card-title card-title-small"><a href="<?php echo $row['name']; ?>"><?php echo $row['title']; ?></a></div>
-				                    <small class="post_meta"><a href="#"><?php echo ucwords($rows['name']); ?></a><span><?php echo $row['date']; ?></span></small>
+				                    <div class="card-title card-title-small"><a href="../<?php echo $row['name']; ?>"><?php echo $row['titles']; ?></a></div>
+				                    <small><i class="fa fa-tag"></i><span> <?php echo $row['tag']; ?></span> <i class="fa fa-eye ml-3" style="float: right;" > <span><?php echo $row['views']; ?></span>
+				                    </i></small>
+				                    <small class="post_meta mt-1"><a href="#"><i>by <?php
+					                    $author =  $row['author'];
+															$sql = "SELECT * FROM users WHERE id = '$author'";
+															$results=mysqli_query($con,$sql);
+															$roll = db_fetch_assoc($results);
+					                     echo ucwords($roll['name']); ?></i></a><span><?php echo $row['date_uploaded']; ?></span></small>
 				                  </div>
 				                </div>
 	                        
