@@ -476,7 +476,7 @@ if ("$name" == '') {
 					
 					
 				
-				<!-- Sidebar -->
+			<!-- Sidebar -->
 
 				<div class="col-lg-3">
 					<div class="sidebar">
@@ -534,13 +534,16 @@ if ("$name" == '') {
 			                       	?>
 										<!-- Top Stories Slider Item -->
 										<div class="owl-item">
-											<p style="font-size: 17spx"><strong><?php echo ucwords($rows['name']); 
-											$id = $rows['id'];
+											<?php
+											$name = $rows['name']; 
+											$name  = str_replace('-', ' ', $name);
+											$name = ucfirst($name);
+											?>
+											<p style="font-size: 17spx"><strong><?php echo ucwords($name); 
+											$id = $rows['name'];
 											?></strong></p><br>
 											<?php  
-								
-							                     
-							                $sql = "SELECT * FROM blogs WHERE posted = 'publish' AND category = '$id' ORDER BY id DESC LIMIT 4";
+							                $sql = "SELECT * FROM article WHERE status = 'publish' AND cat = '$id' ORDER BY id DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 							                           
@@ -553,12 +556,17 @@ if ("$name" == '') {
                                 			?>
 
 							                <div class="side_post">
-												<a href="./<?php echo $row['name']; ?>">
+												<a href="../<?php echo $row['name']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
-														<div class="side_post_content">
-															<div class="side_post_title"><?php echo $row['title']; ?></div>
-															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span><span> <?php echo $row['views']; ?> view(s)</span></small>
+														<div class="side_post_image"><div><img src="../blogger/assets/images/article_images/<?php echo $row['image']; ?>" alt=""></div></div>
+														<div class="side_post_content"><br><br>
+															<div class="side_post_title"><?php echo $row['titles']; ?></div>
+															<small class="post_meta"><?php
+															 $author =  $row['author'];
+															$sql = "SELECT * FROM users WHERE id = '$author'";
+															$results=mysqli_query($con,$sql);
+															$roll = db_fetch_assoc($results);
+				                     						echo ucwords($roll['name']); ?><span><?php echo $row['date_uploaded']; ?></span><span> <?php echo $row['views']; ?> view(s)</span></small>
 														</div>
 													</div>
 												</a>
@@ -572,7 +580,7 @@ if ("$name" == '') {
 				                    		<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -583,7 +591,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -594,7 +602,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -605,7 +613,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -626,12 +634,27 @@ if ("$name" == '') {
 						</div>
 
 						<!-- Advertising -->
+						<div class="sidebar_section mb-5">
+							<div class="advertising_2">
+								<div><p>Ads</p></div>
+								
+								<?php          
+							    $sql = "SELECT * FROM ads ORDER BY rand()";
+							    $result=mysqli_query($con,$sql);
+							    $rowcount=mysqli_num_rows($result);
+						        if(!empty($result)) { 
+                     			foreach($result as $row){
+                       			?>
+								<img style="height: auto; width: 100%;" class="test" src="../blogger/<?php echo $row['image']; ?>">
+							<?php }} ?> 
+							</div>
+						</div>
 
 						<div class="sidebar_section">
 							<?php  
 								
 							                     
-							                $sql = "SELECT * FROM blogs LIMIT 1";
+							                $sql = "SELECT * FROM article LIMIT 1";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
 							                           
@@ -641,26 +664,14 @@ if ("$name" == '') {
                             					foreach($result as $row){
                                 			?>
 
-							<div class="advertising">
-								Advertisement
-										
-							 	<?php          
-							    $sql = "SELECT * FROM ads";
-							    $result=mysqli_query($con,$sql);
-							    $rowcount=mysqli_num_rows($result);
-						        if(!empty($result)) { 
-                     			foreach($result as $row){
-                       			?>
 
-								<img style="height: auto; width: 100%;" src="<?php echo['image']; ?>">					
-							</div>
-							<?php }}}} ?> 
+							<?php }} ?> 
 						</div>
 
 						<!-- Newest Videos -->
 
 						<div class="sidebar_section newest_videos">
-							<div class="sidebar_title_container">
+							<div class="sidebar_title_container"><br><br>
 								<div class="sidebar_title">Most Viewed</div>
 								
 							</div>
@@ -674,13 +685,9 @@ if ("$name" == '') {
 										<div class="owl-item">
 											<br>
 											<?php
-											 $sql = "SELECT * FROM blogs WHERE category = '10' ORDER BY views DESC LIMIT 4";
+											 $sql = "SELECT * FROM article WHERE status = 'Publish' ORDER BY views DESC LIMIT 4";
 							                $result=mysqli_query($con,$sql);
 							                $rowcount=mysqli_num_rows($result);
-							                           
-							                  
-                        
-						                        
 
 						                    if(!empty($result)) { 
                             					foreach($result as $row){
@@ -688,12 +695,17 @@ if ("$name" == '') {
 
 											<!-- Most viewed Videos Post -->
 											<div class="side_post">
-												<a href="./<?php echo $row['name']; ?>">
+												<a href="../<?php echo $row['name']; ?>">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="blogadmin/images/<?php echo $row['photo']; ?>" alt=""></div></div>
-														<div class="side_post_content">
-															<div class="side_post_title"><?php echo $row['title']; ?></div>
-															<small class="post_meta"><?php echo ucwords($row['author']); ?><span><?php echo $row['date']; ?></span><span> <?php echo $row['views']; ?> view(s)</span></small>
+														<div class="side_post_image"><div><img src="../blogger/assets/images/article_images/<?php echo $row['image']; ?>" alt=""></div></div>
+														<div class="side_post_content"><br>
+															<div class="side_post_title"><?php echo $row['titles']; ?></div>
+															<small class="post_meta"><?php
+															 $author =  $row['author'];
+															$sql = "SELECT * FROM users WHERE id = '$author'";
+															$results=mysqli_query($con,$sql);
+															$roll = db_fetch_assoc($results);
+				                     						echo ucwords($roll['name']); ?><span><?php echo $row['date_uploaded']; ?></span><span> <?php echo $row['views']; ?> view(s)</span></small><br>
 														</div>
 													</div>
 												</a>
@@ -704,7 +716,7 @@ if ("$name" == '') {
 				                    		<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -715,7 +727,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -726,7 +738,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -737,7 +749,7 @@ if ("$name" == '') {
 											<div class="side_post">
 												<a href="#">
 													<div class="d-flex flex-row align-items-xl-center align-items-start justify-content-start">
-														<div class="side_post_image"><div><img src="../images/logo2.webp" alt=""></div></div>
+														<div class="side_post_image"><div><img src="images/logo2.webp" alt=""></div></div>
 														<div class="side_post_content">
 															<div class="side_post_title">Nothing to show yet</div>
 															<small class="post_meta"></small>
@@ -766,7 +778,7 @@ if ("$name" == '') {
 								<div><p>Ads</p></div>
 								
 								<?php          
-							    $sql = "SELECT * FROM ads";
+							    $sql = "SELECT * FROM ads ORDER BY rand()";
 							    $result=mysqli_query($con,$sql);
 							    $rowcount=mysqli_num_rows($result);
 						        if(!empty($result)) { 
@@ -785,8 +797,7 @@ if ("$name" == '') {
 
 			</div>
 		</div>
-	</div>
-				
+	</div>				
 
 	<!-- Footer -->
 	<?php
