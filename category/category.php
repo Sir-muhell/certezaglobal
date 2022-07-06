@@ -206,11 +206,11 @@ if ("$name" == '') {
 			<div class="post_title" style="font-size: 30px"><?php echo strtoupper($cat_name); ?></div>
 			
 			<?php 
-			$sqle = "SELECT * FROM user WHERE cat = '$id' LIMIT 1  ";
+			$sqle = "SELECT * FROM users WHERE cat = '$id' LIMIT 1  ";
 			$resulte=mysqli_query($con,$sqle);
 			$rowe = db_fetch_assoc($resulte);
 			?>
-			<div>Author - <a href="" style="color: white;"><?php echo ucwords( $rowe['name']); ?><?php echo $id; ?></a></div>
+			<div>Author - <a href="" style="color: white;"><?php echo ucwords( $rowe['name']); ?></a></div>
 
 		</div>
 	</div>
@@ -230,7 +230,7 @@ if ("$name" == '') {
 						<div class="similar_posts">
 							<div class="grid clearfix">
 								<?php   
-									$sql = "SELECT * FROM article WHERE status = 'Publish' AND cat = '$id'";
+									$sql = "SELECT * FROM article WHERE status = 'Publish' AND cat = '$cat_name'";
 									$result=mysqli_query($con,$sql);
 									$row = db_fetch_assoc($result);
 									$rowcount=mysqli_num_rows($result);
