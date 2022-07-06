@@ -210,7 +210,7 @@ if ("$name" == '') {
 			$resulte=mysqli_query($con,$sqle);
 			$rowe = db_fetch_assoc($resulte);
 			?>
-			<div>Author - <a href="" style="color: white;"><?php echo ucwords( $rowe['name']); ?><?php echo $id; ?></a></div>
+			<div>Author - <a href="" style="color: white;"><?php  ucwords( echo $rowe['name'];); ?><?php echo $id; ?></a></div>
 
 		</div>
 	</div>
