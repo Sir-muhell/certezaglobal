@@ -530,7 +530,6 @@ if (isset($_POST['about'])) {
 
 //Upload new article 
 if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && isset($_POST['status']) && isset($_POST['content']) && isset($_POST['pix'])) {
-
 	
 	   	$user = $_SESSION['login'];
 	   	//get author's id
@@ -557,17 +556,19 @@ if (isset($_POST['title']) && isset($_POST['tags']) && isset($_POST['cat']) && i
 		$content 		= escape($_POST['content']); 
 		$date_reg = date('D, jS M, Y');
 		$image = $_POST['pix'];
+		;
 
-        // Insert article into db 
-        $sqlt = "INSERT INTO article(`titles`, `tag`, `cat`, `status`, `content`, `image`, `date_uploaded`, `author`, `views`, `name`)";
-		$sqlt.= " VALUES('$title', '$tags', '$cat', '$status', '$content', '$image', '$date_reg', '$author_id', '0', '$url')";
-		$result = query($sqlt);
-		if ($result != 1) {
-			echo "Error! Please Consult Administrator.";
-		} else {
-			echo "Article Uploaded Successful!";
-			echo '<script>window.location.href ="./articles" </script>';
-		}
+  //       // Insert article into db 
+  //       $sqlt = "INSERT INTO article(`titles`, `tag`, `cat`, `status`, `content`, `image`, `date_uploaded`, `author`, `views`, `name`)";
+		// $sqlt.= " VALUES('$title', '$tags', '$cat', '$status', '$content', '$image', '$date_reg', '$author_id', '0', '$url')";
+		// $result = query($sqlt);
+		echo "fine";
+		// if ($result != 1) {
+		// 	echo "Error! Please Consult Administrator.";
+		// } else {
+		// 	echo "Article Uploaded Successful!";
+		// 	echo '<script>window.location.href ="./articles" </script>';
+		// }
 }
 
 
