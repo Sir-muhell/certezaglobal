@@ -100,19 +100,19 @@
                                 if (parent == "0")
                                 {
                                     comments = "<li class='comment'>"+
-                                    "<div class='comment_body' style='margin-bottom: -30px'>"+
+                                    "<div class='comment_body' style='margin-bottom: -50px'>"+
                                     "<div class='comment_panel d-flex flex-row align-items-center justify-content-start'>"+
                                     "<small class='post_meta'><a href='#'><b>" + data[i]['comment_sender'] + "</b></a><span>" + data[i]['commentedon'] + " at " + data[i]['timer'] + "</span></small>"+
-                                    "<button type='button' style='outline: none' onClick='postReply(" + commentId + ")' class='reply_button ml-auto'>Reply</button>"+
+                                    // "<button type='button' style='outline: none' onClick='postReply(" + commentId + ")' class='reply_button ml-auto'>Reply</button>"+
                                     "</div>"+
                                     "<div class='comment_content'>"+
-                                    "<p>" + data[i]['comments'] + "</p><hr>"+
+                                    "<p style='margin-top: -25px; margin-left:18px;'>" + data[i]['comments'] + "</p><hr>"+
                                     "</div></div></li>";
                                     var item = $("<li>").html(comments);
                                     list.append(item);
                                     var reply_list = $('<ul>');
                                     item.append(reply_list);
-                                    listReplies(commentId, data, reply_list);
+                                    // listReplies(commentId, data, reply_list);
                                 }
                             }
                             $("#output").html(list);

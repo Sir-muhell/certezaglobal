@@ -5,7 +5,7 @@ session_start();
 $postid = $_SESSION["postid"];
 
 require("data/functions.php");
-$sql = "SELECT * FROM comment  WHERE $postid = post_id  ORDER BY comment_id asc";
+$sql = "SELECT * FROM comment  WHERE $postid = post_id  ORDER BY comment_id desc";
 
 $result = mysqli_query($con, $sql);
 $record_set = array();
