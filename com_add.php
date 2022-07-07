@@ -24,6 +24,6 @@ echo $commentSenderName;
 
 
 
-$result = query($sql);
+
 }
 ?>
