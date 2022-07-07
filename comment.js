@@ -5,8 +5,8 @@
 
             $("#submitButton").click(function () {
                 var str = $("#frm-comment").serialize();
-                var name = $("#comname").val();
-                var email = $("#comemail").val();
+                var comname = $("#comname").val();
+                var comemail = $("#comemail").val();
                 var comment = $("#comment").val();
                 var post_id = $("#post_id").val();
                 var comment_id  = $('#commentId').val();
@@ -43,7 +43,7 @@
 
                 $.ajax({
                     url: "com_add.php",
-                    data: {comment_id: comment_id, comment: comment, email: email, name: name, post_id: post_id},
+                    data: {comment_id: comment_id, comment: comment, comemail: comemail, comname: comname, post_id: post_id},
                     type: 'post',
                     success: function (response)
                     {
@@ -51,8 +51,8 @@
                        var result = [' + response + '];
                        if (response)
                         {
-                            $("#name").val("");
-                            $("#email").val("");
+                            $("#comname").val("");
+                            $("#comemail").val("");
                             $("#comment").val("");
                             $("#commentId").val("");
                             $("#post_id").val("");
