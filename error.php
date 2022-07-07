@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Search | Certeza Global</title>
+<title>Error | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Certeza Global">

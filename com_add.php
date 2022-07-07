@@ -19,12 +19,7 @@ $result = mysqli_query($con, $sql);
 if (! $result) {
     $result = mysqli_error($con);
 }
-$sql = "SELECT * FROM comment  WHERE $postid = post_id  ORDER BY comment_id desc";
-
-$result = mysqli_query($con, $sql);
-while($row = mysqli_fetch_array($rsl)) {
-
-    ?>
+echo"
     <li class='comment'>
     <div class='comment_body' style='margin-bottom: -50px'>+
     <div class='comment_panel d-flex flex-row align-items-center justify-content-start'>+
@@ -33,9 +28,9 @@ while($row = mysqli_fetch_array($rsl)) {
     </div>
     <div class='comment_content'>
     <p style='margin-top: -25px; margin-left:18px;'><?php echo $row['comments']; ?></p><hr>+
-    </div></div></li>"
+    </div></div></li> ";
 
-<?php }
+
 $result = query($sql);
 }
 ?>
