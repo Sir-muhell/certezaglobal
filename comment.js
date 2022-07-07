@@ -47,7 +47,6 @@
                     type: 'post',
                     success: function (response)
                     {
-                       $("#output").html(response);
                        var result = [' + response + '];
                        if (response)
                         {
