@@ -9,7 +9,7 @@
                 var email = $("#email").val();
                 var comment = $("#comment").val();
                 var post_id = $("#post_id").val();
-                var comment_id  = $('#commentId').val();
+                var comment_id  = $('#commentId').val();x``
 
                 var a = document.forms["frm-comment"]["name"].value;
                 var b = document.forms["frm-comment"]["email"].value;
