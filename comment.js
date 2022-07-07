@@ -5,14 +5,14 @@
 
             $("#submitButton").click(function () {
                 var str = $("#frm-comment").serialize();
-                var comname = $("#comname").val();
-                var comemail = $("#comemail").val();
+                var name = $("#name").val();
+                var email = $("#email").val();
                 var comment = $("#comment").val();
                 var post_id = $("#post_id").val();
                 var comment_id  = $('#commentId').val();
 
-                var a = document.forms["frm-comment"]["comname"].value;
-                var b = document.forms["frm-comment"]["comemail"].value;
+                var a = document.forms["frm-comment"]["name"].value;
+                var b = document.forms["frm-comment"]["email"].value;
                 var c = document.forms["frm-comment"]["comment"].value;
 
                 if (a === null || a === "") {
@@ -43,7 +43,7 @@
 
                 $.ajax({
                     url: "com_add.php",
-                    data: {comment_id: comment_id, comment: comment, comemail: comemail, comname: comname, post_id: post_id},
+                    data: {comment_id: comment_id, comment: comment, email: email, name: name, post_id: post_id},
                     type: 'post',
                     success: function (response)
                     {
@@ -51,8 +51,8 @@
                        var result = [' + response + '];
                        if (response)
                         {
-                            $("#comname").val("");
-                            $("#comemail").val("");
+                            $("#name").val("");
+                            $("#email").val("");
                             $("#comment").val("");
                             $("#commentId").val("");
                             $("#post_id").val("");
