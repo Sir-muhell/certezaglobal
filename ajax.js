@@ -1,20 +1,20 @@
 $(document).ready(function () {
 	//Long description
 $("#subscribe").click(function () {
-    var name  = $("#name").val();
-    var email = $("#email").val();
+    var subname  = $("#subname").val();
+    var subemail = $("#subemail").val();
 
-    if (name == null || name == "") {
+    if (subname == null || subname == "") {
       $("#msg").html("Kindly input your name");
     } else {
-    	if (email == null || email == "") {
+    	if (subemail == null || subemail == "") {
       $("#msg").html("Kindly input your email");
 		  }else{
 		      $("#msg").html("Sending...");
 		      $.ajax({
 		        type: "post",
 		        url: "data/functions.php",
-		        data: {name: name, email: email},
+		        data: {subname: subname, subemail: subemail},
 		        success: function (data) {
 		          $("#msg").html(data);
 		        },

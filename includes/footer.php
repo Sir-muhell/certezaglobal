@@ -46,9 +46,9 @@
 					<div class="footer_content">
 						<div class="subscribe_title">Subscribe</div>
 							<form>
-									<input type="email " class="sub_input" name="name" id="name" autocomplete="off" placeholder="Your Full Name" required="required">
+									<input type="email " class="sub_input" name="name" id="subname" autocomplete="off" placeholder="Your Full Name" required="required">
 									<br><br>
-									<input type="text " class="sub_input" name="email" id="email" autocomplete="off" placeholder="Your Email" required="required">
+									<input type="text " class="sub_input" name="email" id="subemail" autocomplete="off" placeholder="Your Email" required="required">
 									<p id="msg" style="color: white;"> </p>
 								<button class="sub_button" id="subscribe" type="button">
 									<svg version="1.1" id="link_arrow_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
