@@ -5,14 +5,14 @@
 
             $("#submitButton").click(function () {
                 var str = $("#frm-comment").serialize();
-                var name = $("#name").val();
-                var email = $("#email").val();
+                var name = $("#comname").val();
+                var email = $("#comemail").val();
                 var comment = $("#comment").val();
                 var post_id = $("#post_id").val();
                 var comment_id  = $('#commentId').val();
 
-                var a = document.forms["frm-comment"]["name"].value;
-                var b = document.forms["frm-comment"]["email"].value;
+                var a = document.forms["frm-comment"]["comname"].value;
+                var b = document.forms["frm-comment"]["comemail"].value;
                 var c = document.forms["frm-comment"]["comment"].value;
 
                 if (a === null || a === "") {

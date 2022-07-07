@@ -310,8 +310,8 @@ if ($rowcounta == '0') {
 											<form id="frm-comment">
 												<input type="hidden" name="comment_id" id="commentId" />
 												<input type="hidden" id="post_id" value="<?php echo $id; ?>">
-												<input type="text" class="comment_input comment_input_name" placeholder="Your Name" id="name" required="required">
-												<input type="email" class="comment_input comment_input_email" placeholder="Your Email" required="required" id="email">
+												<input type="text" class="comment_input comment_input_name" placeholder="Your Name" id="comname" required="required">
+												<input type="email" class="comment_input comment_input_email" placeholder="Your Email" required="required" id="comemail">
 												<textarea class="comment_text" placeholder="Your Comment" required="required" id="comment"></textarea>
 												<div id="msgs"></div>
 												<button type="button" style="outline: none" id="submitButton" class="comment_button">Post Comment</button>
