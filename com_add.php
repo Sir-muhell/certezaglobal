@@ -16,6 +16,10 @@ $sql.= " VALUES('$commentId', '$comment', '$sender', '$cemail', '$postid', '$dat
 
 $result = mysqli_query($con, $sql);
 
+if (! $result) {
+    $result = mysqli_error($con);
+}
+
 
 
 }
