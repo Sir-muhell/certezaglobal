@@ -18,10 +18,9 @@ $result = mysqli_query($con, $sql);
 
 if (! $result) {
     $result = mysqli_error($con);
+} else {
+    echo'';
 }
-echo $result;
-echo $commentSenderName;
-
 
 
 
