@@ -97,6 +97,15 @@ if ($rowcounta == '0') {
         color:#2ddf80;
 </style>
 </head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6HCCJHSHV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z6HCCJHSHV');
+</script>
 <body>
 
 <div class="super_container">

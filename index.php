@@ -21,6 +21,15 @@ include("data/functions.php");
 <meta name="theme-color" content="#262626"> 
 <link rel="icon" type="image/png"  href="images/logo7.png">
 </head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6HCCJHSHV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z6HCCJHSHV');
+</script>
 <body>
 
 <div class="super_container">
