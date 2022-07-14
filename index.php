@@ -46,7 +46,7 @@ include("data/functions.php");
 							<ul>
 								<li class="active"><a href="./">Home</a></li>
 								<?php
-										$sql = "SELECT * FROM article WHERE status = 'Publish' ORDER BY id DESC LIMIT 1";
+										$sql = "SELECT * FROM article WHERE status = 'Publish' ORDER BY id ASC LIMIT 1";
 										$result=mysqli_query($con,$sql);
 										$row = db_fetch_assoc($result);
 										$rowcount=mysqli_num_rows($result);	

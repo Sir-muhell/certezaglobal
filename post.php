@@ -69,7 +69,7 @@ if ($rowcounta == '0') {
 	}
 	$rowc = db_fetch_assoc($resultc);
 	$string = $rowc['content'];
-	$string = (strlen($string) > 13) ? substr($string,0,10).'...' : $string;
+	// $string = (strlen($string) > 13) ? substr($string,0,10).'...' : $string;
  ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,13 @@ if ($rowcounta == '0') {
 <title><?php echo $row['titles']; ?> | Certeza Global</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="<?php echo $string; ?>">
+
+<meta property="og:url"           content="<?php echo $url; ?>" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="Certeza Global" />
+<meta property="og:description"   content="<?php echo $string; ?>" />
+<meta property="og:image"         content="https://certezaglobal.com.ng/blogger/<?php echo $rowc['pix'] ?>" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
